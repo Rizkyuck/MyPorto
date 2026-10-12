@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochammad Rizky Kurniawan | STr Teknik Telekomunikasi PENS</title>
+  <meta name="description" content="Portofolio resmi Mochammad Rizky Kurniawan - Mahasiswa STr Teknik Telekomunikasi, Politeknik Elektronika Negeri Surabaya (PENS). Fokus Jaringan Komputer, Keamanan Siber, IoT, dan Telekomunikasi Radio.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%2032%22><text y=%2226%22 font-size=%2226%22>⚡</text></svg>">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    html.dark ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    html.dark ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    html.dark ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+    html.light ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+    html.light ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    html.light ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Technical Background Grid */
+    .tech-grid {
+      background-size: 32px 32px;
+    }
+    html.dark .tech-grid {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    html.light .tech-grid {
+      background-image: 
+        linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#f1f5f9] dark:bg-[#090d16] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300 min-h-screen transition-colors duration-300">
+
+  <!-- Technical Background Grid -->
+  <div class="fixed inset-0 tech-grid pointer-events-none z-0"></div>
+  
+  <!-- Subtle Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-emerald-500/10 via-slate-500/5 to-transparent blur-[140px] pointer-events-none z-0"></div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 border-b border-slate-300 dark:border-white/[0.08] bg-white/95 dark:bg-[#090d16]/85 backdrop-blur-md transition-colors duration-300 shadow-sm dark:shadow-none">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand / Monogram: MRK (Mochammad Rizky Kurniawan) -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-slate-900 dark:bg-gradient-to-br dark:from-white/10 dark:to-white/5 border border-slate-700 dark:border-white/20 flex items-center justify-center font-mono font-bold text-xs tracking-wider text-white shadow-sm group-hover:border-emerald-500/70 transition-colors">
+          MRK
+        </div>
+        <div>
+          <span class="font-bold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white block leading-none">Mochammad Rizky Kurniawan</span>
+          <span class="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 font-medium block mt-0.5">STr Teknik Telekomunikasi • PENS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu Items -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-slate-950 dark:hover:text-white transition-colors">Tentang</a>
+        <a href="#projects" class="hover:text-slate-950 dark:hover:text-white transition-colors">Proyek & Lab</a>
+        <a href="#skills" class="hover:text-slate-950 dark:hover:text-white transition-colors">Keahlian</a>
+        <a href="#certificates" class="hover:text-slate-950 dark:hover:text-white transition-colors">Sertifikasi</a>
+        <a href="#contact" class="hover:text-slate-950 dark:hover:text-white transition-colors">Kontak</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2 rounded-lg border border-slate-300 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors" title="Ganti Tema">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <!-- CTA Email -->
+        <a href="mailto:mocha.rizkykurniawan@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 font-semibold text-xs transition-all shadow-sm">
+          <span>Kirim Email</span>
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-300 dark:border-white/10 bg-white dark:bg-[#0c1220] px-4 py-4 space-y-3">
+      <a href="#about" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Tentang Saya</a>
+      <a href="#projects" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Proyek & Hasil Lab</a>
+      <a href="#skills" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Keahlian Teknis</a>
+      <a href="#certificates" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Sertifikasi & Workshop</a>
+      <a href="#contact" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Kontak</a>
+      <a href="mailto:mocha.rizkykurniawan@gmail.com" class="block text-center w-full py-2.5 mt-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-lg">
+        Hubungi via Email
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-24">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="pt-4 sm:pt-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Copywriting & Bio -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- General Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>STr Teknik Telekomunikasi • PENS Surabaya</span>
+          </div>
+
+          <!-- Main Heading -->
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+              Mochammad Rizky <br class="hidden sm:inline">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400">Kurniawan</span>
+            </h1>
+            <p class="font-mono text-xs sm:text-sm text-emerald-700 dark:text-emerald-400 font-semibold">
+              Jaringan Komputer • Keamanan Siber • IoT • Telekomunikasi Radio
+            </p>
+          </div>
+
+          <!-- Narrative -->
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            Halo! Saya mahasiswa aktif semester 5 program studi <strong class="text-slate-900 dark:text-white font-semibold">STr Teknik Telekomunikasi</strong> di <strong class="text-slate-900 dark:text-white font-semibold">Politeknik Elektronika Negeri Surabaya (PENS)</strong>. Memiliki fokus pada infrastruktur transmisi data dan jaringan: mulai dari <strong class="text-slate-900 dark:text-white font-medium">arsitektur jaringan LAN/WAN di Cisco Packet Tracer</strong>, pengujian keamanan sistem (Web Pentest), purwarupa sensor <strong class="text-slate-900 dark:text-white font-medium">IoT (ESP32)</strong>, hingga fabrikasi fisik <strong class="text-slate-900 dark:text-white font-medium">Antena Horn gelombang mikro</strong> dan pemrosesan sinyal radio (SDR/GNU Radio).
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 font-semibold text-xs sm:text-sm transition-all shadow-md">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Lihat Proyek & Lab</span>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-300 dark:border-white/15 bg-white dark:bg-white/[0.04] text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-white/[0.08] font-medium text-xs sm:text-sm transition-all shadow-sm">
+              <i data-lucide="linkedin" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="mailto:mocha.rizkykurniawan@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-300 dark:border-white/15 bg-white dark:bg-white/[0.04] text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-white/[0.08] font-medium text-xs sm:text-sm transition-all shadow-sm">
+              <i data-lucide="mail" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+              <span class="truncate max-w-[210px] sm:max-w-none">mocha.rizkykurniawan@gmail.com</span>
+            </a>
+          </div>
+
+          <!-- Quick Metadata Pills -->
+          <div class="pt-4 border-t border-slate-300 dark:border-white/[0.08] grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-[11px]">
+            <div class="p-2.5 rounded-lg bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm">
+              <span class="block text-slate-500 dark:text-slate-400 text-[10px]">PROGRAM STUDI</span>
+              <span class="text-slate-900 dark:text-slate-200 font-semibold">STr Teknik Telekomunikasi</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm">
+              <span class="block text-slate-500 dark:text-slate-400 text-[10px]">KAMPUS</span>
+              <span class="text-slate-900 dark:text-slate-200 font-semibold">PENS Surabaya</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm">
+              <span class="block text-slate-500 dark:text-slate-400 text-[10px]">STATUS</span>
+              <span class="text-slate-900 dark:text-slate-200 font-semibold">Semester 5 Aktif</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Photo Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-[320px]">
+            
+            <!-- Ambient Glow behind card -->
+            <div class="absolute -inset-1 bg-gradient-to-tr from-emerald-500/20 via-slate-400/10 dark:via-white/10 to-transparent rounded-2xl blur-lg"></div>
+
+            <!-- Main Card Container -->
+            <div class="relative rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-300 dark:border-white/10 p-3.5 space-y-4 shadow-xl dark:shadow-none transition-colors duration-300">
+              
+              <!-- Image Container -->
+              <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-white/10">
+                <img 
+                  src="assets/profile.jpg" 
+                  alt="Mochammad Rizky Kurniawan" 
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
+                
+                <!-- Status Overlay on Photo -->
+                <div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-2 rounded-lg bg-white/95 dark:bg-slate-950/85 backdrop-blur-md border border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-mono shadow-sm">
+                  <span class="text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Mochammad Rizky Kurniawan
+                  </span>
+                  <span class="text-slate-600 dark:text-slate-400 font-medium">STr Telkom</span>
+                </div>
+              </div>
+
+              <!-- Mini Spec Badges -->
+              <div class="grid grid-cols-2 gap-2 text-center text-xs font-mono">
+                <div class="p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
+                  <span class="block text-slate-500 dark:text-slate-400 text-[10px]">SERTIFIKASI</span>
+                  <span class="text-emerald-700 dark:text-emerald-400 font-semibold">Komdigi, IDN, Cisco</span>
+                </div>
+                <div class="p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06]">
+                  <span class="block text-slate-500 dark:text-slate-400 text-[10px]">PROGRAM STUDI</span>
+                  <span class="text-slate-900 dark:text-white font-semibold">Teknik Telekomunikasi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT STATS BANNER -->
+    <section class="border-y border-slate-300 dark:border-white/[0.08] py-8 transition-colors duration-300">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="space-y-1">
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">20+</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">Topologi Cisco Dibuat</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">5+</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">Proyek Lab Nyata</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">14+</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">Sertifikat Terverifikasi</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-700 dark:text-emerald-400 font-mono">Sem 5</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">STr Telkom PENS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS & EXPERIMENTAL SHOWCASE -->
+    <section id="projects" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="font-mono text-xs text-emerald-700 dark:text-emerald-400 uppercase tracking-wider block font-semibold">Portofolio & Eksperimen Nyata</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Proyek & Praktikum Lab</h2>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400 max-w-sm">
+          Dokumentasi langsung dari praktikum lab telekomunikasi, perakitan perangkat keras RF, dan perancangan jaringan.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 border-b border-slate-300 dark:border-white/[0.08] pb-3 text-xs font-mono">
+        <button class="filter-btn active px-3.5 py-1.5 rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-950 font-semibold shadow-sm" data-filter="all">Semua Proyek (5)</button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-md bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300" data-filter="telecom">Telekomunikasi & Antena</button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-md bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300" data-filter="iot">IoT & Hardware</button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-md bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300" data-filter="jaringan">Simulasi Jaringan</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project 1: Horn Antenna Fabrication -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm" data-category="telecom">
+          <div>
+            <!-- Real Photo Banner -->
+            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10">
+              <img 
+                src="assets/horn_antenna_lab.jpg" 
+                alt="Pengujian Antena Horn di Lab PENS" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                  Lab Antena & Gelombang Mikro
+                </span>
+                <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/50">
+                  Praktikum Kelompok PENS
+                </span>
+              </div>
+            </div>
+
+            <!-- Content Details -->
+            <div class="p-5 space-y-3">
+              <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                Fabrikasi & Karakterisasi Antena Horn (Gelombang Mikro)
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Terlibat dalam perancangan dimensi fisik, fabrikasi lembaran logam, dan pengujian transmisi antena Horn piramidal di laboratorium gelombang mikro PENS. Mengamati pola radiasi elektromagnetik, directivity, serta kecocokan impedansi pada frekuensi gelombang mikro.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] pt-1">
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Antenna Fabrication</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Microwave Frequency</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Pola Radiasi</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Lab Telekomunikasi PENS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 border-t border-slate-200 dark:border-white/[0.06] mt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 font-medium">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              Pengujian & Perakitan Fisik Selesai
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 2: IoT Water Level Monitoring -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm" data-category="iot">
+          <div>
+            <!-- Real Photo Banner -->
+            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10">
+              <img 
+                src="assets/iot_water_level_team.png" 
+                alt="Purwarupa IoT Pemantau Ketinggian Air Tambak" 
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 backdrop-blur-md">
+                  Proyek Kolaborasi IoT
+                </span>
+                <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/50">
+                  Teknik Telekomunikasi PENS
+                </span>
+              </div>
+            </div>
+
+            <!-- Content Details -->
+            <div class="p-5 space-y-3">
+              <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                IoT Water Level Monitoring System (Tambak Garam)
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Mengembangkan purwarupa monitoring ketinggian air tambak garam secara otomatis. Menggunakan mikrokontroler ESP32, display LCD, dan sensor ultrasonik, dikoneksikan ke jaringan Wi-Fi untuk mentransmisikan data ketinggian air ke antarmuka web monitoring secara real-time.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] pt-1">
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">ESP32</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Sensor Ultrasonik</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Wi-Fi IoT</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">C++ / Arduino IDE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 border-t border-slate-200 dark:border-white/[0.06] mt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 font-medium">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              Purwarupa Hardware & Transmisi Berhasil
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 3: 20+ Cisco Packet Tracer Topologies -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-4 hover:border-slate-400 dark:hover:border-white/25 transition-all group shadow-sm" data-category="jaringan">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 flex items-center justify-center">
+              <i data-lucide="network" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-500/10 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-500/20 font-medium">20+ File Topologi</span>
+          </div>
+
+          <div class="space-y-1.5">
+            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              Eksplorasi & Simulasi Topologi Jaringan (Cisco Packet Tracer)
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Telah merancang dan menguji lebih dari 20 skenario topologi jaringan pada Workshop Jaringan Komputer PENS. Meliputi: <em>Multi-Site Network</em>, <em>Client-Server & VLAN segmentation</em>, <em>Static Routing antar router</em>, konfigurasi switch/router level, hingga analisis topologi fisik (Star, Mesh, Ring, Bus, dan Hybrid).
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Multi-Site Network</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">VLAN & Inter-VLAN</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Static Routing</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Client-Server Architecture</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Cisco Packet Tracer</span>
+          </div>
+
+          <div class="pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-medium">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+              Portofolio Topologi Praktikum Lengkap
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 4: Software Defined Radio FM Receiver -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-4 hover:border-slate-400 dark:hover:border-white/25 transition-all group shadow-sm" data-category="telecom">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+              <i data-lucide="radio" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-500/20 font-medium">DSP & SDR</span>
+          </div>
+
+          <div class="space-y-1.5">
+            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              Penerima FM 1 & 2 Channel Berbasis RTL-SDR (GNU Radio)
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Membangun diagram alir pemrosesan sinyal digital (*Software Defined Radio*) untuk menangkap siaran radio FM komersial. Mengimplementasikan <em>Digital Down Conversion (DDC)</em> dengan osilator lokal Cosine untuk mendemodulasi 2 frekuensi radio berbeda secara paralel dari 1 perangkat dongle RTL-SDR.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">GNU Radio (.grc)</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">RTL-SDR</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">WBFM Demodulator</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Low Pass Filter</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Python Flowgraph</span>
+          </div>
+
+          <div class="pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-medium">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+              Real-time DSP Radio Receiver
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 5: Autonomous Robot Line Follower & Gripper (REAL PHOTO 3) -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm md:col-span-2" data-category="iot">
+          <div>
+            <!-- Real Photo Banner -->
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10">
+              <img 
+                src="assets/line_follower_robot.jpg" 
+                alt="Robot Line Follower dengan Capit Gripper" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 backdrop-blur-md">
+                  Robotika & Mekatronika
+                </span>
+                <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/50">
+                  Line Follower + Gripper Arm
+                </span>
+              </div>
+            </div>
+
+            <!-- Content Details -->
+            <div class="p-5 space-y-3">
+              <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                Pengembangan Robot Line Follower & Gripper Otonom (Proyek Kelompok)
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Membangun robot beroda pelacak garis otonom yang dilengkapi dengan lengan mekanik capit (*gripper/claw*) berbasis servo. Mengintegrasikan modul driver motor L298N, baterai Li-ion UltraFire, motor DC beroda gigi (*gearbox*), dan sensor array optik inframerah untuk navigasi lintasan serta pemindahan objek secara presisi.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] pt-1">
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Arduino / Mikrokontroler</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Motor Driver L298N</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Servo Gripper Arm</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">IR Sensor Array</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">C++ Embedded</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 border-t border-slate-200 dark:border-white/[0.06] mt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 font-medium">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              Purwarupa Robot Fisik Selesai & Beroperasi
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="space-y-8">
+      <div>
+        <span class="font-mono text-xs text-emerald-700 dark:text-emerald-400 uppercase tracking-wider block font-semibold">Kapabilitas Teknis Praktis</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Keahlian & Bidang Kajian</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Skill 1: Jaringan Komputer -->
+        <div class="bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm">
+            <i data-lucide="server" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+            <span>Jaringan Komputer</span>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Routing & Switching Dasar</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> IP Addressing & Subnetting IPv4</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Konfigurasi VLAN & Inter-VLAN</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Client-Server Architecture</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Teori Dasar Optik (FTTH)</li>
+          </ul>
+        </div>
+
+        <!-- Skill 2: Simulator & Analisis -->
+        <div class="bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm">
+            <i data-lucide="terminal" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>
+            <span>Software & Simulator</span>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Cisco Packet Tracer (20+ Topologi)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> GNS3 Network Simulation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Wireshark (Packet Capture)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> GNU Radio Companion (GRC)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Proteus & Wokwi Simulator</li>
+          </ul>
+        </div>
+
+        <!-- Skill 3: Hardware & IoT -->
+        <div class="bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm">
+            <i data-lucide="cpu" class="w-4 h-4 text-purple-600 dark:text-purple-400"></i>
+            <span>Hardware & IoT</span>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> ESP32 (Wi-Fi Transmisi Data)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Arduino Uno & Sensor Array</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Fabrikasi Antena Horn (Gelombang Mikro)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Dongle RTL-SDR (Software Radio)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Driver Motor & Komponen Pasif</li>
+          </ul>
+        </div>
+
+        <!-- Skill 4: Bahasa Pemrograman -->
+        <div class="bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm">
+            <i data-lucide="code" class="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+            <span>Bahasa & Toolkit</span>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> C++ (Arduino & Algoritma)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Python (Dasar & Otomasi)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> C (Bahasa Pemrograman Lab)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Java (Dasar OOP)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Git & GitHub (Version Control)</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATES & CREDENTIALS WITH VIEWABLE PDF LINKS -->
+    <section id="certificates" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="font-mono text-xs text-emerald-700 dark:text-emerald-400 uppercase tracking-wider block font-semibold">Kredensial & Pelatihan Teknis</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Sertifikasi Terverifikasi</h2>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400 max-w-sm">
+          Klik tombol <strong>"Lihat Sertifikat"</strong> pada setiap kartu untuk membuka dokumen PDF resmi secara langsung.
+        </p>
+      </div>
+
+      <!-- Filter Tabs for Certificates -->
+      <div class="flex flex-wrap items-center gap-2 border-b border-slate-300 dark:border-white/[0.08] pb-3 text-xs font-mono">
+        <button class="cert-filter-btn active px-3.5 py-1.5 rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-950 font-semibold shadow-sm" data-cert-filter="all">Semua Sertifikat (10)</button>
+        <button class="cert-filter-btn px-3.5 py-1.5 rounded-md bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300" data-cert-filter="network">Jaringan Komputer</button>
+        <button class="cert-filter-btn px-3.5 py-1.5 rounded-md bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300" data-cert-filter="security">Keamanan Siber (Cyber)</button>
+        <button class="cert-filter-btn px-3.5 py-1.5 rounded-md bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300" data-cert-filter="system">Sistem & Programming</button>
+      </div>
+
+      <!-- Certificate Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Cert 1: DEX Komdigi Network Administrator Intermediate -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="network">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
+              <i data-lucide="badge-check" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Associate Network Administrator (Intermediate)</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">DEX Komdigi • Politeknik Elektronika Negeri Surabaya</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/20 font-medium">
+                Tahun 2026 • Administrasi Jaringan
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/dex_network_admin_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-emerald-600 dark:text-emerald-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 2: DEX Komdigi Network Technician Intermediate -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="network">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
+              <i data-lucide="badge-check" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Associate Computer Network Technician (Intermediate)</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">DEX Komdigi • Politeknik Elektronika Negeri Surabaya</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/20 font-medium">
+                Tahun 2026 • Teknisi Jaringan Komputer
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/dex_network_tech_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-emerald-600 dark:text-emerald-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 3: ID-Networkers Jaringan Komputer Dasar -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="network">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5">
+              <i data-lucide="network" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Sertifikat Jaringan Komputer Dasar</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">ID-Networkers (IDN.ID) • Dedi Gunawan, M.T., CCIE</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-500/10 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-500/20 font-medium">
+                Tahun 2024 • Fundamental Networking & IP
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/idn_jaringan_dasar.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-sky-600 dark:text-sky-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 4: ID-Networkers Web Pentest Bootcamp -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="security">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Beasiswa Bootcamp Online "Web Pentest" (1 Bulan)</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">ID-Networkers (IDN.ID) • Instruktur: Fattyr | CCIE: Dedi Gunawan, M.T.</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-500/10 text-rose-800 dark:text-rose-300 border border-rose-300 dark:border-rose-500/20 font-medium">
+                Tahun 2024 • Web Penetration Testing
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/idn_web_pentest_bootcamp.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-rose-600 dark:text-rose-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 5: Cyber Academy InfoSec -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="security">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Introduction to Information Security Course</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Cyber Academy (Cyber Army Indonesia) • ID: PKMI01107241944</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-500/10 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-500/20 font-medium">
+                Tahun 2024 • Information Security Fundamentals
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/cyber_academy_infosec.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-sky-600 dark:text-sky-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 6: Cisco NetAcad Cyber -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="security">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5">
+              <i data-lucide="lock" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Introduction to Cybersecurity</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">IDCamp x Cisco Networking Academy</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-500/10 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-500/20 font-medium">
+                Tahun 2025 • Cisco NetAcad Partner
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/cisco_cybersecurity.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-indigo-600 dark:text-indigo-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 7: Dicoding Python -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="system">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Memulai Pemrograman dengan Python</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Dicoding Indonesia</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/20 font-medium">
+                Tahun 2026 • Fondasi Pemrograman
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/dicoding_python.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-amber-600 dark:text-amber-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 8: Workshop Intelligent Systems Hardware -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="system">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Workshop Basic Intelligent Systems (Hardware)</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-500/20 font-medium">
+                Tahun 2024 • Sistem Tertanam & Hardware
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/pens_hardware_intelligent_sys.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-purple-600 dark:text-purple-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 9: DQLab Python Data Science -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="system">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
+              <i data-lucide="file-code" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Python Fundamental for Data Science</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">DQLab Indonesia</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/20 font-medium">
+                Tahun 2024 • Data Analysis & Scripting
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/dqlab_python.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-emerald-600 dark:text-emerald-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 10: DQLab SQL Fundamental -->
+        <div class="cert-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/25 transition-all" data-cert-category="system">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">Fundamental SQL Using SELECT Statement</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-400">DQLab Indonesia</p>
+              <span class="inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-teal-100 dark:bg-teal-500/10 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-500/20 font-medium">
+                Tahun 2024 • Database Querying
+              </span>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-end">
+            <a href="assets/certificates/dqlab_sql.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.05] dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-medium transition-colors">
+              <span>Buka Sertifikat (PDF)</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-teal-600 dark:text-teal-400"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Expandable Archive of All 36 Certificates -->
+      <div class="mt-10 pt-6 border-t border-slate-300 dark:border-white/10 text-center">
+        <button id="toggleArchiveBtn" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white dark:bg-white/5 border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm transition-all shadow-sm">
+          <i data-lucide="folder-archive" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+          <span id="toggleArchiveText">Buka Seluruh Arsip Dokumen Sertifikat (36 File)</span>
+          <i data-lucide="chevron-down" id="archiveChevron" class="w-4 h-4 transition-transform duration-300"></i>
+        </button>
+      </div>
+
+      <div id="archiveSection" class="hidden space-y-4 pt-4">
+        <!-- Live Search Box -->
+        <div class="relative max-w-md mx-auto">
+          <input type="text" id="archiveSearchInput" placeholder="Cari sertifikat (misal: DEX, Web, Cyber, AI, SQL)..." class="w-full px-4 py-2.5 pl-10 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-white/15 text-xs text-slate-800 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 shadow-sm font-mono">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3"></i>
+        </div>
+
+        <div class="text-xs font-mono text-slate-500 dark:text-slate-400 text-center">
+          Menampilkan <span id="archiveCount">36</span> dokumen terverifikasi
+        </div>
+
+        <!-- 36 items grid -->
+        <div id="archiveGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Jaringan Komputer</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DEX Komdigi - Associate Network Administrator (Intermediate)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dex_network_admin_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Jaringan Komputer</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DEX Komdigi - Associate Network Administrator (Fundamental)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dex_network_admin_fundamental.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Jaringan Komputer</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DEX Komdigi - Associate Computer Network Technician (Intermediate)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dex_network_tech_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Jaringan Komputer</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DEX Komdigi - Associate Computer Network Technician (Fundamental)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dex_network_tech_fundamental.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Keamanan Siber</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">ID-Networkers - Beasiswa Bootcamp Web Pentest (1 Bulan)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_idn_web_pentest_bootcamp.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Jaringan Komputer</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">ID-Networkers - Sertifikat Jaringan Komputer Dasar</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_idn_jaringan_dasar.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Keamanan Siber</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Cyber Academy - Introduction to Information Security Course</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_cyber_academy_infosec.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Keamanan Siber</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Cisco NetAcad x IDCamp - Introduction to Cybersecurity</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_cisco_cybersecurity.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Keamanan Siber</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Cyber Security Fundamental Course</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_cyber_security_course.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Keamanan Siber</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Webinar Nasional Cyber Security</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_webinar_cyber_security.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Programming</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Dicoding Indonesia - Memulai Pemrograman dengan Python</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dicoding_python.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Mobile App</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Dicoding Indonesia - Belajar Membuat Aplikasi Flutter untuk Pemula</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dicoding_flutter.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Web Development</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">React.js Front-End Web Development Course</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_react_js.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Web Development</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Binar Academy - Full-Stack Web Development 101</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_binar_fullstack_101.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Web Development</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Bootcamp Web Development for Beginner (Dari Nol)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_bootcamp_web_beginner.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Web Development</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Web Development Series 4.0 Course</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_web_development_series.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Web Development</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Back-End Web Developer Training Certificate</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_backend_developer.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Software Eng.</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Spec-Driven Development Training dengan Kiro</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_spec_driven_dev_kiro.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Embedded System</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">PENS - Workshop Basic Intelligent Systems (Hardware)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_pens_intelligent_hardware.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Embedded System</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">PENS - Workshop Basic Intelligent Systems (Software)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_pens_intelligent_software.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Kecerdasan Buatan</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Kelas Belajar Artificial Intelligence (AI)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_belajar_ai.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Data Science</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DQLab - Python Fundamental for Data Science</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dqlab_python_data_science.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Data Science</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DQLab - R Fundamental for Data Science</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dqlab_r_data_science.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Database & SQL</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DQLab - Fundamental SQL Using SELECT Statement</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dqlab_sql.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Data Science</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">DQLab - Data Science Free Class Session</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_dqlab_free_class.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Data Engineering</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Data Series Fair 8.0 - Data Engineering</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_data_series_data_engineer.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Design UI/UX</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">UI/UX Design Fundamental Course</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_uiux_design.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Graphic Design</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Adobe Photoshop Graphic Design Course</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_photoshop_design.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Kompetisi</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Participant - National Technical Essay Competition</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_essay_competition.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Kompetisi</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Sertifikat Kompetisi GJAC #2</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_gjac_competition.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Organisasi</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">HIMA Telkom PENS - Suksesi Kepengurusan Organisasi</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_suksesi_hima_telkom.png" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Kepemimpinan</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">PENS - Latihan Keterampilan Manajemen Mahasiswa (LKMM-TD)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_lkmm_td_pens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Kepemimpinan</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">PENS - Latihan Keterampilan Manajemen Mahasiswa (Pra-TD)</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_lkmm_pra_td.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Pelatihan</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Sertifikat Partisipasi & Pelatihan Teknis #1</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_partisipasi_1.png" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Pelatihan</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Sertifikat Partisipasi & Pelatihan Teknis #2</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_partisipasi_2.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="archive-item bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-lg p-3.5 flex flex-col justify-between shadow-sm hover:border-slate-400 dark:hover:border-white/20 transition-all text-left">
+              <div class="space-y-1">
+                <span class="inline-block text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06] font-medium">Pelatihan</span>
+                <h5 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">Sertifikat Partisipasi & Pelatihan Teknis #3</h5>
+              </div>
+              <div class="pt-2.5 mt-2 border-t border-slate-100 dark:border-white/[0.04] flex items-center justify-end">
+                <a href="assets/certificates/cert_partisipasi_3.pdf" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-medium">
+                  <span>Lihat Dokumen</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CALL TO ACTION -->
+    <section id="contact" class="bg-white dark:bg-slate-900/80 rounded-2xl p-6 sm:p-10 border border-slate-300 dark:border-white/10 relative overflow-hidden shadow-sm transition-colors duration-300">
+      
+      <!-- Subtle internal glow -->
+      <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-100 dark:bg-white/[0.05] border border-slate-300 dark:border-white/10 text-xs font-mono text-emerald-800 dark:text-emerald-400 font-medium">
+            <i data-lucide="mail-check" class="w-3.5 h-3.5"></i>
+            <span>Terbuka Untuk Komunikasi & Peluang Kolaborasi</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Mari Terhubung & Berdiskusi!
+          </h2>
+
+          <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed max-w-lg">
+            Tertarik berdiskusi seputar perancangan topologi jaringan, pengujian keamanan sistem, proyek IoT, maupun peluang kolaborasi teknis lainnya? Anda dapat menghubungi saya langsung melalui email atau profil LinkedIn.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="mailto:mocha.rizkykurniawan@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md">
+              <i data-lucide="mail" class="w-4 h-4 text-white dark:text-slate-950"></i>
+              <span>Kirim Email Langsung</span>
+            </a>
+
+            <button id="copyEmailBtn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-300 dark:border-white/15 bg-white dark:bg-white/[0.04] text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-white/[0.08] font-medium text-xs sm:text-sm transition-all shadow-sm">
+              <i data-lucide="copy" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+              <span id="copyEmailText">Salin Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact Detail Box (No Phone, Clean & Safe) -->
+        <div class="lg:col-span-5 bg-slate-50 dark:bg-slate-950/70 rounded-xl p-5 border border-slate-300 dark:border-white/10 space-y-3 font-mono text-xs">
+          <div>
+            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">EMAIL UTAMA (SERING DIBUKA)</span>
+            <span class="text-slate-900 dark:text-slate-200 select-all font-semibold break-all">mocha.rizkykurniawan@gmail.com</span>
+          </div>
+          <div>
+            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">LINKEDIN RESMI</span>
+            <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="text-emerald-700 dark:text-emerald-400 hover:underline block truncate font-medium">
+              linkedin.com/in/mochammad-rizky-kurniawan
+            </a>
+          </div>
+          <div>
+            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">PROGRAM STUDI & INSTITUSI</span>
+            <span class="text-slate-800 dark:text-slate-300 font-medium">STr Teknik Telekomunikasi, Politeknik Elektronika Negeri Surabaya</span>
+          </div>
+          <div>
+            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">DOMISILI</span>
+            <span class="text-slate-800 dark:text-slate-300">Surabaya, Jawa Timur, Indonesia</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-300 dark:border-white/[0.08] py-8 text-center text-xs font-mono text-slate-600 dark:text-slate-400 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 Mochammad Rizky Kurniawan. Politeknik Elektronika Negeri Surabaya.
+      </div>
+      <div class="flex items-center gap-4 text-slate-700 dark:text-slate-400">
+        <a href="#hero" class="hover:text-slate-950 dark:hover:text-white transition-colors">Kembali ke Atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT UNTUK INTERAKTIVITAS & FILTER -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Dark/Light Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+      }
+      lucide.createIcons();
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Copy Email to Clipboard
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyEmailText = document.getElementById('copyEmailText');
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('mocha.rizkykurniawan@gmail.com').then(() => {
+        copyEmailText.textContent = 'Tersalin!';
+        setTimeout(() => {
+          copyEmailText.textContent = 'Salin Email';
+        }, 2000);
+      });
+    });
+
+    // Projects Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active button styling
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-950', 'font-semibold', 'shadow-sm');
+          b.classList.add('bg-white', 'dark:bg-white/5', 'text-slate-700', 'dark:text-slate-300');
+        });
+        btn.classList.add('active', 'bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-950', 'font-semibold', 'shadow-sm');
+        btn.classList.remove('bg-white', 'dark:bg-white/5', 'text-slate-700', 'dark:text-slate-300');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Certificates Filtering Logic
+    const certFilterButtons = document.querySelectorAll('.cert-filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    certFilterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active button styling
+        certFilterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-950', 'font-semibold', 'shadow-sm');
+          b.classList.add('bg-white', 'dark:bg-white/5', 'text-slate-700', 'dark:text-slate-300');
+        });
+        btn.classList.add('active', 'bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-950', 'font-semibold', 'shadow-sm');
+        btn.classList.remove('bg-white', 'dark:bg-white/5', 'text-slate-700', 'dark:text-slate-300');
+
+        const filter = btn.getAttribute('data-cert-filter');
+
+        certCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-cert-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Archive Toggle & Live Search Logic
+    const toggleArchiveBtn = document.getElementById('toggleArchiveBtn');
+    const toggleArchiveText = document.getElementById('toggleArchiveText');
+    const archiveChevron = document.getElementById('archiveChevron');
+    const archiveSection = document.getElementById('archiveSection');
+    const archiveSearchInput = document.getElementById('archiveSearchInput');
+    const archiveItems = document.querySelectorAll('.archive-item');
+    const archiveCount = document.getElementById('archiveCount');
+
+    if (toggleArchiveBtn) {
+      toggleArchiveBtn.addEventListener('click', () => {
+        const isHidden = archiveSection.classList.contains('hidden');
+        if (isHidden) {
+          archiveSection.classList.remove('hidden');
+          toggleArchiveText.textContent = 'Tutup Arsip Sertifikat';
+          archiveChevron.style.transform = 'rotate(180deg)';
+        } else {
+          archiveSection.classList.add('hidden');
+          toggleArchiveText.textContent = 'Buka Seluruh Arsip Dokumen Sertifikat (36 File)';
+          archiveChevron.style.transform = 'rotate(0deg)';
+        }
+        lucide.createIcons();
+      });
+    }
+
+    if (archiveSearchInput) {
+      archiveSearchInput.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        let visibleCount = 0;
+        archiveItems.forEach(item => {
+          const txt = item.textContent.toLowerCase();
+          if (txt.includes(q)) {
+            item.style.display = 'flex';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        if (archiveCount) archiveCount.textContent = visibleCount;
+      });
+    }
+  </script>
+</body>
+</html>
