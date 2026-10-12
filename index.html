@@ -308,7 +308,7 @@
         <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm" data-category="telecom">
           <div>
             <!-- Real Photo Banner -->
-            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10">
+            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 group/img cursor-pointer" onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Fabrikasi & Pengujian Antena Horn di Lab Gelombang Mikro PENS')">
               <img 
                 src="assets/horn_antenna_lab.jpg" 
                 alt="Pengujian Antena Horn di Lab PENS" 
@@ -320,7 +320,7 @@
                   Lab Antena & Gelombang Mikro
                 </span>
                 <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/50">
-                  Praktikum Kelompok PENS
+                  Praktikum Kelompok PENS ↗
                 </span>
               </div>
             </div>
@@ -355,7 +355,7 @@
         <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm" data-category="iot">
           <div>
             <!-- Real Photo Banner -->
-            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10">
+            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 group/img cursor-pointer" onclick="openCertificateModal('assets/iot_water_level_team.png', 'Tim Proyek IoT Pemantau Ketinggian Air Tambak Garam PENS')">
               <img 
                 src="assets/iot_water_level_team.png" 
                 alt="Purwarupa IoT Pemantau Ketinggian Air Tambak" 
@@ -367,7 +367,7 @@
                   Proyek Kolaborasi IoT
                 </span>
                 <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/50">
-                  Teknik Telekomunikasi PENS
+                  Teknik Telekomunikasi PENS ↗
                 </span>
               </div>
             </div>
@@ -398,70 +398,164 @@
           </div>
         </div>
 
-        <!-- Project 3: 20+ Cisco Packet Tracer Topologies -->
-        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-4 hover:border-slate-400 dark:hover:border-white/25 transition-all group shadow-sm" data-category="jaringan">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 flex items-center justify-center">
-              <i data-lucide="network" class="w-5 h-5"></i>
+        <!-- Project 3: 20+ Cisco Packet Tracer Topologies (WITH SIMULATION SCREENSHOTS) -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm" data-category="jaringan">
+          <div>
+            <!-- Simulation Banner -->
+            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-950 border-b border-slate-200 dark:border-white/10 group/img cursor-pointer" onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Simulasi Cisco Packet Tracer: Multi-Site Enterprise Network (HQ, Branches, Carrier & Data Center)')">
+              <img 
+                src="assets/cisco_multisite_network.png" 
+                alt="Simulasi Cisco Packet Tracer Multi-Site Network" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+              <div class="absolute top-3 right-3">
+                <span class="px-2 py-1 rounded bg-black/60 text-white font-mono text-[10px] backdrop-blur-md border border-white/10 flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3 h-3"></i> Perbesar
+                </span>
+              </div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-md">
+                  Simulasi Enterprise Network
+                </span>
+                <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/60">
+                  Cisco Packet Tracer
+                </span>
+              </div>
             </div>
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-500/10 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-500/20 font-medium">20+ File Topologi</span>
+
+            <!-- Content Details -->
+            <div class="p-5 space-y-3">
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-500/10 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-500/20 font-medium">20+ Skenario Topologi</span>
+                  <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">Workshop Jarkom PENS</span>
+                </div>
+                <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  Eksplorasi & Simulasi Topologi Jaringan (Cisco Packet Tracer)
+                </h3>
+              </div>
+
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Merancang dan menguji 20+ topologi praktikum jaringan komputer di laboratorium PENS. Mengimplementasikan arsitektur <strong>Multi-Site Enterprise</strong> (HQ, Cabang 1 & 2, ISP Carrier, dan Data Center) serta <strong>VLAN Segmentation & Client-Server Architecture</strong> lengkap dengan routing sub-interface dan ICMP validation.
+              </p>
+
+              <!-- Gallery Mini Previews (2 Simulation Screenshots) -->
+              <div class="grid grid-cols-2 gap-2 pt-1">
+                <button type="button" onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Simulasi Topologi Enterprise Multi-Site (HQ, Branch, Data Center)')" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.04] dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-left flex items-center gap-2 group/mini transition-colors">
+                  <div class="w-10 h-7 rounded overflow-hidden shrink-0 border border-white/10">
+                    <img src="assets/cisco_multisite_network.png" class="w-full h-full object-cover" alt="Multi-Site" />
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate">Multi-Site Network</span>
+                    <span class="block text-[9px] font-mono text-sky-600 dark:text-sky-400">Lihat Full HD ↗</span>
+                  </div>
+                </button>
+                <button type="button" onclick="openCertificateModal('assets/cisco_vlan_clientserver.png', 'Simulasi Segmentasi VLAN & Client Server Practice')" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.04] dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-left flex items-center gap-2 group/mini transition-colors">
+                  <div class="w-10 h-7 rounded overflow-hidden shrink-0 border border-white/10">
+                    <img src="assets/cisco_vlan_clientserver.png" class="w-full h-full object-cover" alt="VLAN" />
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate">VLAN Client Server</span>
+                    <span class="block text-[9px] font-mono text-sky-600 dark:text-sky-400">Lihat Full HD ↗</span>
+                  </div>
+                </button>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] pt-1">
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Multi-Site Network</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">VLAN & Inter-VLAN</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Static Routing</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Client-Server Architecture</span>
+              </div>
+            </div>
           </div>
 
-          <div class="space-y-1.5">
-            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-              Eksplorasi & Simulasi Topologi Jaringan (Cisco Packet Tracer)
-            </h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Telah merancang dan menguji lebih dari 20 skenario topologi jaringan pada Workshop Jaringan Komputer PENS. Meliputi: <em>Multi-Site Network</em>, <em>Client-Server & VLAN segmentation</em>, <em>Static Routing antar router</em>, konfigurasi switch/router level, hingga analisis topologi fisik (Star, Mesh, Ring, Bus, dan Hybrid).
-            </p>
-          </div>
-
-          <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Multi-Site Network</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">VLAN & Inter-VLAN</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Static Routing</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Client-Server Architecture</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Cisco Packet Tracer</span>
-          </div>
-
-          <div class="pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+          <div class="p-5 pt-0 border-t border-slate-200 dark:border-white/[0.06] mt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
             <span class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-medium">
               <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
-              Portofolio Topologi Praktikum Lengkap
+              20+ File Simulasi Terverifikasi Praktikum
             </span>
           </div>
         </div>
 
-        <!-- Project 4: Software Defined Radio FM Receiver -->
-        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-5 space-y-4 hover:border-slate-400 dark:hover:border-white/25 transition-all group shadow-sm" data-category="telecom">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center">
-              <i data-lucide="radio" class="w-5 h-5"></i>
+        <!-- Project 4: Software Defined Radio FM Receiver (WITH GNU RADIO FLOWGRAPHS) -->
+        <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm" data-category="telecom">
+          <div>
+            <!-- Simulation Flowgraph Banner -->
+            <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-950 border-b border-slate-200 dark:border-white/10 group/img cursor-pointer" onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio: Penerima FM 2-Channel Paralel (DDC & Cosine Oscillator)')">
+              <img 
+                src="assets/gnuradio_fm_2channel.png" 
+                alt="Diagram Alir GNU Radio Companion Penerima FM 2 Channel" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+              <div class="absolute top-3 right-3">
+                <span class="px-2 py-1 rounded bg-black/60 text-white font-mono text-[10px] backdrop-blur-md border border-white/10 flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3 h-3"></i> Perbesar
+                </span>
+              </div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-md">
+                  Digital Signal Processing (DSP)
+                </span>
+                <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/60">
+                  GNU Radio + RTL-SDR
+                </span>
+              </div>
             </div>
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-500/20 font-medium">DSP & SDR</span>
+
+            <!-- Content Details -->
+            <div class="p-5 space-y-3">
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-500/20 font-medium">DSP & Software Defined Radio</span>
+                  <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">SisKom Radio PENS</span>
+                </div>
+                <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  Penerima FM 1 & 2 Channel Berbasis RTL-SDR (GNU Radio)
+                </h3>
+              </div>
+
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Membangun diagram alir pemrosesan sinyal digital (*Software Defined Radio*) untuk menangkap siaran radio FM komersial. Mengimplementasikan <em>Digital Down Conversion (DDC)</em> dengan osilator lokal Cosine untuk mendemodulasi 2 frekuensi radio berbeda secara paralel dari 1 perangkat dongle RTL-SDR, difilter dengan Low Pass Filter dan divisualisasikan dengan QT GUI Frequency Sink.
+              </p>
+
+              <!-- Gallery Mini Previews (2 Flowgraphs) -->
+              <div class="grid grid-cols-2 gap-2 pt-1">
+                <button type="button" onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio: Penerima FM 2 Channel Lengkap dengan Osilator Cosine')" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.04] dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-left flex items-center gap-2 group/mini transition-colors">
+                  <div class="w-10 h-7 rounded overflow-hidden shrink-0 border border-white/10">
+                    <img src="assets/gnuradio_fm_2channel.png" class="w-full h-full object-cover" alt="2 Channel" />
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate">Flowgraph 2-Channel</span>
+                    <span class="block text-[9px] font-mono text-purple-600 dark:text-purple-400">Lihat Diagram ↗</span>
+                  </div>
+                </button>
+                <button type="button" onclick="openCertificateModal('assets/gnuradio_fm_1channel.png', 'Flowgraph GNU Radio: Penerima FM 1 Channel Tunggal (Dasar)')" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.04] dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-left flex items-center gap-2 group/mini transition-colors">
+                  <div class="w-10 h-7 rounded overflow-hidden shrink-0 border border-white/10">
+                    <img src="assets/gnuradio_fm_1channel.png" class="w-full h-full object-cover" alt="1 Channel" />
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate">Flowgraph 1-Channel</span>
+                    <span class="block text-[9px] font-mono text-purple-600 dark:text-purple-400">Lihat Diagram ↗</span>
+                  </div>
+                </button>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] pt-1">
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">GNU Radio (.grc)</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">RTL-SDR USB</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Digital Down Conversion</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">WBFM Demodulator</span>
+              </div>
+            </div>
           </div>
 
-          <div class="space-y-1.5">
-            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-              Penerima FM 1 & 2 Channel Berbasis RTL-SDR (GNU Radio)
-            </h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Membangun diagram alir pemrosesan sinyal digital (*Software Defined Radio*) untuk menangkap siaran radio FM komersial. Mengimplementasikan <em>Digital Down Conversion (DDC)</em> dengan osilator lokal Cosine untuk mendemodulasi 2 frekuensi radio berbeda secara paralel dari 1 perangkat dongle RTL-SDR.
-            </p>
-          </div>
-
-          <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">GNU Radio (.grc)</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">RTL-SDR</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">WBFM Demodulator</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Low Pass Filter</span>
-            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/[0.06]">Python Flowgraph</span>
-          </div>
-
-          <div class="pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+          <div class="p-5 pt-0 border-t border-slate-200 dark:border-white/[0.06] mt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
             <span class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-medium">
               <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
-              Real-time DSP Radio Receiver
+              Real-time DSP Radio Receiver Berhasil
             </span>
           </div>
         </div>
@@ -470,7 +564,7 @@
         <div class="project-card bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl overflow-hidden hover:border-slate-400 dark:hover:border-white/25 transition-all group flex flex-col justify-between shadow-sm md:col-span-2" data-category="iot">
           <div>
             <!-- Real Photo Banner -->
-            <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10">
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 group/img cursor-pointer" onclick="openCertificateModal('assets/line_follower_robot.jpg', 'Purwarupa Robot Line Follower dengan Capit Gripper Servo')">
               <img 
                 src="assets/line_follower_robot.jpg" 
                 alt="Robot Line Follower dengan Capit Gripper" 
@@ -482,7 +576,7 @@
                   Robotika & Mekatronika
                 </span>
                 <span class="text-slate-200 text-[11px] backdrop-blur-md px-2 py-0.5 rounded bg-black/50">
-                  Line Follower + Gripper Arm
+                  Line Follower + Gripper Arm ↗
                 </span>
               </div>
             </div>
