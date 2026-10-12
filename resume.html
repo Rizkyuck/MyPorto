@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume / CV - Mochammad Rizky Kurniawan | STr Teknik Telekomunikasi PENS</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    @media print {
+      body {
+        background-color: white !important;
+        color: black !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .sheet {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: black !important;
+      }
+      @page {
+        margin: 1.5cm;
+        size: A4;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-800 min-h-screen py-6 px-3 sm:px-6">
+
+  <!-- Top Action Bar (No Print) -->
+  <div class="max-w-4xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-3 no-print">
+    <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition-colors border border-slate-700">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      <span>Kembali ke Portofolio</span>
+    </a>
+    
+    <div class="flex items-center gap-2">
+      <button onclick="window.print()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-emerald-900/30 transition-all cursor-pointer">
+        <i data-lucide="printer" class="w-4 h-4"></i>
+        <span>Cetak / Simpan PDF (ATS Friendly)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- A4 Resume Paper Sheet -->
+  <main class="sheet max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-6 sm:p-12 border border-slate-200">
+    
+    <!-- HEADER -->
+    <header class="border-b border-slate-300 pb-5 space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight uppercase">
+        Mochammad Rizky Kurniawan
+      </h1>
+      <p class="text-sm font-semibold text-emerald-800 font-mono tracking-wide">
+        Mahasiswa STr Teknik Telekomunikasi • Jaringan Komputer & IoT
+      </p>
+      
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-slate-600 pt-1">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+          Surabaya, Jawa Timur, Indonesia
+        </span>
+        <a href="mailto:mocha.rizkykurniawan@gmail.com" class="flex items-center gap-1.5 hover:text-emerald-700 transition-colors">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-400"></i>
+          mocha.rizkykurniawan@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="flex items-center gap-1.5 hover:text-emerald-700 transition-colors">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5 text-slate-400"></i>
+          LinkedIn Profil
+        </a>
+        <a href="https://github.com/Rizkyuck/MyPorto" target="_blank" class="flex items-center gap-1.5 hover:text-emerald-700 transition-colors">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-slate-400"></i>
+          Portofolio Web
+        </a>
+      </div>
+    </header>
+
+    <div class="mt-6 space-y-6 text-slate-800">
+      
+      <!-- SUMMARY -->
+      <section class="space-y-2">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono border-b border-slate-200 pb-1">
+          Ringkasan Profil (Professional Summary)
+        </h2>
+        <p class="text-xs sm:text-[13px] leading-relaxed text-slate-700 text-justify">
+          Mahasiswa aktif Semester 5 Program Studi <strong>Sarjana Terapan (STr) Teknik Telekomunikasi</strong> di <strong>Politeknik Elektronika Negeri Surabaya (PENS)</strong> dengan fokus utama pada infrastruktur <strong>Jaringan Komputer</strong>, <strong>Internet of Things (IoT)</strong>, <strong>Telekomunikasi Radio/SDR</strong>, dan <strong>Keamanan Siber</strong>. Berpengalaman dalam perancangan arsitektur jaringan berbasis Cisco Packet Tracer (20+ skenario topologi praktikum), fabrikasi antena gelombang mikro, purwarupa sensor telemetri nirkabel berbasis ESP32, serta pemrosesan sinyal digital (*Software Defined Radio*). Bersertifikasi kompetensi dari DEX Komdigi dan ID-Networkers yang siap berkontribusi pada program magang (*internship*) maupun kolaborasi keteknikan.
+        </p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="space-y-2">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono border-b border-slate-200 pb-1">
+          Pendidikan (Education)
+        </h2>
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5">
+            <h3 class="font-bold text-sm text-slate-900">Politeknik Elektronika Negeri Surabaya (PENS)</h3>
+            <span class="text-xs font-mono text-slate-500">2022 – Sekarang (Semester 5 Aktif)</span>
+          </div>
+          <div class="text-xs text-slate-700 font-medium">
+            Sarjana Terapan (STr) Teknik Telekomunikasi • Departemen Teknik Elektro
+          </div>
+          <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+            <strong>Mata Kuliah Praktikum Relevan:</strong> Workshop Jaringan Komputer, Praktikum Sistem Komunikasi Radio & Satelit, Antena & Propagasi Gelombang, Workshop Sistem Tertanam/IoT, Pengolahan Sinyal Digital, Dasar Komunikasi Optik (FTTH).
+          </p>
+        </div>
+      </section>
+
+      <!-- TECHNICAL PROJECTS -->
+      <section class="space-y-4">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono border-b border-slate-200 pb-1">
+          Pengalaman Proyek Teknik (Engineering Projects)
+        </h2>
+
+        <!-- Project 1 -->
+        <div class="space-y-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900">
+              Simulasi Arsitektur Jaringan Enterprise Multi-Site & Segmentasi VLAN
+            </h3>
+            <span class="text-[11px] font-mono text-slate-500">Cisco Packet Tracer • PENS</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+            <li>Merancang dan menyimulasikan arsitektur jaringan *multi-site* yang menghubungkan Kantor Pusat (HQ), dua Kantor Cabang, ISP Carrier, dan Data Center.</li>
+            <li>Mengimplementasikan segmentasi VLAN dan *Inter-VLAN Routing* untuk memisahkan lalu lintas data tiap divisi secara efisien dan aman.</li>
+            <li>Melakukan konfigurasi *Static Routing*, pengaturan *gateway*, serta validasi transmisi paket end-to-end melalui *ICMP Simulation Panel*.</li>
+            <li>Mendokumentasikan lebih dari 20 skenario topologi jaringan praktikum (Star, Mesh, Ring, Bus, dan Hybrid).</li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="space-y-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900">
+              Purwarupa Sistem Monitoring Ketinggian Air Tambak Garam Berbasis IoT
+            </h3>
+            <span class="text-[11px] font-mono text-slate-500">ESP32 • Wi-Fi • C++ • PENS</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+            <li>Mengembangkan alat telemetri otomatis pemantau level air tambak garam menggunakan mikrokontroler ESP32 dan modul sensor ultrasonik.</li>
+            <li>Memprogram algoritma pembacaan sensor dan transmisi data secara nirkabel (*Wi-Fi*) menuju antarmuka web monitoring secara *real-time*.</li>
+            <li>Merangkai sistem display LCD fisik dan manajemen daya untuk indikasi ambang batas ketinggian air secara langsung di lokasi.</li>
+          </ul>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="space-y-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900">
+              Fabrikasi & Karakterisasi Antena Horn Piramidal (Gelombang Mikro)
+            </h3>
+            <span class="text-[11px] font-mono text-slate-500">Lab Gelombang Mikro • PENS</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+            <li>Melakukan kalkulasi dimensi fisik dan pemotongan lembaran logam untuk fabrikasi antena *Pyramidal Horn* frekuensi gelombang mikro.</li>
+            <li>Melakukan perakitan presisi serta pengujian karakteristik transmisi di laboratorium gelombang mikro PENS.</li>
+            <li>Mengamati dan menganalisis pola radiasi elektromagnetik, keterarahan (*directivity*), dan kecocokan impedansi.</li>
+          </ul>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="space-y-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900">
+              Penerima Siaran Radio FM 1 & 2 Channel Berbasis Software-Defined Radio (SDR)
+            </h3>
+            <span class="text-[11px] font-mono text-slate-500">GNU Radio • RTL-SDR • DSP</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+            <li>Membangun diagram alir pemrosesan sinyal digital (*flowgraph*) GNU Radio untuk menangkap siaran radio FM komersial secara *real-time*.</li>
+            <li>Mengimplementasikan teknik *Digital Down Conversion (DDC)* dengan osilator lokal Cosine untuk mendemodulasi 2 stasiun radio secara paralel dari 1 dongle USB RTL-SDR.</li>
+            <li>Mengintegrasikan blok filter *Low Pass Filter*, blok *WBFM Demodulator*, dan visualisasi spektrum FFT via *QT GUI Sink*.</li>
+          </ul>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="space-y-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900">
+              Robot Line Follower Otonom dengan Capit Mekanik Servo (Gripper)
+            </h3>
+            <span class="text-[11px] font-mono text-slate-500">Arduino • L298N • Mekatronika</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+            <li>Membangun robot pelacak garis otomatis menggunakan *array sensor* inframerah (IR) untuk navigasi lintasan secara presisi.</li>
+            <li>Mengintegrasikan mekanisme capit (*gripper/claw*) berbasis servo untuk fungsi pemindahan objek (*pick-and-place*).</li>
+            <li>Merancang sirkuit driver motor L298N, motor DC beroda gigi (*gearbox*), dan manajemen baterai Li-ion.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="space-y-2">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono border-b border-slate-200 pb-1">
+          Sertifikasi & Kredensial Terverifikasi (Certifications)
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-slate-700">
+          <div>
+            <strong>Associate Network Administrator (Intermediate)</strong><br>
+            <span class="text-slate-500">DEX Komdigi • PENS (2026)</span>
+          </div>
+          <div>
+            <strong>Associate Computer Network Technician (Intermediate)</strong><br>
+            <span class="text-slate-500">DEX Komdigi • PENS (2026)</span>
+          </div>
+          <div>
+            <strong>Beasiswa Bootcamp Web Penetration Testing (1 Bulan)</strong><br>
+            <span class="text-slate-500">ID-Networkers (IDN.ID) (2024)</span>
+          </div>
+          <div>
+            <strong>Sertifikat Jaringan Komputer Dasar</strong><br>
+            <span class="text-slate-500">ID-Networkers • Dedi Gunawan, M.T., CCIE (2024)</span>
+          </div>
+          <div>
+            <strong>Memulai Pemrograman dengan Python</strong><br>
+            <span class="text-slate-500">Dicoding Indonesia (2026)</span>
+          </div>
+          <div>
+            <strong>Workshop Basic Intelligent Systems (Hardware)</strong><br>
+            <span class="text-slate-500">Politeknik Elektronika Negeri Surabaya (2024)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="space-y-2">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono border-b border-slate-200 pb-1">
+          Keahlian Teknis (Technical Skills)
+        </h2>
+        <div class="space-y-1.5 text-xs text-slate-700">
+          <div>
+            <strong class="text-slate-900 font-mono text-[11px]">Jaringan Komputer:</strong> 
+            Routing & Switching Dasar, IPv4 Subnetting, Konfigurasi VLAN & Inter-VLAN, Client-Server Architecture, Teori Optik (FTTH), TCP/IP, ICMP.
+          </div>
+          <div>
+            <strong class="text-slate-900 font-mono text-[11px]">Software & Simulator:</strong> 
+            Cisco Packet Tracer (20+ Topologi), GNU Radio Companion (GRC), Wireshark (Packet Capture), GNS3, Proteus Simulator.
+          </div>
+          <div>
+            <strong class="text-slate-900 font-mono text-[11px]">Perangkat Keras & IoT:</strong> 
+            ESP32, Arduino Uno, Sensor Interfacing (Ultrasonik, IR Array), Modul Driver Motor L298N, Fabrikasi Antena Horn RF, Dongle RTL-SDR.
+          </div>
+          <div>
+            <strong class="text-slate-900 font-mono text-[11px]">Bahasa & Alat:</strong> 
+            C++, Python, C, SQL (Dasar), Git & GitHub, Linux/CLI.
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Print Footer -->
+    <footer class="mt-8 pt-4 border-t border-slate-200 text-center text-[10px] text-slate-400 font-mono">
+      Dokumen Curriculum Vitae resmi Mochammad Rizky Kurniawan • Terverifikasi melalui portofolio online di rizkyuck.vercel.app
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
