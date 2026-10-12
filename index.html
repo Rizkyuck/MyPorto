@@ -17,6 +17,9 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- PDF.js for Inline Document Viewing (Mobile & Desktop View-Only) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -1363,6 +1366,48 @@
     </div>
   </footer>
 
+  <!-- In-App View-Only Certificate Lightbox Modal -->
+  <div id="certModal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 opacity-0 transition-opacity duration-300">
+    <div class="bg-slate-900 border border-slate-700/70 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="px-4 py-3 bg-slate-950/95 border-b border-white/10 flex items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+            <i data-lucide="file-check" class="w-4 h-4"></i>
+          </div>
+          <div class="min-w-0">
+            <h3 id="modalCertTitle" class="text-xs sm:text-sm font-bold text-white truncate">Pratinjau Dokumen</h3>
+            <span id="modalCertSub" class="text-[10px] font-mono text-emerald-400/80 block truncate">Mode Lihat Saja (View Only)</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <a id="modalExternalLink" href="#" target="_blank" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors text-xs font-mono flex items-center gap-1.5" title="Buka di tab terpisah">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline text-[11px]">Tab Baru</span>
+          </a>
+          <button id="closeCertModal" class="p-2 rounded-lg bg-white/5 hover:bg-rose-500/20 text-slate-300 hover:text-rose-400 transition-colors" title="Tutup (Esc)">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Modal Body (Canvas Container) -->
+      <div id="modalBody" class="flex-1 overflow-y-auto p-3 sm:p-6 bg-slate-950/60 flex flex-col items-center min-h-[350px] relative">
+        <div id="modalLoading" class="flex flex-col items-center justify-center gap-3 text-slate-400 py-20 my-auto">
+          <div class="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+          <span class="text-xs font-mono">Memuat dokumen tanpa unduhan...</span>
+        </div>
+        <div id="modalCanvasContainer" class="flex flex-col items-center gap-3 w-full"></div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-4 py-2.5 bg-slate-950/95 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400 shrink-0">
+        <span id="modalPageInfo">Pratinjau Siap</span>
+        <button id="closeCertModalBtn" class="px-3 py-1 rounded-md bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors">Tutup</button>
+      </div>
+    </div>
+  </div>
+
   <!-- SCRIPT UNTUK INTERAKTIVITAS & FILTER -->
   <script>
     // Initialize Lucide Icons
@@ -1500,6 +1545,171 @@
         if (archiveCount) archiveCount.textContent = visibleCount;
       });
     }
+
+    // ==========================================
+    // IN-APP VIEW-ONLY CERTIFICATE VIEWER MODAL
+    // (Prevents auto-download on mobile & desktop)
+    // ==========================================
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    const certModal = document.getElementById('certModal');
+    const modalCertTitle = document.getElementById('modalCertTitle');
+    const modalCertSub = document.getElementById('modalCertSub');
+    const modalExternalLink = document.getElementById('modalExternalLink');
+    const modalBody = document.getElementById('modalBody');
+    const modalLoading = document.getElementById('modalLoading');
+    const modalCanvasContainer = document.getElementById('modalCanvasContainer');
+    const modalPageInfo = document.getElementById('modalPageInfo');
+    const closeCertModal = document.getElementById('closeCertModal');
+    const closeCertModalBtn = document.getElementById('closeCertModalBtn');
+
+    let currentPdfLoadingTask = null;
+
+    async function openCertificateModal(url, title) {
+      if (!certModal) return;
+
+      // Cancel previous loading task if still running
+      if (currentPdfLoadingTask) {
+        try { currentPdfLoadingTask.destroy(); } catch (e) {}
+        currentPdfLoadingTask = null;
+      }
+
+      certModal.classList.remove('hidden');
+      setTimeout(() => {
+        certModal.classList.remove('opacity-0');
+        certModal.classList.add('opacity-100');
+      }, 10);
+
+      document.body.style.overflow = 'hidden';
+      modalCertTitle.textContent = title || 'Dokumen Sertifikat';
+      
+      const cleanFileName = decodeURIComponent(url.split('/').pop().replace(/\.[^/.]+$/, "").replace(/_/g, " "));
+      modalCertSub.textContent = cleanFileName;
+      modalExternalLink.href = url;
+
+      modalCanvasContainer.innerHTML = '';
+      modalLoading.classList.remove('hidden');
+      modalPageInfo.textContent = 'Memuat dokumen...';
+
+      const isImage = /\.(png|jpe?g|webp)$/i.test(url);
+
+      if (isImage) {
+        const img = new Image();
+        img.src = url;
+        img.className = 'max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/10';
+        img.onload = () => {
+          modalLoading.classList.add('hidden');
+          modalCanvasContainer.appendChild(img);
+          modalPageInfo.textContent = 'Gambar 1 Halaman';
+        };
+        img.onerror = () => {
+          modalLoading.innerHTML = '<span class="text-rose-400 text-xs">Gagal memuat gambar sertifikat.</span>';
+        };
+        return;
+      }
+
+      // Render PDF with PDF.js
+      try {
+        currentPdfLoadingTask = pdfjsLib.getDocument(url);
+        const pdf = await currentPdfLoadingTask.promise;
+        modalLoading.classList.add('hidden');
+        modalPageInfo.textContent = `Dokumen Terverifikasi • ${pdf.numPages} Halaman`;
+
+        const dpr = Math.min(window.devicePixelRatio || 1, 2); // cap at 2 for performance
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          
+          // Container responsive width
+          const availableWidth = Math.min(window.innerWidth - 36, 860);
+          const unscaledViewport = page.getViewport({ scale: 1 });
+          const scale = availableWidth / unscaledViewport.width;
+          const viewport = page.getViewport({ scale: scale });
+
+          const canvas = document.createElement('canvas');
+          canvas.className = 'rounded-lg shadow-2xl max-w-full border border-white/10 bg-white mb-4';
+          const context = canvas.getContext('2d');
+
+          canvas.width = Math.floor(viewport.width * dpr);
+          canvas.height = Math.floor(viewport.height * dpr);
+          canvas.style.width = Math.floor(viewport.width) + 'px';
+          canvas.style.height = Math.floor(viewport.height) + 'px';
+
+          const renderContext = {
+            canvasContext: context,
+            transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : null,
+            viewport: viewport
+          };
+
+          await page.render(renderContext).promise;
+          modalCanvasContainer.appendChild(canvas);
+        }
+      } catch (err) {
+        console.error('PDF rendering error:', err);
+        modalLoading.innerHTML = `
+          <div class="text-center space-y-3 py-6">
+            <p class="text-rose-400 text-xs font-mono">Pratinjau dokumen tidak dapat dirender secara otomatis.</p>
+            <a href="${url}" target="_blank" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono inline-flex items-center gap-2">
+              <span>Buka Dokumen Langsung</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        `;
+        lucide.createIcons();
+      }
+    }
+
+    function hideCertificateModal() {
+      if (!certModal) return;
+      certModal.classList.remove('opacity-100');
+      certModal.classList.add('opacity-0');
+      setTimeout(() => {
+        certModal.classList.add('hidden');
+        modalCanvasContainer.innerHTML = '';
+        if (currentPdfLoadingTask) {
+          try { currentPdfLoadingTask.destroy(); } catch (e) {}
+          currentPdfLoadingTask = null;
+        }
+      }, 250);
+      document.body.style.overflow = '';
+    }
+
+    if (closeCertModal) closeCertModal.addEventListener('click', hideCertificateModal);
+    if (closeCertModalBtn) closeCertModalBtn.addEventListener('click', hideCertificateModal);
+    if (certModal) {
+      certModal.addEventListener('click', (e) => {
+        if (e.target === certModal) hideCertificateModal();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && certModal && !certModal.classList.contains('hidden')) {
+        hideCertificateModal();
+      }
+    });
+
+    // Attach click interceptor to all certificate links
+    function attachCertModalListeners() {
+      const certLinks = document.querySelectorAll('a[href*="assets/certificates/"]');
+      certLinks.forEach(link => {
+        // remove duplicate listeners if any
+        link.onclick = (e) => {
+          e.preventDefault();
+          const url = link.getAttribute('href');
+          const card = link.closest('.cert-card, .archive-item');
+          let title = 'Dokumen Sertifikat';
+          if (card) {
+            const heading = card.querySelector('h4, h5');
+            if (heading) title = heading.textContent.trim();
+          }
+          openCertificateModal(url, title);
+        };
+      });
+    }
+
+    attachCertModalListeners();
   </script>
 </body>
 </html>
