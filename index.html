@@ -97,6 +97,60 @@
     .project-card:hover, .skill-card:hover, .cert-card:hover {
       transform: translateY(-2px);
     }
+
+    /* Hero Ambient Aurora & Network Signals (Pure GPU CSS, Zero CPU Overhead) */
+    @keyframes heroAurora1 {
+      0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.5; }
+      50% { transform: translate3d(40px, -25px, 0) scale(1.15); opacity: 0.75; }
+      100% { transform: translate3d(-30px, 20px, 0) scale(0.95); opacity: 0.5; }
+    }
+
+    @keyframes heroAurora2 {
+      0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.4; }
+      50% { transform: translate3d(-35px, 30px, 0) scale(1.18); opacity: 0.65; }
+      100% { transform: translate3d(25px, -20px, 0) scale(0.92); opacity: 0.4; }
+    }
+
+    @keyframes signalFlow {
+      0% { stroke-dashoffset: 240; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes nodePulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.5); opacity: 1; }
+    }
+
+    .hero-aurora-1 {
+      animation: heroAurora1 14s ease-in-out infinite alternate;
+      will-change: transform, opacity;
+    }
+
+    .hero-aurora-2 {
+      animation: heroAurora2 18s ease-in-out infinite alternate;
+      will-change: transform, opacity;
+    }
+
+    .signal-line-flow {
+      stroke-dasharray: 12 40;
+      animation: signalFlow 6s linear infinite;
+    }
+
+    .signal-line-fast {
+      stroke-dasharray: 8 30;
+      animation: signalFlow 4s linear infinite;
+    }
+
+    .network-node {
+      transform-origin: center;
+      animation: nodePulse 3.5s ease-in-out infinite;
+    }
+    .network-node-delay-1 {
+      animation-delay: 1.2s;
+    }
+    .network-node-delay-2 {
+      animation-delay: 2.1s;
+    }
   </style>
 </head>
 <body class="bg-[#f1f5f9] dark:bg-[#090d16] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300 min-h-screen transition-colors duration-300">
@@ -187,6 +241,42 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="relative pt-4 sm:pt-10 overflow-hidden">
+      <!-- Ambient Animated Background (Pure GPU CSS & SVG, Zero JS/CPU Overhead, Only Behind Hero) -->
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
+        <!-- Floating Soft Aurora Glow Orbs Behind Name -->
+        <div class="hero-aurora-1 absolute -top-16 -left-12 w-[340px] sm:w-[500px] h-[340px] sm:h-[500px] rounded-full bg-emerald-500/20 dark:bg-emerald-500/25 blur-[90px] sm:blur-[120px]"></div>
+        <div class="hero-aurora-2 absolute top-12 left-1/4 w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] rounded-full bg-sky-500/15 dark:bg-cyan-500/20 blur-[85px] sm:blur-[110px]"></div>
+
+        <!-- Telecommunications Network Circuit & Signal Wave SVG -->
+        <svg class="absolute top-0 left-0 w-full h-full opacity-35 dark:opacity-45" viewBox="0 0 1000 500" fill="none" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="sigGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#10b981" stop-opacity="0.1"/>
+              <stop offset="50%" stop-color="#10b981" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/>
+            </linearGradient>
+            <linearGradient id="sigGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.1"/>
+              <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#10b981" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Grid Signal Carrier Paths -->
+          <path d="M 0 140 Q 250 80, 500 140 T 1000 140" stroke="url(#sigGrad1)" stroke-width="1.5" class="signal-line-flow" fill="none"/>
+          <path d="M 0 220 Q 300 280, 600 210 T 1000 240" stroke="url(#sigGrad2)" stroke-width="1.5" class="signal-line-fast" fill="none"/>
+          <path d="M 120 0 L 120 140 L 320 230 L 320 450" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1" stroke-dasharray="4 6" fill="none"/>
+          <path d="M 450 40 L 450 180 L 680 180 L 680 500" stroke="rgba(6, 182, 212, 0.2)" stroke-width="1" stroke-dasharray="4 6" fill="none"/>
+
+          <!-- Network Transmission Nodes (Pulsing Data Points) -->
+          <circle cx="120" cy="140" r="4" fill="#10b981" class="network-node"/>
+          <circle cx="320" cy="230" r="4.5" fill="#38bdf8" class="network-node network-node-delay-1"/>
+          <circle cx="450" cy="180" r="3.5" fill="#34d399" class="network-node network-node-delay-2"/>
+          <circle cx="680" cy="180" r="4" fill="#06b6d4" class="network-node network-node-delay-1"/>
+          <circle cx="500" cy="140" r="3" fill="#10b981" class="network-node"/>
+        </svg>
+      </div>
+
       <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- Left: Copywriting & Bio -->
