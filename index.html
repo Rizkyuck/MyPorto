@@ -27,13 +27,6 @@
   
   <!-- PDF.js for Inline Document Viewing (Mobile & Desktop View-Only) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-  <!-- GSAP & ScrollTrigger for Scroll-Driven Choreography -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- Lenis for Buttery Smooth Physics-based Scrolling -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -52,6 +45,11 @@
   </script>
 
   <style>
+    /* Native Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
@@ -92,34 +90,12 @@
         linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
     }
 
-    /* Linear-Style Card Spotlight Hover Effect */
-    .spotlight-card {
-      position: relative;
+    /* Clean Card Hover Transitions */
+    .project-card, .skill-card, .cert-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
-    .spotlight-card::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: radial-gradient(400px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(16, 185, 129, 0.45), transparent 45%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 10;
-    }
-    .spotlight-card:hover::before {
-      opacity: 1;
-    }
-
-    /* Oscilloscope CRT Scanline effect */
-    .crt-scanlines {
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-      background-size: 100% 3px, 3px 100%;
-      pointer-events: none;
+    .project-card:hover, .skill-card:hover, .cert-card:hover {
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -152,10 +128,6 @@
       <!-- Desktop Menu Items -->
       <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
         <a href="#about" class="hover:text-slate-950 dark:hover:text-white transition-colors">Tentang</a>
-        <a href="#workbench" class="text-emerald-600 dark:text-emerald-400 font-bold hover:underline transition-colors flex items-center gap-1.5" title="Konsol Simulasi Lab">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Konsol Lab</span>
-        </a>
         <a href="#projects" class="hover:text-slate-950 dark:hover:text-white transition-colors">Proyek & Lab</a>
         <a href="#skills" class="hover:text-slate-950 dark:hover:text-white transition-colors">Keahlian</a>
         <a href="#certificates" class="hover:text-slate-950 dark:hover:text-white transition-colors">Sertifikasi</a>
@@ -199,10 +171,6 @@
         <span>📄 Buka Resume / CV</span>
         <i data-lucide="chevron-right" class="w-4 h-4"></i>
       </button>
-      <a href="#workbench" class="block py-2 text-sm text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>Konsol Lab Interaktif</span>
-      </a>
       <a href="#about" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Tentang Saya</a>
       <a href="#projects" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Proyek & Hasil Lab</a>
       <a href="#skills" class="block py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-white font-medium">Keahlian Teknis</a>
@@ -219,8 +187,6 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="relative pt-4 sm:pt-10 overflow-hidden">
-      <!-- Interactive RF Carrier & Constellation Canvas -->
-      <canvas id="telecomWaveCanvas" class="absolute inset-0 pointer-events-none opacity-25 dark:opacity-40 z-0"></canvas>
       <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- Left: Copywriting & Bio -->
@@ -339,200 +305,21 @@
     <section id="statsSection" class="border-y border-slate-300 dark:border-white/[0.08] py-8 transition-colors duration-300">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="space-y-1 stat-card">
-          <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono"><span class="counter-num" data-target="20">0</span>+</div>
+          <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">20+</div>
           <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">Topologi Cisco Dibuat</div>
         </div>
         <div class="space-y-1 stat-card">
-          <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono"><span class="counter-num" data-target="5">0</span>+</div>
+          <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">5+</div>
           <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">Proyek Lab Nyata</div>
         </div>
         <div class="space-y-1 stat-card">
-          <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono"><span class="counter-num" data-target="36">0</span>+</div>
+          <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">36+</div>
           <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">Sertifikat Terverifikasi</div>
         </div>
         <div class="space-y-1 stat-card">
           <div class="text-2xl sm:text-4xl font-extrabold text-emerald-700 dark:text-emerald-400 font-mono">Sem 5</div>
           <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-semibold">STr Telkom PENS</div>
         </div>
-      </div>
-    </section>
-
-    <!-- INTERACTIVE LAB WORKBENCH (ANTI-AI ENGINEERING SHOWPIECE) -->
-    <section id="workbench" class="space-y-6 pt-2">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-mono text-[11px] mb-2 font-medium">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>KONSOL LAB INTERAKTIF // LIVE ENGINEERING WORKBENCH</span>
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-            Eksplorasi Sinyal & Simulasi Jaringan
-          </h2>
-        </div>
-        <p class="text-xs text-slate-600 dark:text-slate-400 max-w-md">
-          Uji langsung kapabilitas teknis: coba modulasi frekuensi radio (SDR) secara real-time atau jalankan simulasi paket ICMP routing Cisco langsung di peramban Anda.
-        </p>
-      </div>
-
-      <!-- Workbench Container Card with Spotlight Hover Effect -->
-      <div class="spotlight-card bg-white dark:bg-[#0c1220] border border-slate-300 dark:border-white/10 rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
-        
-        <!-- Workbench Top Control Bar -->
-        <div class="px-4 sm:px-6 py-3.5 bg-slate-100 dark:bg-slate-950/80 border-b border-slate-300 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
-          <!-- Mode Tabs -->
-          <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300/80 dark:border-white/10 text-xs font-mono font-medium">
-            <button id="wbTabSdr" onclick="switchWorkbenchMode('sdr')" class="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer">
-              <i data-lucide="radio" class="w-3.5 h-3.5"></i>
-              <span>1. SDR & Spectrum Analyzer</span>
-            </button>
-            <button id="wbTabNet" onclick="switchWorkbenchMode('net')" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white transition-all flex items-center gap-2 cursor-pointer">
-              <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
-              <span>2. Cisco Terminal & Route Ping</span>
-            </button>
-          </div>
-
-          <!-- Live Status Indicator -->
-          <div class="flex items-center gap-3 font-mono text-[11px] text-slate-500 dark:text-slate-400">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-              <span class="text-emerald-600 dark:text-emerald-400 font-semibold" id="wbStatusText">DSP ENGINE: ACTIVE</span>
-            </div>
-            <span class="hidden sm:inline opacity-40">|</span>
-            <span class="hidden sm:inline">SAMPLE RATE: 2.048 MSPS</span>
-          </div>
-        </div>
-
-        <!-- Mode 1: SDR & Spectrum Analyzer -->
-        <div id="wbPanelSdr" class="p-4 sm:p-6 space-y-6">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
-            <!-- Left: Oscilloscope Canvas Screen -->
-            <div class="lg:col-span-8 bg-slate-950 rounded-xl border border-slate-800 p-4 relative overflow-hidden shadow-inner crt-scanlines">
-              <div class="flex items-center justify-between border-b border-slate-800/80 pb-2 mb-3 text-[11px] font-mono text-slate-400">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span class="ml-1 text-slate-300 font-bold">RTL-SDR v4 • DSP OSCILLOSCOPE MONITOR</span>
-                </div>
-                <div class="text-emerald-400 font-bold text-[10px] tracking-wide" id="sdrLockBadge">SIGNAL LOCKED • SNR +28.6 dB</div>
-              </div>
-
-              <!-- Canvas element -->
-              <canvas id="sdrOscilloscope" class="w-full h-44 sm:h-56 rounded bg-black/60 block"></canvas>
-
-              <!-- Metrics beneath canvas -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-2.5 border-t border-slate-800/80 text-[10px] font-mono text-slate-400 text-center">
-                <div class="p-1 rounded bg-white/[0.02] border border-white/5"><span class="block text-slate-600 text-[9px]">CENTER FREQ</span><span class="text-emerald-400 font-bold" id="dispCenterFreq">98.70 MHz</span></div>
-                <div class="p-1 rounded bg-white/[0.02] border border-white/5"><span class="block text-slate-600 text-[9px]">DEMODULATION</span><span class="text-white font-bold" id="dispModMode">WBFM Stereo</span></div>
-                <div class="p-1 rounded bg-white/[0.02] border border-white/5"><span class="block text-slate-600 text-[9px]">BANDWIDTH</span><span class="text-sky-400 font-bold">200 kHz</span></div>
-                <div class="p-1 rounded bg-white/[0.02] border border-white/5"><span class="block text-slate-600 text-[9px]">FILTER LPF</span><span class="text-purple-400 font-bold">Butterworth 8-pole</span></div>
-              </div>
-            </div>
-
-            <!-- Right: Interactive Radio Tuning Controls -->
-            <div class="lg:col-span-4 space-y-5">
-              <div class="space-y-2 bg-slate-50 dark:bg-white/[0.02] p-4 rounded-xl border border-slate-200 dark:border-white/5">
-                <label class="block text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">
-                  Frekuensi Radio Tuner (VFO)
-                </label>
-                <div class="flex items-baseline justify-between">
-                  <span id="freqValueDisplay" class="text-3xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400">98.7 <span class="text-sm font-normal text-slate-500">MHz</span></span>
-                  <span id="stationNameDisplay" class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-bold">PENS Lab Station</span>
-                </div>
-                
-                <!-- Range Slider -->
-                <input id="freqSlider" type="range" min="88.0" max="108.0" step="0.1" value="98.7" class="w-full accent-emerald-500 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
-                
-                <div class="flex justify-between text-[10px] font-mono text-slate-500 dark:text-slate-400">
-                  <span>88.0 MHz</span>
-                  <span>108.0 MHz</span>
-                </div>
-              </div>
-
-              <!-- Quick Tuning Presets -->
-              <div class="space-y-1.5">
-                <span class="block text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Stasiun Preset:</span>
-                <div class="grid grid-cols-3 gap-2 text-xs font-mono">
-                  <button onclick="setFreq(98.7)" class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300 font-bold hover:bg-emerald-100 dark:hover:bg-emerald-500/20 transition-all text-center cursor-pointer">
-                    98.7 MHz
-                    <span class="block text-[9px] font-normal text-slate-500 dark:text-slate-400">PENS Lab</span>
-                  </button>
-                  <button onclick="setFreq(101.5)" class="p-2 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-200 dark:hover:bg-white/10 transition-all text-center cursor-pointer">
-                    101.5 MHz
-                    <span class="block text-[9px] font-normal text-slate-500 dark:text-slate-400">Surabaya FM</span>
-                  </button>
-                  <button onclick="setFreq(92.4)" class="p-2 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-200 dark:hover:bg-white/10 transition-all text-center cursor-pointer">
-                    92.4 MHz
-                    <span class="block text-[9px] font-normal text-slate-500 dark:text-slate-400">Commercial</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Audio Demodulator Toggle Simulation -->
-              <div class="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
-                <div class="text-xs">
-                  <span class="font-bold text-slate-900 dark:text-white block">Mode Analisis</span>
-                  <span class="text-[11px] text-slate-500 dark:text-slate-400" id="currentViewModeText">Time-Domain (Oscilloscope)</span>
-                </div>
-                <button id="toggleWaveModeBtn" onclick="toggleWaveformMode()" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 font-mono text-xs font-semibold transition-all shadow-sm cursor-pointer flex items-center gap-1.5">
-                  <i data-lucide="activity" class="w-3.5 h-3.5"></i>
-                  <span>Switch: FFT Spectrum</span>
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Mode 2: Cisco Terminal & Route Ping -->
-        <div id="wbPanelNet" class="p-4 sm:p-6 space-y-4 hidden">
-          <!-- Terminal Shell -->
-          <div class="bg-[#090d16] rounded-xl border border-slate-800 font-mono text-xs overflow-hidden shadow-2xl">
-            <!-- Terminal Header -->
-            <div class="px-4 py-2.5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                <span class="ml-1 text-white font-bold">Cisco-2911-Enterprise# Terminal Shell (IOS 15.2)</span>
-              </div>
-              <span class="text-emerald-400 font-bold text-[10px] hidden sm:inline">VLANs ACTIVE • EIGRP AS-100 CONVERGED</span>
-            </div>
-
-            <!-- Terminal Output Area -->
-            <div id="terminalOutput" class="p-4 h-64 overflow-y-auto space-y-1 text-slate-300 font-mono text-[11px] leading-relaxed select-text">
-              <div class="text-slate-500">// Selamat datang di Konsol Simulasi Jaringan Cisco Enterprise PENS</div>
-              <div class="text-slate-500">// Silakan klik tombol skenario di bawah untuk menjalankan pengujian paket real-time:</div>
-              <div class="text-emerald-400 mt-2 font-bold">Cisco-Router-HQ# show version</div>
-              <div class="text-slate-400">Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.2(4)M4</div>
-              <div class="text-slate-400">System image file is "flash0:c2900-universalk9-mz.SPA.152-4.M4.bin"</div>
-              <div class="text-slate-400">Topologi Aktif: 1 HQ + 2 Branch Offices + ISP Carrier Cloud + Data Center</div>
-              <div class="text-emerald-400 mt-2 font-bold">Cisco-Router-HQ# <span class="animate-pulse">_</span></div>
-            </div>
-
-            <!-- Terminal Quick Commands -->
-            <div class="p-3 bg-slate-950 border-t border-slate-800 flex flex-wrap items-center gap-2">
-              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Perintah Cepat:</span>
-              <button onclick="runTerminalCmd('ping-hq-branch')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-emerald-400 text-[11px] transition-colors border border-slate-700 cursor-pointer">
-                ▶ ping 10.10.20.1 (HQ ➔ Branch 1)
-              </button>
-              <button onclick="runTerminalCmd('ping-datacenter')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 text-[11px] transition-colors border border-slate-700 cursor-pointer">
-                ▶ ping 192.168.100.1 (Data Center)
-              </button>
-              <button onclick="runTerminalCmd('show-vlan')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 text-[11px] transition-colors border border-slate-700 cursor-pointer">
-                ▶ show vlan brief
-              </button>
-              <button onclick="runTerminalCmd('show-ip-route')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-purple-400 text-[11px] transition-colors border border-slate-700 cursor-pointer">
-                ▶ show ip route
-              </button>
-              <button onclick="clearTerminal()" class="px-2.5 py-1 rounded bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-[11px] transition-colors border border-rose-500/30 ml-auto cursor-pointer">
-                Bersihkan
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -2165,77 +1952,18 @@
 
     attachCertModalListeners();
 
-    /* ==========================================================================
-       1. LENIS SMOOTH SCROLL & GSAP SCROLLTRIGGER ORCHESTRATION
-       ========================================================================== */
-    let lenisInstance = null;
-    try {
-      if (typeof Lenis !== 'undefined') {
-        lenisInstance = new Lenis({
-          duration: 1.15,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          orientation: 'vertical',
-          gestureOrientation: 'vertical',
-          smoothWheel: true,
-          wheelMultiplier: 1.1,
-          touchMultiplier: 1.5,
-          infinite: false,
-        });
-
-        function raf(time) {
-          lenisInstance.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-          gsap.registerPlugin(ScrollTrigger);
-          lenisInstance.on('scroll', ScrollTrigger.update);
-          gsap.ticker.add((time) => {
-            lenisInstance.raf(time * 1000);
-          });
-          gsap.ticker.lagSmoothing(0);
-        }
-      }
-    } catch (e) {
-      console.warn('Lenis smooth scroll initialization skipped:', e);
-    }
-
-    // Smooth anchor navigation handling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId && targetId !== '#') {
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            if (lenisInstance) {
-              lenisInstance.scrollTo(targetEl, { offset: -70 });
-            } else {
-              targetEl.scrollIntoView({ behavior: 'smooth' });
-            }
-          }
-        }
-      });
-    });
-
-    /* ==========================================================================
-       2. TOP SCROLL PROGRESS BAR
-       ========================================================================== */
+    /* Top Scroll Progress Bar */
     const progressBar = document.getElementById('scrollProgressBar');
-    function updateScrollProgress() {
-      if (!progressBar) return;
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = `${progress}%`;
+    if (progressBar) {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = `${progress}%`;
+      }, { passive: true });
     }
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    updateScrollProgress();
 
-    /* ==========================================================================
-       3. LIVE SURABAYA TELEMETRY CLOCK
-       ========================================================================== */
+    /* Live Surabaya Telemetry Clock */
     function updateSurabayaClock() {
       const clockEl = document.getElementById('liveClock');
       if (!clockEl) return;
@@ -2257,534 +1985,6 @@
     }
     updateSurabayaClock();
     setInterval(updateSurabayaClock, 1000);
-
-    /* ==========================================================================
-       4. HERO RF CARRIER & TELECOM WAVEFORM CANVAS (INTERACTIVE PHYSICS)
-       ========================================================================== */
-    (function initHeroWaveCanvas() {
-      const canvas = document.getElementById('telecomWaveCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let animationFrame;
-      let width, height;
-      let mouseX = 0.5;
-      let mouseY = 0.5;
-      let targetMouseX = 0.5;
-      let targetMouseY = 0.5;
-      let time = 0;
-
-      function resize() {
-        const rect = canvas.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        width = rect.width;
-        height = rect.height;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
-      }
-
-      window.addEventListener('resize', resize, { passive: true });
-      resize();
-
-      const heroSection = document.getElementById('hero');
-      if (heroSection) {
-        heroSection.addEventListener('mousemove', (e) => {
-          const rect = heroSection.getBoundingClientRect();
-          targetMouseX = (e.clientX - rect.left) / rect.width;
-          targetMouseY = (e.clientY - rect.top) / rect.height;
-        }, { passive: true });
-        heroSection.addEventListener('mouseleave', () => {
-          targetMouseX = 0.5;
-          targetMouseY = 0.5;
-        });
-      }
-
-      function draw() {
-        if (!width || !height) {
-          animationFrame = requestAnimationFrame(draw);
-          return;
-        }
-
-        // Smooth mouse damping
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
-        time += 0.02;
-
-        ctx.clearRect(0, 0, width, height);
-
-        const isDark = document.documentElement.classList.contains('dark');
-        const primaryColor = isDark ? 'rgba(16, 185, 129, ' : 'rgba(5, 150, 105, ';
-        const secondaryColor = isDark ? 'rgba(56, 189, 248, ' : 'rgba(14, 165, 233, ';
-
-        // Wave parameters modulated by cursor position
-        const waves = [
-          { freq: 0.008 + (mouseX * 0.006), amp: 28 + (mouseY * 20), speed: 0.03, color: primaryColor + '0.45)', width: 2 },
-          { freq: 0.014 + (mouseX * 0.004), amp: 18 + (mouseY * 15), speed: -0.02, color: secondaryColor + '0.35)', width: 1.5 },
-          { freq: 0.005, amp: 35, speed: 0.015, color: primaryColor + '0.2)', width: 1 },
-        ];
-
-        waves.forEach(w => {
-          ctx.beginPath();
-          ctx.strokeStyle = w.color;
-          ctx.lineWidth = w.width;
-
-          const centerY = height * 0.55;
-          for (let x = 0; x <= width; x += 4) {
-            // Modulation envelope simulates AM/FM RF carrier
-            const envelope = Math.sin((x / width) * Math.PI);
-            const y = centerY + Math.sin(x * w.freq + time * (w.speed * 60)) * (w.amp * envelope);
-            if (x === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        });
-
-        // Add subtle carrier constellation grid points
-        const cols = 8;
-        const rows = 4;
-        for (let i = 1; i < cols; i++) {
-          for (let j = 1; j < rows; j++) {
-            const px = (width / cols) * i;
-            const py = (height / rows) * j;
-            const dist = Math.hypot(px - mouseX * width, py - mouseY * height);
-            const alpha = Math.max(0, 0.25 - dist / (width * 0.45));
-            if (alpha > 0.02) {
-              ctx.fillStyle = isDark ? `rgba(52, 211, 153, ${alpha})` : `rgba(16, 185, 129, ${alpha})`;
-              ctx.beginPath();
-              ctx.arc(px, py, 1.8, 0, Math.PI * 2);
-              ctx.fill();
-            }
-          }
-        }
-
-        animationFrame = requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-
-    /* ==========================================================================
-       5. LINEAR-STYLE SPOTLIGHT CARD TRACKER
-       ========================================================================== */
-    function initSpotlightTracking() {
-      const cards = document.querySelectorAll('.spotlight-card');
-      cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', `${x}px`);
-          card.style.setProperty('--mouse-y', `${y}px`);
-        }, { passive: true });
-      });
-    }
-    initSpotlightTracking();
-
-    /* ==========================================================================
-       6. GSAP SCROLLTRIGGER ENTRANCE ANIMATIONS & COUNTER ROLLS
-       ========================================================================== */
-    function initScrollAnimations() {
-      // Numerical Counter Animation
-      const counterElements = document.querySelectorAll('.counter-num');
-      let countersAnimated = false;
-
-      function startCounters() {
-        if (countersAnimated) return;
-        countersAnimated = true;
-        counterElements.forEach(el => {
-          const target = parseInt(el.getAttribute('data-target'), 10) || 0;
-          let current = 0;
-          const duration = 1600;
-          const startTime = performance.now();
-
-          function step(now) {
-            const progress = Math.min((now - startTime) / duration, 1);
-            // Ease out cubic
-            const ease = 1 - Math.pow(1 - progress, 3);
-            current = Math.floor(ease * target);
-            el.textContent = current;
-            if (progress < 1) {
-              requestAnimationFrame(step);
-            } else {
-              el.textContent = target;
-            }
-          }
-          requestAnimationFrame(step);
-        });
-      }
-
-      const statsSec = document.getElementById('statsSection');
-      if (statsSec) {
-        if (typeof IntersectionObserver !== 'undefined') {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                startCounters();
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.35 });
-          observer.observe(statsSec);
-        } else {
-          startCounters();
-        }
-      }
-
-      // GSAP Section and Card Entrance Animations
-      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        // Sections subtle slide-in
-        document.querySelectorAll('main > section').forEach(sec => {
-          if (sec.id === 'hero') return; // Hero renders immediately
-          gsap.from(sec, {
-            opacity: 0,
-            y: 28,
-            duration: 0.85,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: sec,
-              start: 'top 85%',
-              toggleActions: 'play none none none'
-            }
-          });
-        });
-
-        // Project Cards Stagger
-        const projCards = document.querySelectorAll('.project-card');
-        if (projCards.length > 0) {
-          gsap.from(projCards, {
-            opacity: 0,
-            y: 35,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: '#projects',
-              start: 'top 75%'
-            }
-          });
-        }
-      }
-    }
-    initScrollAnimations();
-
-    /* ==========================================================================
-       7. INTERACTIVE LAB WORKBENCH: SDR OSCILLOSCOPE & CISCO TERMINAL
-       ========================================================================== */
-    const STATIONS = {
-      '98.7': { name: 'PENS Lab Station', snr: '+28.6 dB', mod: 'WBFM Stereo', locked: true, freqLabel: '98.70 MHz' },
-      '101.5': { name: 'Surabaya FM Commercial', snr: '+24.1 dB', mod: 'WBFM Stereo RDS', locked: true, freqLabel: '101.50 MHz' },
-      '92.4': { name: 'Maritime Port Control (VHF)', snr: '+19.4 dB', mod: 'NBFM Voice Channel', locked: true, freqLabel: '92.40 MHz' }
-    };
-
-    let currentSdrFreq = 98.7;
-    let sdrViewMode = 'time'; // 'time' or 'fft'
-
-    // Switch between SDR Oscilloscope and Cisco Terminal Tab
-    window.switchWorkbenchMode = function(mode) {
-      const panelSdr = document.getElementById('wbPanelSdr');
-      const panelNet = document.getElementById('wbPanelNet');
-      const tabSdr = document.getElementById('wbTabSdr');
-      const tabNet = document.getElementById('wbTabNet');
-      const statusText = document.getElementById('wbStatusText');
-
-      if (mode === 'sdr') {
-        panelSdr.classList.remove('hidden');
-        panelNet.classList.add('hidden');
-        tabSdr.className = 'px-3.5 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer';
-        tabNet.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white transition-all flex items-center gap-2 cursor-pointer';
-        if (statusText) statusText.textContent = 'DSP ENGINE: ACTIVE';
-      } else {
-        panelSdr.classList.add('hidden');
-        panelNet.classList.remove('hidden');
-        tabNet.className = 'px-3.5 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer';
-        tabSdr.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white transition-all flex items-center gap-2 cursor-pointer';
-        if (statusText) statusText.textContent = 'ROUTER IOS: CONVERGED';
-      }
-      lucide.createIcons();
-    };
-
-    // SDR Tuning Controls
-    window.setFreq = function(freqVal) {
-      const slider = document.getElementById('freqSlider');
-      if (slider) slider.value = freqVal;
-      updateSdrTuning(freqVal);
-    };
-
-    function updateSdrTuning(val) {
-      currentSdrFreq = parseFloat(val);
-      const freqDisplay = document.getElementById('freqValueDisplay');
-      const stationDisplay = document.getElementById('stationNameDisplay');
-      const centerFreqDisplay = document.getElementById('dispCenterFreq');
-      const modModeDisplay = document.getElementById('dispModMode');
-      const lockBadge = document.getElementById('sdrLockBadge');
-
-      if (freqDisplay) {
-        freqDisplay.innerHTML = `${currentSdrFreq.toFixed(1)} <span class="text-sm font-normal text-slate-500">MHz</span>`;
-      }
-      if (centerFreqDisplay) {
-        centerFreqDisplay.textContent = `${currentSdrFreq.toFixed(2)} MHz`;
-      }
-
-      // Check for lock onto known station frequencies
-      let matched = null;
-      for (const [key, station] of Object.entries(STATIONS)) {
-        if (Math.abs(currentSdrFreq - parseFloat(key)) < 0.25) {
-          matched = station;
-          break;
-        }
-      }
-
-      if (matched) {
-        if (stationDisplay) {
-          stationDisplay.textContent = matched.name;
-          stationDisplay.className = 'text-xs font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-bold';
-        }
-        if (modModeDisplay) modModeDisplay.textContent = matched.mod;
-        if (lockBadge) {
-          lockBadge.textContent = `SIGNAL LOCKED • SNR ${matched.snr}`;
-          lockBadge.className = 'text-emerald-400 font-bold text-[10px] tracking-wide';
-        }
-      } else {
-        const noiseSnr = (1.5 + Math.random() * 2.5).toFixed(1);
-        if (stationDisplay) {
-          stationDisplay.textContent = 'White Noise / Inter-carrier';
-          stationDisplay.className = 'text-xs font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-slate-400';
-        }
-        if (modModeDisplay) modModeDisplay.textContent = 'Raw IQ (Thermal Noise)';
-        if (lockBadge) {
-          lockBadge.textContent = `SEARCHING CARRIER • NOISE FLOOR +${noiseSnr} dB`;
-          lockBadge.className = 'text-amber-400 font-bold text-[10px] tracking-wide';
-        }
-      }
-    }
-
-    const freqSlider = document.getElementById('freqSlider');
-    if (freqSlider) {
-      freqSlider.addEventListener('input', (e) => {
-        updateSdrTuning(e.target.value);
-      });
-    }
-
-    // Toggle Time-Domain Oscilloscope vs FFT Spectrum
-    window.toggleWaveformMode = function() {
-      const modeText = document.getElementById('currentViewModeText');
-      const btn = document.getElementById('toggleWaveModeBtn');
-      if (sdrViewMode === 'time') {
-        sdrViewMode = 'fft';
-        if (modeText) modeText.textContent = 'Frequency-Domain (FFT Power Spectrum)';
-        if (btn) btn.innerHTML = '<i data-lucide="waves" class="w-3.5 h-3.5"></i><span>Switch: Time-Domain</span>';
-      } else {
-        sdrViewMode = 'time';
-        if (modeText) modeText.textContent = 'Time-Domain (Oscilloscope)';
-        if (btn) btn.innerHTML = '<i data-lucide="activity" class="w-3.5 h-3.5"></i><span>Switch: FFT Spectrum</span>';
-      }
-      lucide.createIcons();
-    };
-
-    // Canvas Oscilloscope & Spectrum Drawing Engine
-    (function initOscilloscopeRenderer() {
-      const canvas = document.getElementById('sdrOscilloscope');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let animId;
-      let width, height;
-      let phase = 0;
-
-      function resize() {
-        const rect = canvas.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        width = rect.width;
-        height = rect.height;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
-      }
-      window.addEventListener('resize', resize, { passive: true });
-      resize();
-
-      function render() {
-        if (!width || !height) {
-          animId = requestAnimationFrame(render);
-          return;
-        }
-
-        ctx.fillStyle = '#060a12';
-        ctx.fillRect(0, 0, width, height);
-
-        // Draw Oscilloscope Reticle Grid
-        ctx.strokeStyle = 'rgba(30, 41, 59, 0.7)';
-        ctx.lineWidth = 1;
-        const gridX = 10;
-        const gridY = 6;
-        for (let i = 1; i < gridX; i++) {
-          const gx = (width / gridX) * i;
-          ctx.beginPath();
-          ctx.moveTo(gx, 0);
-          ctx.lineTo(gx, height);
-          ctx.stroke();
-        }
-        for (let j = 1; j < gridY; j++) {
-          const gy = (height / gridY) * j;
-          ctx.beginPath();
-          ctx.moveTo(0, gy);
-          ctx.lineTo(width, gy);
-          ctx.stroke();
-        }
-
-        // Center crosshairs
-        ctx.strokeStyle = 'rgba(52, 211, 153, 0.2)';
-        ctx.setLineDash([2, 4]);
-        ctx.beginPath();
-        ctx.moveTo(width / 2, 0);
-        ctx.lineTo(width / 2, height);
-        ctx.moveTo(0, height / 2);
-        ctx.lineTo(width, height / 2);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Determine signal quality based on tuned frequency
-        let isLocked = false;
-        for (const key of Object.keys(STATIONS)) {
-          if (Math.abs(currentSdrFreq - parseFloat(key)) < 0.25) {
-            isLocked = true;
-            break;
-          }
-        }
-
-        phase += isLocked ? 0.08 : 0.04;
-
-        if (sdrViewMode === 'time') {
-          // TIME-DOMAIN OSCILLOSCOPE WAVEFORM
-          ctx.beginPath();
-          ctx.strokeStyle = isLocked ? '#10b981' : '#f59e0b';
-          ctx.lineWidth = 2.2;
-          ctx.shadowColor = isLocked ? 'rgba(16, 185, 129, 0.65)' : 'rgba(245, 158, 11, 0.5)';
-          ctx.shadowBlur = 10;
-
-          const midY = height / 2;
-          const points = 120;
-          for (let i = 0; i <= points; i++) {
-            const x = (width / points) * i;
-            let y;
-            if (isLocked) {
-              // Carrier tone + audio harmonic modulation
-              const carrier = Math.sin(i * 0.25 + phase) * (height * 0.28);
-              const audioMod = Math.sin(i * 0.08 + phase * 0.4) * (height * 0.12);
-              const subtleJitter = (Math.random() - 0.5) * 2;
-              y = midY + carrier + audioMod + subtleJitter;
-            } else {
-              // Wideband random noise floor
-              const noise = (Math.random() - 0.5) * (height * 0.35);
-              y = midY + noise;
-            }
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-          ctx.shadowBlur = 0; // reset
-        } else {
-          // FREQUENCY-DOMAIN FFT SPECTRUM BARS
-          const bars = 48;
-          const barWidth = width / bars;
-          const peakIdx = Math.floor(bars / 2);
-
-          for (let b = 0; b < bars; b++) {
-            let barHeight;
-            if (isLocked) {
-              // Gaussian resonant peak around center channel
-              const distFromCenter = Math.abs(b - peakIdx);
-              const peakStrength = Math.exp(-Math.pow(distFromCenter / 3.2, 2));
-              const noiseFloor = (Math.random() * 0.12 + 0.05) * height;
-              barHeight = (peakStrength * (height * 0.75)) + noiseFloor;
-            } else {
-              // Flat thermal noise floor
-              barHeight = (Math.random() * 0.22 + 0.04) * height;
-            }
-
-            const bx = b * barWidth;
-            const by = height - barHeight;
-
-            // Gradient for FFT bars
-            const grad = ctx.createLinearGradient(0, height, 0, by);
-            if (isLocked && Math.abs(b - peakIdx) < 4) {
-              grad.addColorStop(0, 'rgba(16, 185, 129, 0.2)');
-              grad.addColorStop(1, '#34d399');
-            } else {
-              grad.addColorStop(0, 'rgba(56, 189, 248, 0.1)');
-              grad.addColorStop(1, 'rgba(56, 189, 248, 0.6)');
-            }
-
-            ctx.fillStyle = grad;
-            ctx.fillRect(bx + 1, by, barWidth - 2, barHeight);
-          }
-        }
-
-        animId = requestAnimationFrame(render);
-      }
-      render();
-    })();
-
-    // Cisco IOS Terminal Simulator
-    const terminalOutput = document.getElementById('terminalOutput');
-    window.runTerminalCmd = function(cmdKey) {
-      if (!terminalOutput) return;
-
-      const appendLine = (html, delay = 0) => {
-        setTimeout(() => {
-          const div = document.createElement('div');
-          div.innerHTML = html;
-          terminalOutput.appendChild(div);
-          terminalOutput.scrollTop = terminalOutput.scrollHeight;
-        }, delay);
-      };
-
-      if (cmdKey === 'ping-hq-branch') {
-        appendLine('<div class="text-emerald-400 mt-2 font-bold">Cisco-Router-HQ# ping 10.10.20.1</div>');
-        appendLine('<div class="text-slate-400">Type escape sequence to abort.</div>', 150);
-        appendLine('<div class="text-slate-400">Sending 5, 100-byte ICMP Echos to 10.10.20.1, timeout is 2 seconds:</div>', 300);
-        appendLine('<div class="text-slate-500">Packet sent with source address 10.10.10.1 via Gi0/0 (EIGRP AS-100)</div>', 450);
-        appendLine('<div class="text-emerald-400 font-bold text-sm tracking-widest">! ! ! ! !</div>', 750);
-        appendLine('<div class="text-slate-300">Success rate is 100 percent (5/5), round-trip min/avg/max = 4/8/14 ms</div>', 900);
-        appendLine('<div class="text-emerald-400 mt-1 font-bold">Cisco-Router-HQ# <span class="animate-pulse">_</span></div>', 1050);
-      } else if (cmdKey === 'ping-datacenter') {
-        appendLine('<div class="text-sky-400 mt-2 font-bold">Cisco-Router-HQ# ping 192.168.100.1</div>');
-        appendLine('<div class="text-slate-400">Sending 5, 100-byte ICMP Echos to 192.168.100.1 (Data Center Gateway):</div>', 200);
-        appendLine('<div class="text-sky-400 font-bold text-sm tracking-widest">! ! ! ! !</div>', 600);
-        appendLine('<div class="text-slate-300">Success rate is 100 percent (5/5), round-trip min/avg/max = 2/3/6 ms</div>', 750);
-        appendLine('<div class="text-emerald-400 mt-1 font-bold">Cisco-Router-HQ# <span class="animate-pulse">_</span></div>', 900);
-      } else if (cmdKey === 'show-vlan') {
-        appendLine('<div class="text-amber-400 mt-2 font-bold">Cisco-Router-HQ# show vlan brief</div>');
-        appendLine(`<div class="text-slate-400 whitespace-pre overflow-x-auto text-[10px] sm:text-[11px] leading-tight">
-VLAN Name                             Status    Ports
----- -------------------------------- --------- -------------------------------
-1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
-10   MGMT-NETWORK                     active    Gi0/1
-20   ENG-TELECOM-PENS                 active    Fa0/5, Fa0/6, Fa0/7, Fa0/8
-30   VOICE-VOIP-SIP                   active    Fa0/9, Fa0/10
-40   MERATUS-LOGISTICS-PORT           active    Gi0/2</div>`, 350);
-        appendLine('<div class="text-emerald-400 mt-1 font-bold">Cisco-Router-HQ# <span class="animate-pulse">_</span></div>', 500);
-      } else if (cmdKey === 'show-ip-route') {
-        appendLine('<div class="text-purple-400 mt-2 font-bold">Cisco-Router-HQ# show ip route</div>');
-        appendLine(`<div class="text-slate-400 whitespace-pre overflow-x-auto text-[10px] sm:text-[11px] leading-tight">
-Codes: L - local, C - connected, S - static, R - RIP, D - EIGRP, O - OSPF
-
-Gateway of last resort is 10.254.1.1 to network 0.0.0.0
-
-D    10.10.20.0/24 [90/156160] via 10.254.1.2, 00:14:22, GigabitEthernet0/0
-C    10.10.10.0/24 is directly connected, FastEthernet0/1
-L    10.10.10.1/32 is directly connected, FastEthernet0/1
-D    192.168.100.0/24 [90/130560] via 10.254.1.3, 01:05:11, GigabitEthernet0/1
-S*   0.0.0.0/0 [1/0] via 10.254.1.1 (Carrier ISP Cloud)</div>`, 400);
-        appendLine('<div class="text-emerald-400 mt-1 font-bold">Cisco-Router-HQ# <span class="animate-pulse">_</span></div>', 600);
-      }
-    };
-
-    window.clearTerminal = function() {
-      if (!terminalOutput) return;
-      terminalOutput.innerHTML = `
-        <div class="text-slate-500">// Terminal bersih. Siap menerima simulasi routing & testing paket:</div>
-        <div class="text-emerald-400 mt-2 font-bold">Cisco-Router-HQ# <span class="animate-pulse">_</span></div>
-      `;
-    };
   </script>
 </body>
 </html>
