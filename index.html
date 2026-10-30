@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mochammad Rizky Kurniawan | STr Teknik Telekomunikasi PENS</title>
-  <meta name="description" content="Portofolio resmi Mochammad Rizky Kurniawan - Mahasiswa STr Teknik Telekomunikasi, Politeknik Elektronika Negeri Surabaya (PENS). Fokus Jaringan Komputer, Keamanan Siber, IoT, dan Telekomunikasi Radio.">
+  <title>Mochammad Rizky Kurniawan | Network & IT Infrastructure — PENS</title>
+  <meta name="description" content="Portofolio resmi Mochammad Rizky Kurniawan - Mahasiswa STr Teknik Telekomunikasi PENS Surabaya. Fokus pada NOC, Network Infrastructure, Server Administration, Cloud, dan Keamanan Siber.">
   <link rel="canonical" href="https://rizky-kurniawan.my.id">
   
   <!-- Open Graph / WhatsApp Preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rizky-kurniawan.my.id">
-  <meta property="og:title" content="Mochammad Rizky Kurniawan | STr Teknik Telekomunikasi PENS">
-  <meta property="og:description" content="Portofolio resmi & hasil riset praktikum: Jaringan Komputer, IoT, Fabrikasi Antena Horn, SDR, dan Robotika.">
+  <meta property="og:title" content="Mochammad Rizky Kurniawan | Network & IT Infrastructure">
+  <meta property="og:description" content="Portofolio STr Teknik Telekomunikasi PENS: Network Infrastructure (NOC), Server Administration, Cloud, Keamanan Jaringan & IoT.">
   <meta property="og:image" content="https://rizky-kurniawan.my.id/assets/profile.jpg">
   
   <!-- Favicon: Custom MRK Editorial Monogram (Obsidian, Crisp White & Terracotta Orange) -->
@@ -62,22 +62,22 @@
       overflow-x: hidden;
     }
 
-    /* Custom Scrollbar - Monochrome & Warm Terracotta */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
     html.dark ::-webkit-scrollbar-track {
-      background: #090909;
+      background: #09090b;
     }
     html.dark ::-webkit-scrollbar-thumb {
-      background: #262626;
+      background: #27272a;
       border-radius: 4px;
     }
     html.dark ::-webkit-scrollbar-thumb:hover {
       background: #e07a38;
     }
     html.light ::-webkit-scrollbar-track {
-      background: #f4f0ea;
+      background: #f6f4f0;
     }
     html.light ::-webkit-scrollbar-thumb {
       background: #d6cfc5;
@@ -87,121 +87,71 @@
       background: #a86234;
     }
 
-    /* Proportional Editorial Display Typography (Never Stretches or Clips) */
-    .editorial-display {
-      font-family: 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 0.94;
+    /* Subtle Ambient Warm Glow (Non-AI, Warm Editorial Atmosphere) */
+    .warm-ambient-bg {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(224, 122, 56, 0.08), transparent 38%),
+        radial-gradient(circle at 85% 22%, rgba(168, 98, 52, 0.07), transparent 40%);
     }
 
-    /* Rotating Circular Agency Stamp Badge (Pure GPU CSS) */
-    @keyframes spinSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    /* Card Hover Lift */
+    .clean-card {
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    .spin-badge {
-      animation: spinSlow 20s linear infinite;
-      will-change: transform;
-    }
-
-    /* Subtle Image Editorial Zoom */
-    .editorial-photo-wrap img {
-      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-    }
-    .editorial-photo-wrap:hover img {
-      transform: scale(1.035);
-    }
-
-    /* Smooth Crossfade for Hero Image */
-    #heroShowcaseImg {
-      transition: opacity 0.25s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Clean Row Hover Effect for Skills / Services */
-    .service-row {
-      transition: background-color 0.25s ease, transform 0.25s ease;
-    }
-    .service-row:hover {
-      background-color: rgba(224, 122, 56, 0.04);
+    .clean-card:hover {
+      transform: translateY(-3px);
     }
   </style>
 </head>
-<body class="bg-[#f4f0ea] dark:bg-[#090909] text-stone-900 dark:text-[#f5f5f5] font-sans antialiased selection:bg-[#e07a38]/30 selection:text-[#e07a38] min-h-screen transition-colors duration-300">
+<body class="bg-[#f6f4f0] dark:bg-[#09090b] text-stone-900 dark:text-neutral-100 font-sans antialiased selection:bg-[#e07a38]/30 selection:text-[#e07a38] min-h-screen transition-colors duration-300 warm-ambient-bg">
 
-  <!-- Top Scroll Progress Bar (Warm Terracotta & Gold) -->
-  <div id="scrollProgressBar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#9e3b24] via-[#e07a38] to-[#c9a259] z-[999] transition-all duration-75 w-0 pointer-events-none"></div>
+  <!-- Top Scroll Progress Bar -->
+  <div id="scrollProgressBar" class="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-[#9e3b24] via-[#e07a38] to-[#f39c5a] z-[999] transition-all duration-75 w-0 pointer-events-none"></div>
 
-  <!-- TOP 6-SEGMENT EDITORIAL COLOR STRIP (Reference Palette) -->
-  <div class="w-full h-1.5 grid grid-cols-6 relative z-50">
-    <div class="bg-[#5c1d24]"></div>
-    <div class="bg-[#9e3b24]"></div>
-    <div class="bg-[#d97724]"></div>
-    <div class="bg-[#c9a259]"></div>
-    <div class="bg-[#7fa982]"></div>
-    <div class="bg-[#3d7a80]"></div>
-  </div>
-
-  <!-- MINIMALIST EDITORIAL NAVIGATION BAR -->
-  <header class="sticky top-0 z-50 border-b border-stone-300/80 dark:border-white/[0.08] bg-[#f4f0ea]/95 dark:bg-[#090909]/90 backdrop-blur-md transition-colors duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
+  <!-- =====================================================================
+       MINIMALIST, BREATHABLE NAVIGATION BAR (LIKE REFERENCE SCREENSHOT)
+       ===================================================================== -->
+  <header class="sticky top-0 z-50 border-b border-stone-200/80 dark:border-white/[0.06] bg-[#f6f4f0]/90 dark:bg-[#09090b]/85 backdrop-blur-md transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
       
-      <!-- Brand Mark: Custom MRK Monogram Badge + Full Name -->
-      <a href="#hero" class="flex items-center gap-3 group shrink-0">
-        <div class="relative w-10 h-10 rounded-xl bg-stone-900 dark:bg-[#141414] border-2 border-[#e07a38] flex items-center justify-center shadow-sm group-hover:bg-[#e07a38] transition-colors">
-          <span class="font-grotesk font-extrabold text-xs tracking-tighter text-white group-hover:text-white leading-none">
+      <!-- Brand Mark: MRK Monogram + Full Name -->
+      <a href="#about" class="flex items-center gap-3 group shrink-0">
+        <div class="relative w-9 h-9 rounded-xl bg-stone-900 dark:bg-[#141417] border border-[#e07a38]/80 flex items-center justify-center shadow-sm group-hover:bg-[#e07a38] transition-colors">
+          <span class="font-grotesk font-extrabold text-xs tracking-tighter text-white leading-none">
             MR<span class="text-[#e07a38] group-hover:text-stone-950">K</span>
           </span>
-          <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#e07a38] border-2 border-[#f4f0ea] dark:border-[#090909]"></span>
         </div>
-        <div class="leading-none">
-          <span class="font-grotesk font-bold text-xs sm:text-sm tracking-tight text-stone-900 dark:text-white block">MOCHAMMAD RIZKY KURNIAWAN</span>
-          <span class="text-[10px] font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-widest block mt-1">STR TEKNIK TELEKOMUNIKASI • PENS</span>
-        </div>
+        <span class="font-grotesk font-bold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white">
+          Mochammad Rizky Kurniawan
+        </span>
       </a>
 
-      <!-- Editorial 2-Line Micro Navigation -->
-      <nav class="hidden md:flex items-center gap-7 lg:gap-9 text-[10px] font-grotesk font-bold uppercase tracking-widest text-stone-600 dark:text-neutral-300">
-        <a href="#skills" class="text-right leading-tight hover:text-[#e07a38] dark:hover:text-[#e07a38] transition-colors">
-          <span class="block text-stone-900 dark:text-white">KEAHLIAN</span>
-          <span class="block text-[9px] text-stone-400 dark:text-neutral-500 font-mono">04 BIDANG</span>
-        </a>
-        <a href="#projects" class="text-right leading-tight hover:text-[#e07a38] dark:hover:text-[#e07a38] transition-colors">
-          <span class="block text-stone-900 dark:text-white">PROYEK & LAB</span>
-          <span class="block text-[9px] text-stone-400 dark:text-neutral-500 font-mono">05 RISET NYATA</span>
-        </a>
-        <a href="#about" class="text-right leading-tight hover:text-[#e07a38] dark:hover:text-[#e07a38] transition-colors">
-          <span class="block text-stone-900 dark:text-white">PROFIL & BIO</span>
-          <span class="block text-[9px] text-stone-400 dark:text-neutral-500 font-mono">PENS SURABAYA</span>
-        </a>
-        <a href="#certificates" class="text-right leading-tight hover:text-[#e07a38] dark:hover:text-[#e07a38] transition-colors">
-          <span class="block text-stone-900 dark:text-white">SERTIFIKASI</span>
-          <span class="block text-[9px] text-stone-400 dark:text-neutral-500 font-mono">36 DOKUMEN</span>
-        </a>
-        <button onclick="openCvModal()" class="text-right leading-tight hover:text-[#e07a38] transition-colors cursor-pointer group">
-          <span class="block text-[#c86428] dark:text-[#e07a38] group-hover:underline">RESUME / CV ▾</span>
-          <span class="block text-[9px] text-stone-400 dark:text-neutral-500 font-mono">EN & ID FLOWCV</span>
-        </button>
+      <!-- Clean Single-Line Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600 dark:text-neutral-400">
+        <a href="#about" class="hover:text-[#e07a38] dark:hover:text-white transition-colors">About</a>
+        <a href="#expertise" class="hover:text-[#e07a38] dark:hover:text-white transition-colors">Expertise</a>
+        <a href="#experience" class="hover:text-[#e07a38] dark:hover:text-white transition-colors">Track Record</a>
+        <a href="#projects" class="hover:text-[#e07a38] dark:hover:text-white transition-colors">Projects</a>
+        <a href="#certificates" class="hover:text-[#e07a38] dark:hover:text-white transition-colors">Certificates</a>
       </nav>
 
       <!-- Right Action Controls -->
       <div class="flex items-center gap-2.5 shrink-0">
-        <!-- Live Surabaya Clock -->
-        <div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-300 dark:border-white/15 text-[10px] font-mono text-stone-600 dark:text-neutral-400">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#e07a38]"></span>
-          <span id="liveClock">SUB: --:-- WIB</span>
-        </div>
-
         <!-- Theme Toggle -->
-        <button id="themeToggle" class="w-9 h-9 rounded-full border border-stone-300 dark:border-white/15 flex items-center justify-center text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] hover:text-[#e07a38] transition-colors cursor-pointer" title="Ganti Tema Terang/Gelap">
+        <button id="themeToggle" class="w-9 h-9 rounded-full border border-stone-300 dark:border-white/10 flex items-center justify-center text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] hover:text-[#e07a38] transition-colors cursor-pointer" title="Ganti Tema Terang/Gelap">
           <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
           <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
         </button>
 
-        <!-- Contact Pill -->
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-stone-900 dark:bg-white text-white dark:text-black font-grotesk font-bold text-[11px] uppercase tracking-wider hover:bg-[#e07a38] dark:hover:bg-[#e07a38] dark:hover:text-white transition-colors">
-          <span>Kontak</span>
-          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        <!-- Resume / CV Pill -->
+        <button onclick="openCvModal()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#e07a38]/50 bg-[#e07a38]/10 hover:bg-[#e07a38] text-[#c86428] dark:text-[#f39c5a] hover:text-white dark:hover:text-white text-xs font-semibold transition-all cursor-pointer">
+          <span>Resume / CV</span>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+        </button>
+
+        <!-- Collaborate Outline Pill -->
+        <a href="#contact" class="hidden lg:inline-flex items-center gap-1.5 px-5 py-2 rounded-full border border-stone-300 dark:border-white/15 hover:border-[#e07a38] text-stone-800 dark:text-neutral-200 hover:text-[#e07a38] text-xs font-semibold transition-all">
+          <span>Let's Collaborate</span>
         </a>
 
         <!-- Mobile Menu Toggle -->
@@ -212,964 +162,664 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-300 dark:border-white/10 bg-[#f4f0ea] dark:bg-[#0d0d0d] px-4 py-5 space-y-3 font-grotesk">
-      <button onclick="openCvModal(); document.getElementById('mobileMenu').classList.add('hidden');" class="w-full text-left py-2.5 px-4 rounded-lg bg-[#e07a38] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-between cursor-pointer">
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200 dark:border-white/10 bg-[#f6f4f0] dark:bg-[#0d0d10] px-5 py-5 space-y-3">
+      <button onclick="openCvModal(); document.getElementById('mobileMenu').classList.add('hidden');" class="w-full text-left py-2.5 px-4 rounded-xl bg-[#e07a38] text-white font-semibold text-xs flex items-center justify-between cursor-pointer">
         <span>📄 Buka Resume / CV (EN & ID)</span>
         <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
       </button>
-      <a href="#skills" class="block py-2 text-xs uppercase tracking-wider font-bold text-stone-800 dark:text-neutral-200">01 / Keahlian Teknis</a>
-      <a href="#projects" class="block py-2 text-xs uppercase tracking-wider font-bold text-stone-800 dark:text-neutral-200">02 / Proyek & Praktikum Lab</a>
-      <a href="#about" class="block py-2 text-xs uppercase tracking-wider font-bold text-stone-800 dark:text-neutral-200">03 / Profil & Tentang Saya</a>
-      <a href="#certificates" class="block py-2 text-xs uppercase tracking-wider font-bold text-stone-800 dark:text-neutral-200">04 / Sertifikasi & 36 Arsip PDF</a>
-      <a href="#contact" class="block py-2 text-xs uppercase tracking-wider font-bold text-[#e07a38]">05 / Kontak & Diskusi</a>
+      <a href="#about" class="block py-2 text-sm font-medium text-stone-800 dark:text-neutral-200">About</a>
+      <a href="#expertise" class="block py-2 text-sm font-medium text-stone-800 dark:text-neutral-200">Expertise</a>
+      <a href="#experience" class="block py-2 text-sm font-medium text-stone-800 dark:text-neutral-200">Track Record & Galeri</a>
+      <a href="#projects" class="block py-2 text-sm font-medium text-stone-800 dark:text-neutral-200">Projects</a>
+      <a href="#certificates" class="block py-2 text-sm font-medium text-stone-800 dark:text-neutral-200">Certificates (36 PDF)</a>
+      <a href="#contact" class="block py-2 text-sm font-semibold text-[#e07a38]">Let's Collaborate</a>
     </div>
   </header>
 
-  <!-- MAIN EDITORIAL CONTENT -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-8 sm:pt-12 pb-24 space-y-24 sm:space-y-32">
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-6xl mx-auto px-5 sm:px-8 pt-10 sm:pt-16 pb-24 space-y-28 sm:space-y-36">
 
     <!-- =====================================================================
-         1. HERO SECTION (PROPORTIONAL, BALANCED & PLEASING TO THE EYE)
+         1. HERO SECTION (CLEAN 2-COLUMN SPLIT + ORBITAL PORTRAIT FRAME)
          ===================================================================== -->
-    <section id="hero" class="space-y-6 sm:space-y-8">
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       
-      <!-- Top Editorial Header Row (Zero Overflow, Cleanly Contained) -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
-        <div class="space-y-3">
-          <!-- Eyebrow Status Badge -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/80 dark:bg-white/[0.06] border border-stone-300 dark:border-white/10">
-            <span class="w-2 h-2 rounded-full bg-[#e07a38]"></span>
-            <span class="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-stone-700 dark:text-neutral-300 font-medium">
-              Portofolio & Dokumentasi Lab • PENS Surabaya
-            </span>
-          </div>
-
-          <!-- Proportional Display Title (2 Even Lines, Never Wraps RIZKY Alone) -->
-          <h1 class="editorial-display text-3xl sm:text-5xl md:text-[3.4rem] lg:text-[3.8rem] uppercase text-stone-900 dark:text-white tracking-tight">
-            <span class="block sm:whitespace-nowrap">MOCHAMMAD RIZKY</span>
-            <span class="block text-[#c86428] dark:text-[#e07a38]">KURNIAWAN.</span>
-          </h1>
+      <!-- Left 7 Cols: Greeting Pill, Stacked Full Name, Role & Bio -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Greeting Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a] text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#e07a38]"></span>
+          <span>Halo! Terbuka untuk Magang / KP (NOC & IT Infrastructure)</span>
         </div>
 
-        <!-- Right-Aligned Academic Attribution & Quick Actions -->
-        <div class="lg:text-right space-y-3 shrink-0">
-          <div>
-            <p class="font-grotesk text-base sm:text-lg font-bold text-stone-900 dark:text-white">
-              STr Teknik Telekomunikasi
-            </p>
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400">
-              Politeknik Elektronika Negeri Surabaya (PENS)
-            </p>
-          </div>
+        <!-- Clean Stacked Full Name -->
+        <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-[4rem] tracking-tight leading-[1.06] text-stone-900 dark:text-white">
+          <span class="block">Mochammad</span>
+          <span class="block">Rizky</span>
+          <span class="block text-stone-500 dark:text-neutral-300">Kurniawan</span>
+        </h1>
 
-          <div class="flex flex-wrap lg:justify-end gap-2">
-            <button onclick="openCvModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e07a38] hover:bg-[#c86428] text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all shadow-sm cursor-pointer">
-              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-              <span>Buka Resume / CV</span>
-              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="#projects" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-stone-300 dark:border-white/15 bg-white/70 dark:bg-white/[0.04] hover:border-[#e07a38] text-stone-900 dark:text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all">
-              <span>Lihat Eksperimen</span>
-              <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-[#e07a38]"></i>
-            </a>
-          </div>
+        <!-- Role Subtitle with Accent Pipe -->
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm sm:text-base font-medium text-stone-600 dark:text-neutral-400">
+          <span>STr Teknik Telekomunikasi PENS</span>
+          <span class="text-[#e07a38] font-bold">|</span>
+          <span class="text-stone-900 dark:text-neutral-200">Network Infrastructure, NOC & Server Admin</span>
+        </div>
+
+        <!-- Concise, Focused Bio Paragraph -->
+        <p class="text-sm sm:text-base text-stone-600 dark:text-neutral-400 leading-relaxed max-w-xl">
+          Mahasiswa D4/STr Teknik Telekomunikasi di <strong class="text-stone-900 dark:text-neutral-200 font-semibold">Politeknik Elektronika Negeri Surabaya (PENS)</strong> dengan minat mendalam pada <strong class="text-stone-900 dark:text-neutral-200 font-medium">infrastruktur jaringan (NOC), administrasi server Linux, cloud computing, dan keamanan jaringan</strong>. Terbiasa merancang topologi jaringan enterprise, mengelola arsitektur <em>client-server</em>, hingga mengintegrasikan sistem monitoring telemetri IoT.
+        </p>
+
+        <!-- Primary Action Pills -->
+        <div class="flex flex-wrap items-center gap-3.5 pt-2">
+          <a href="#projects" class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#c86428] to-[#e07a38] hover:from-[#e07a38] hover:to-[#f39c5a] text-white font-semibold text-sm shadow-lg shadow-[#e07a38]/20 transition-all">
+            <span>Lihat Proyek</span>
+          </a>
+
+          <button onclick="openCvModal()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 dark:border-white/15 bg-white/60 dark:bg-white/[0.03] hover:border-[#e07a38] text-stone-800 dark:text-white font-semibold text-sm transition-all cursor-pointer">
+            <i data-lucide="file-text" class="w-4 h-4 text-[#e07a38]"></i>
+            <span>Resume / CV</span>
+          </button>
+
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 dark:border-white/10 hover:border-[#e07a38] text-stone-600 dark:text-neutral-300 hover:text-stone-900 dark:hover:text-white font-medium text-sm transition-all">
+            <span>Hubungi Saya</span>
+          </a>
         </div>
       </div>
 
-      <!-- Main Photographic Showcase + Interactive Filmstrip Selector -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
-        
-        <!-- Left 8 Cols: Main High-Impact Photograph Frame -->
-        <div class="lg:col-span-8 relative rounded-2xl overflow-hidden bg-[#121212] border border-stone-300 dark:border-white/10 h-[300px] sm:h-[420px] md:h-[460px] group">
-          <img 
-            id="heroShowcaseImg"
-            src="assets/horn_antenna_lab.jpg" 
-            alt="Mochammad Rizky Kurniawan - Praktikum Antena Horn Gelombang Mikro di Lab PENS" 
-            class="w-full h-full object-cover object-center cursor-pointer"
-            onclick="openCertificateModal(document.getElementById('heroShowcaseImg').getAttribute('src'), document.getElementById('heroShowcaseCaption').textContent)"
-          />
-
-          <!-- Gentle Bottom Gradient Only (Top of photo stays 100% clear & bright) -->
-          <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none"></div>
-
-          <!-- Top-Left Photo Tag -->
-          <div class="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white uppercase tracking-wider">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#e07a38]"></span>
-            <span id="heroShowcaseTag">DOKUMENTASI LAB 01 / 04</span>
-          </div>
-
-          <!-- Top-Right Rotating Orange Stamp Badge (Cleanly Positioned in Corner) -->
-          <div onclick="openCvModal()" title="Klik untuk membuka Resume / CV" class="hidden sm:flex absolute top-4 right-4 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#e07a38] text-white items-center justify-center shadow-xl cursor-pointer hover:scale-105 transition-transform z-20">
-            <svg class="w-full h-full p-1.5 spin-badge" viewBox="0 0 100 100">
-              <defs>
-                <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
-              </defs>
-              <text class="text-[8.3px] font-mono uppercase tracking-[2.4px] fill-white font-bold">
-                <textPath href="#circlePath">• TELECOMMUNICATIONS • PENS SURABAYA </textPath>
-              </text>
-            </svg>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-8 h-8 md:w-9 md:h-9 rounded-full border border-white/60 flex items-center justify-center">
-                <i data-lucide="file-text" class="w-4 h-4 text-white"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Caption Bar Inside Main Photo -->
-          <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 z-20">
-            <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-[#f39c5a] block mb-0.5">SOROTAN DOKUMENTASI NYATA</span>
-              <p id="heroShowcaseCaption" class="text-xs sm:text-sm md:text-base font-grotesk font-bold text-white leading-snug">
-                Praktikum Fabrikasi & Karakterisasi Antena Horn di Lab Gelombang Mikro PENS
-              </p>
-            </div>
-            <button type="button" onclick="openCertificateModal(document.getElementById('heroShowcaseImg').getAttribute('src'), document.getElementById('heroShowcaseCaption').textContent)" class="shrink-0 px-3 py-1.5 rounded-full bg-white/15 hover:bg-[#e07a38] backdrop-blur-md border border-white/20 text-[10px] font-mono text-white uppercase tracking-wider transition-colors cursor-pointer">
-              Perbesar ↗
-            </button>
-          </div>
-        </div>
-
-        <!-- Right 4 Cols: Interactive Photographic Filmstrip Selector -->
-        <div class="lg:col-span-4 flex flex-col justify-between gap-2.5">
+      <!-- Right 5 Cols: Circular Portrait with Double Orbital Rings -->
+      <div class="lg:col-span-5 flex items-center justify-center">
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[340px] md:h-[340px] flex items-center justify-center">
           
-          <!-- Filmstrip Item 1 -->
-          <button type="button" onclick="switchHeroPhoto('assets/horn_antenna_lab.jpg', 'Praktikum Fabrikasi & Karakterisasi Antena Horn di Lab Gelombang Mikro PENS', 'DOKUMENTASI LAB 01 / 04', this)" class="hero-photo-btn active group flex-1 p-3 rounded-xl bg-white dark:bg-[#121212] border-2 border-[#e07a38] text-left flex items-center gap-3.5 transition-all cursor-pointer">
-            <img src="assets/horn_antenna_lab.jpg" alt="Lab Antena Horn" class="w-16 h-14 sm:w-20 sm:h-16 rounded-lg object-cover shrink-0" />
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#e07a38] font-bold mb-0.5">
-                <span>01 / RF & GELOMBANG MIKRO</span>
-                <span>● AKTIF</span>
-              </div>
-              <p class="font-grotesk font-bold text-xs sm:text-sm text-stone-900 dark:text-white truncate">
-                Fabrikasi Antena Horn
-              </p>
-              <p class="text-[11px] text-stone-500 dark:text-neutral-400 truncate">
-                Pengujian pola radiasi di Lab PENS
-              </p>
-            </div>
-          </button>
-
-          <!-- Filmstrip Item 2 -->
-          <button type="button" onclick="switchHeroPhoto('assets/iot_water_level_team.png', 'Tim Riset Purwarupa IoT Water Level Monitoring System (ESP32) PENS', 'DOKUMENTASI LAB 02 / 04', this)" class="hero-photo-btn group flex-1 p-3 rounded-xl bg-white/70 dark:bg-[#121212]/80 border border-stone-300 dark:border-white/10 hover:border-[#e07a38]/60 text-left flex items-center gap-3.5 transition-all cursor-pointer">
-            <img src="assets/iot_water_level_team.png" alt="Tim IoT ESP32" class="w-16 h-14 sm:w-20 sm:h-16 rounded-lg object-cover object-top shrink-0" />
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-400 dark:text-neutral-500 mb-0.5">
-                <span>02 / INTERNET OF THINGS</span>
-              </div>
-              <p class="font-grotesk font-bold text-xs sm:text-sm text-stone-900 dark:text-white truncate">
-                IoT Monitoring Tambak
-              </p>
-              <p class="text-[11px] text-stone-500 dark:text-neutral-400 truncate">
-                Transmisi sensor ESP32 via Wi-Fi
-              </p>
-            </div>
-          </button>
-
-          <!-- Filmstrip Item 3 -->
-          <button type="button" onclick="switchHeroPhoto('assets/horn_antenna_team.png', 'Dokumentasi Tim Praktikum Fabrikasi Antena Horn Gelombang Mikro PENS', 'DOKUMENTASI LAB 03 / 04', this)" class="hero-photo-btn group flex-1 p-3 rounded-xl bg-white/70 dark:bg-[#121212]/80 border border-stone-300 dark:border-white/10 hover:border-[#e07a38]/60 text-left flex items-center gap-3.5 transition-all cursor-pointer">
-            <img src="assets/horn_antenna_team.png" alt="Tim Lab RF" class="w-16 h-14 sm:w-20 sm:h-16 rounded-lg object-cover shrink-0" />
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-400 dark:text-neutral-500 mb-0.5">
-                <span>03 / KOLABORASI TIM LAB</span>
-              </div>
-              <p class="font-grotesk font-bold text-xs sm:text-sm text-stone-900 dark:text-white truncate">
-                Tim Praktikum Antena PENS
-              </p>
-              <p class="text-[11px] text-stone-500 dark:text-neutral-400 truncate">
-                Perakitan logam & karakterisasi
-              </p>
-            </div>
-          </button>
-
-          <!-- Filmstrip Item 4 -->
-          <button type="button" onclick="switchHeroPhoto('assets/cisco_multisite_network.png', 'Arsitektur Simulasi Multi-Site Enterprise Network di Cisco Packet Tracer', 'DOKUMENTASI LAB 04 / 04', this)" class="hero-photo-btn group flex-1 p-3 rounded-xl bg-white/70 dark:bg-[#121212]/80 border border-stone-300 dark:border-white/10 hover:border-[#e07a38]/60 text-left flex items-center gap-3.5 transition-all cursor-pointer">
-            <img src="assets/cisco_multisite_network.png" alt="Topologi Cisco" class="w-16 h-14 sm:w-20 sm:h-16 rounded-lg object-cover shrink-0" />
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-400 dark:text-neutral-500 mb-0.5">
-                <span>04 / ARSITEKTUR JARINGAN</span>
-              </div>
-              <p class="font-grotesk font-bold text-xs sm:text-sm text-stone-900 dark:text-white truncate">
-                20+ Topologi Cisco WAN
-              </p>
-              <p class="text-[11px] text-stone-500 dark:text-neutral-400 truncate">
-                Multi-Site HQ, Branch & Data Center
-              </p>
-            </div>
-          </button>
-
-        </div>
-      </div>
-
-      <!-- Editorial Summary Strip Under Hero Showcase -->
-      <div class="pt-4 pb-6 border-b border-stone-300 dark:border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <div class="lg:col-span-8">
-          <p class="text-stone-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
-            Mahasiswa aktif semester 5 <strong class="text-stone-900 dark:text-white font-semibold">STr Teknik Telekomunikasi PENS</strong> dengan fokus pada infrastruktur transmisi data dan jaringan: merancang <strong class="text-stone-900 dark:text-white font-medium">topologi LAN/WAN di Cisco Packet Tracer</strong>, pengujian keamanan aplikasi web (<em>Web Pentest</em>), purwarupa <strong class="text-stone-900 dark:text-white font-medium">IoT berbasis ESP32</strong>, hingga fabrikasi fisik <strong class="text-stone-900 dark:text-white font-medium">Antena Horn gelombang mikro</strong> & pemrosesan sinyal radio (SDR/GNU Radio).
-          </p>
-        </div>
-
-        <div class="lg:col-span-4 flex flex-wrap lg:justify-end gap-2.5">
-          <a href="mailto:mocha.rizkykurniawan@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-stone-900 dark:bg-white text-white dark:text-black hover:bg-[#e07a38] dark:hover:bg-[#e07a38] dark:hover:text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all">
-            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-            <span>Hubungi via Email</span>
-          </a>
-          <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-stone-300 dark:border-white/20 text-stone-800 dark:text-white hover:border-[#e07a38] hover:text-[#e07a38] font-grotesk font-bold text-xs uppercase tracking-wider transition-all">
-            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
-            <span>LinkedIn</span>
-          </a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- =====================================================================
-         2. KEAHLIAN TEKNIS ("OUR SERVICES" EDITORIAL ROWS + CRISP PILL PHOTOS)
-         ===================================================================== -->
-    <section id="skills" class="space-y-8">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-300 dark:border-white/15 pb-5">
-        <div class="flex flex-wrap items-center gap-3.5">
-          <h2 class="editorial-display text-3xl sm:text-4xl md:text-5xl uppercase text-stone-900 dark:text-white">
-            KEAHLIAN TEKNIS
-          </h2>
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-stone-400 dark:border-white/20 text-[10px] font-mono uppercase tracking-widest text-stone-700 dark:text-neutral-300">
-            <i data-lucide="layers" class="w-3 h-3 text-[#e07a38]"></i>
-            <span>04 KOMPETENSI INTI</span>
-          </span>
-        </div>
-        <p class="text-xs font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-wider">
-          KLIK FOTO KAPSUL UNTUK MELIHAT DOKUMENTASI
-        </p>
-      </div>
-
-      <!-- 4 Horizontal Editorial Rows with Bright Pill Thumbnails & Scannable Pill Tags -->
-      <div class="divide-y divide-stone-300/80 dark:divide-white/10 border-b border-stone-300/80 dark:border-white/10">
-
-        <!-- Row 1: Jaringan Komputer -->
-        <div class="service-row py-6 sm:py-7 px-3 rounded-xl grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-          <div class="md:col-span-4 flex items-start gap-3.5">
-            <span class="font-mono text-xs text-[#e07a38] font-bold pt-1">01</span>
-            <div>
-              <h3 class="font-grotesk text-lg sm:text-xl font-bold text-stone-900 dark:text-white">
-                Jaringan Komputer
-              </h3>
-              <p class="text-xs text-stone-500 dark:text-neutral-400 mt-0.5">Arsitektur LAN/WAN & infrastruktur jaringan</p>
-            </div>
-          </div>
-          <div class="md:col-span-3 flex md:justify-center">
-            <div onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Simulasi Topologi Jaringan Enterprise Multi-Site')" class="w-44 h-14 sm:w-48 sm:h-16 rounded-full overflow-hidden border-2 border-stone-300 dark:border-white/20 hover:border-[#e07a38] cursor-pointer group relative shadow-md">
-              <img src="assets/cisco_multisite_network.png" alt="Jaringan Komputer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            </div>
-          </div>
-          <div class="md:col-span-5 flex flex-wrap gap-1.5">
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Routing & Switching</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Subnetting IPv4</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">VLAN & Inter-VLAN</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Client-Server</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Jaringan Optik (FTTH)</span>
-          </div>
-        </div>
-
-        <!-- Row 2: Software & Simulator -->
-        <div class="service-row py-6 sm:py-7 px-3 rounded-xl grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-          <div class="md:col-span-4 flex items-start gap-3.5">
-            <span class="font-mono text-xs text-[#e07a38] font-bold pt-1">02</span>
-            <div>
-              <h3 class="font-grotesk text-lg sm:text-xl font-bold text-stone-900 dark:text-white">
-                Software & Simulator
-              </h3>
-              <p class="text-xs text-stone-500 dark:text-neutral-400 mt-0.5">Simulasi topologi, paket data & DSP radio</p>
-            </div>
-          </div>
-          <div class="md:col-span-3 flex md:justify-center">
-            <div onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio Companion & Simulasi Sinyal')" class="w-44 h-14 sm:w-48 sm:h-16 rounded-full overflow-hidden border-2 border-stone-300 dark:border-white/20 hover:border-[#e07a38] cursor-pointer group relative shadow-md">
-              <img src="assets/gnuradio_fm_2channel.png" alt="Software & Simulator" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            </div>
-          </div>
-          <div class="md:col-span-5 flex flex-wrap gap-1.5">
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Cisco Packet Tracer (20+ Lab)</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">GNS3</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Wireshark</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">GNU Radio Companion</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Proteus & Wokwi</span>
-          </div>
-        </div>
-
-        <!-- Row 3: Hardware, RF & IoT -->
-        <div class="service-row py-6 sm:py-7 px-3 rounded-xl grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-          <div class="md:col-span-4 flex items-start gap-3.5">
-            <span class="font-mono text-xs text-[#e07a38] font-bold pt-1">03</span>
-            <div>
-              <h3 class="font-grotesk text-lg sm:text-xl font-bold text-stone-900 dark:text-white">
-                Hardware, RF & IoT
-              </h3>
-              <p class="text-xs text-stone-500 dark:text-neutral-400 mt-0.5">Perangkat keras telekomunikasi & mikrokontroler</p>
-            </div>
-          </div>
-          <div class="md:col-span-3 flex md:justify-center">
-            <div onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Fabrikasi Antena Horn & Perangkat Keras RF')" class="w-44 h-14 sm:w-48 sm:h-16 rounded-full overflow-hidden border-2 border-stone-300 dark:border-white/20 hover:border-[#e07a38] cursor-pointer group relative shadow-md">
-              <img src="assets/horn_antenna_lab.jpg" alt="Hardware & IoT" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            </div>
-          </div>
-          <div class="md:col-span-5 flex flex-wrap gap-1.5">
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">ESP32 Wi-Fi Telemetry</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Arduino Uno</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Fabrikasi Antena Horn</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Dongle RTL-SDR</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Sensor & Driver L298N</span>
-          </div>
-        </div>
-
-        <!-- Row 4: Bahasa Pemrograman & Keamanan -->
-        <div class="service-row py-6 sm:py-7 px-3 rounded-xl grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-          <div class="md:col-span-4 flex items-start gap-3.5">
-            <span class="font-mono text-xs text-[#e07a38] font-bold pt-1">04</span>
-            <div>
-              <h3 class="font-grotesk text-lg sm:text-xl font-bold text-stone-900 dark:text-white">
-                Pemrograman & Keamanan
-              </h3>
-              <p class="text-xs text-stone-500 dark:text-neutral-400 mt-0.5">Otomasi skrip, sistem tertanam & dasar pentest</p>
-            </div>
-          </div>
-          <div class="md:col-span-3 flex md:justify-center">
-            <div onclick="openCertificateModal('assets/line_follower_robot.jpg', 'Pemrograman Embedded C++ pada Robot Line Follower & Gripper')" class="w-44 h-14 sm:w-48 sm:h-16 rounded-full overflow-hidden border-2 border-stone-300 dark:border-white/20 hover:border-[#e07a38] cursor-pointer group relative shadow-md">
-              <img src="assets/line_follower_robot.jpg" alt="Bahasa & Toolkit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            </div>
-          </div>
-          <div class="md:col-span-5 flex flex-wrap gap-1.5">
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">C / C++ (Embedded)</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Python & Data Scripting</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Web Penetration Testing</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">SQL Dasar</span>
-            <span class="px-3 py-1 rounded-full bg-stone-200/70 dark:bg-white/[0.05] border border-stone-300 dark:border-white/10 text-xs text-stone-800 dark:text-neutral-200">Git & Linux</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         3. PROYEK & PRAKTIKUM LAB (WELL-FRAMED EDITORIAL CARDS, NO AWKWARD CROPS)
-         ===================================================================== -->
-    <section id="projects" class="space-y-10">
-      
-      <!-- Header + Filter Pills -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-stone-300 dark:border-white/15 pb-5">
-        <div class="flex flex-wrap items-center gap-3.5">
-          <h2 class="editorial-display text-3xl sm:text-4xl md:text-5xl uppercase text-stone-900 dark:text-white">
-            PROYEK & LAB
-          </h2>
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-stone-400 dark:border-white/20 text-[10px] font-mono uppercase tracking-widest text-stone-700 dark:text-neutral-300">
-            <i data-lucide="camera" class="w-3 h-3 text-[#e07a38]"></i>
-            <span>05 DOKUMENTASI ASLI</span>
-          </span>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono uppercase">
-          <button class="filter-btn active px-4 py-1.5 rounded-full bg-stone-900 text-white dark:bg-white dark:text-black font-bold transition-all cursor-pointer" data-filter="all">Semua (5)</button>
-          <button class="filter-btn px-4 py-1.5 rounded-full border border-stone-400 dark:border-white/20 text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] transition-all cursor-pointer" data-filter="telecom">Telekomunikasi & RF</button>
-          <button class="filter-btn px-4 py-1.5 rounded-full border border-stone-400 dark:border-white/20 text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] transition-all cursor-pointer" data-filter="iot">IoT & Robotika</button>
-          <button class="filter-btn px-4 py-1.5 rounded-full border border-stone-400 dark:border-white/20 text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] transition-all cursor-pointer" data-filter="jaringan">Simulasi Jaringan</button>
-        </div>
-      </div>
-
-      <!-- 2-Column Editorial Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-
-        <!-- Project 1: Horn Antenna Fabrication -->
-        <article class="project-card rounded-2xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group" data-category="telecom">
-          <div>
-            <!-- 16:10 Proportional Editorial Photograph -->
-            <div class="editorial-photo-wrap relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#181818] mb-5 cursor-pointer border border-stone-200 dark:border-white/10" onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Fabrikasi & Pengujian Antena Horn di Lab Gelombang Mikro PENS')">
-              <img 
-                src="assets/horn_antenna_lab.jpg" 
-                alt="Pengujian Antena Horn di Lab PENS" 
-                class="w-full h-full object-cover object-center"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-mono text-white uppercase tracking-wider border border-white/15">
-                01 • Lab Gelombang Mikro
-              </span>
-              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#e07a38] text-white text-[10px] font-mono font-bold uppercase shadow-md">
-                Perbesar Foto ↗
-              </span>
-            </div>
-
-            <!-- Title + Badge Row -->
-            <div class="flex items-start justify-between gap-3 mb-2.5">
-              <h3 class="font-grotesk font-bold text-lg sm:text-xl text-stone-900 dark:text-white group-hover:text-[#e07a38] transition-colors leading-snug">
-                Fabrikasi & Karakterisasi Antena Horn (Gelombang Mikro)
-              </h3>
-              <span class="font-mono text-[10px] px-2.5 py-0.5 rounded bg-stone-100 dark:bg-white/[0.06] text-[#c86428] dark:text-[#e07a38] shrink-0 mt-1">RF LAB</span>
-            </div>
-
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed mb-4">
-              Perancangan dimensi fisik, fabrikasi lembaran logam, dan pengujian transmisi antena Horn piramidal di laboratorium gelombang mikro PENS. Mengamati pola radiasi elektromagnetik, <em>directivity</em>, serta kecocokan impedansi pada frekuensi gelombang mikro.
-            </p>
-
-            <!-- Secondary Photo Switcher (Lab Action vs Team Photo) -->
-            <div class="grid grid-cols-2 gap-2.5 mb-5">
-              <button type="button" onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Pengujian Transmisi Antena Horn di Lab Gelombang Mikro PENS')" class="p-2 rounded-lg bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] border border-stone-200 dark:border-white/10 text-left flex items-center gap-2.5 transition-colors cursor-pointer">
-                <img src="assets/horn_antenna_lab.jpg" class="w-11 h-9 rounded object-cover shrink-0" alt="Lab" />
-                <div class="min-w-0">
-                  <span class="block text-[11px] font-bold text-stone-900 dark:text-white truncate">Pengujian Lab</span>
-                  <span class="block text-[9px] font-mono text-[#e07a38]">Lihat Foto ↗</span>
-                </div>
-              </button>
-              <button type="button" onclick="openCertificateModal('assets/horn_antenna_team.png', 'Dokumentasi Tim Praktikum Fabrikasi Antena Horn PENS')" class="p-2 rounded-lg bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] border border-stone-200 dark:border-white/10 text-left flex items-center gap-2.5 transition-colors cursor-pointer">
-                <img src="assets/horn_antenna_team.png" class="w-11 h-9 rounded object-cover shrink-0" alt="Tim Antena" />
-                <div class="min-w-0">
-                  <span class="block text-[11px] font-bold text-stone-900 dark:text-white truncate">Tim Praktikum</span>
-                  <span class="block text-[9px] font-mono text-[#e07a38]">Lihat Foto ↗</span>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <!-- Rounded Outline Pill Tags -->
-          <div class="flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-wider pt-3 border-t border-stone-200 dark:border-white/[0.06]">
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Antenna Fabrication</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Microwave</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Pola Radiasi</span>
-          </div>
-        </article>
-
-        <!-- Project 2: IoT Water Level Monitoring -->
-        <article class="project-card rounded-2xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group" data-category="iot">
-          <div>
-            <!-- 16:10 Proportional Editorial Photograph -->
-            <div class="editorial-photo-wrap relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#181818] mb-5 cursor-pointer border border-stone-200 dark:border-white/10" onclick="openCertificateModal('assets/iot_water_level_team.png', 'Tim Proyek IoT Pemantau Ketinggian Air Tambak Garam PENS')">
-              <img 
-                src="assets/iot_water_level_team.png" 
-                alt="Purwarupa IoT Pemantau Ketinggian Air Tambak" 
-                class="w-full h-full object-cover object-top"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-mono text-white uppercase tracking-wider border border-white/15">
-                02 • Proyek Kolaborasi IoT
-              </span>
-              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#e07a38] text-white text-[10px] font-mono font-bold uppercase shadow-md">
-                Perbesar Foto ↗
-              </span>
-            </div>
-
-            <!-- Title + Badge Row -->
-            <div class="flex items-start justify-between gap-3 mb-2.5">
-              <h3 class="font-grotesk font-bold text-lg sm:text-xl text-stone-900 dark:text-white group-hover:text-[#e07a38] transition-colors leading-snug">
-                IoT Water Level Monitoring System (Tambak Garam)
-              </h3>
-              <span class="font-mono text-[10px] px-2.5 py-0.5 rounded bg-stone-100 dark:bg-white/[0.06] text-[#c86428] dark:text-[#e07a38] shrink-0 mt-1">ESP32</span>
-            </div>
-
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed mb-5">
-              Mengembangkan purwarupa pemantau ketinggian air tambak garam secara otomatis. Mengintegrasikan mikrokontroler ESP32, layar LCD, dan sensor ultrasonik yang terhubung ke jaringan Wi-Fi untuk mentransmisikan telemetri ketinggian air ke web monitoring secara <em>real-time</em>.
-            </p>
-          </div>
-
-          <!-- Rounded Outline Pill Tags -->
-          <div class="flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-wider pt-3 border-t border-stone-200 dark:border-white/[0.06]">
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">ESP32 Wi-Fi</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Sensor Ultrasonik</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">C++ / Arduino</span>
-          </div>
-        </article>
-
-        <!-- Project 3: 20+ Cisco Packet Tracer Topologies -->
-        <article class="project-card rounded-2xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group" data-category="jaringan">
-          <div>
-            <!-- 16:10 Proportional Editorial Photograph -->
-            <div class="editorial-photo-wrap relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#181818] mb-5 cursor-pointer border border-stone-200 dark:border-white/10" onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Simulasi Cisco Packet Tracer: Multi-Site Enterprise Network (HQ, Branches, Carrier & Data Center)')">
-              <img 
-                src="assets/cisco_multisite_network.png" 
-                alt="Simulasi Cisco Packet Tracer Multi-Site Network" 
-                class="w-full h-full object-cover object-center"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-mono text-white uppercase tracking-wider border border-white/15">
-                03 • 20+ Topologi Jaringan
-              </span>
-              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#e07a38] text-white text-[10px] font-mono font-bold uppercase shadow-md">
-                Perbesar Diagram ↗
-              </span>
-            </div>
-
-            <!-- Title + Badge Row -->
-            <div class="flex items-start justify-between gap-3 mb-2.5">
-              <h3 class="font-grotesk font-bold text-lg sm:text-xl text-stone-900 dark:text-white group-hover:text-[#e07a38] transition-colors leading-snug">
-                Eksplorasi & Simulasi Topologi Jaringan (Cisco Packet Tracer)
-              </h3>
-              <span class="font-mono text-[10px] px-2.5 py-0.5 rounded bg-stone-100 dark:bg-white/[0.06] text-[#c86428] dark:text-[#e07a38] shrink-0 mt-1">CISCO</span>
-            </div>
-
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed mb-4">
-              Merancang dan menguji 20+ topologi jaringan komputer di laboratorium PENS. Mengimplementasikan arsitektur <strong>Multi-Site Enterprise</strong> (HQ, Branch, ISP Carrier, dan Data Center) serta <strong>VLAN Segmentation & Client-Server Architecture</strong>.
-            </p>
-
-            <!-- Gallery Mini Previews (2 Simulation Screenshots) -->
-            <div class="grid grid-cols-2 gap-2.5 mb-5">
-              <button type="button" onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Simulasi Topologi Enterprise Multi-Site (HQ, Branch, Data Center)')" class="p-2 rounded-lg bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] border border-stone-200 dark:border-white/10 text-left flex items-center gap-2.5 transition-colors cursor-pointer">
-                <img src="assets/cisco_multisite_network.png" class="w-11 h-9 rounded object-cover shrink-0" alt="Multi-Site" />
-                <div class="min-w-0">
-                  <span class="block text-[11px] font-bold text-stone-900 dark:text-white truncate">Multi-Site WAN</span>
-                  <span class="block text-[9px] font-mono text-[#e07a38]">Lihat Full HD ↗</span>
-                </div>
-              </button>
-              <button type="button" onclick="openCertificateModal('assets/cisco_vlan_clientserver.png', 'Simulasi Segmentasi VLAN & Client Server Practice')" class="p-2 rounded-lg bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] border border-stone-200 dark:border-white/10 text-left flex items-center gap-2.5 transition-colors cursor-pointer">
-                <img src="assets/cisco_vlan_clientserver.png" class="w-11 h-9 rounded object-cover shrink-0" alt="VLAN" />
-                <div class="min-w-0">
-                  <span class="block text-[11px] font-bold text-stone-900 dark:text-white truncate">VLAN & Server</span>
-                  <span class="block text-[9px] font-mono text-[#e07a38]">Lihat Full HD ↗</span>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <!-- Rounded Outline Pill Tags -->
-          <div class="flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-wider pt-3 border-t border-stone-200 dark:border-white/[0.06]">
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Multi-Site WAN</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">VLAN & Inter-VLAN</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Static Routing</span>
-          </div>
-        </article>
-
-        <!-- Project 4: Software Defined Radio FM Receiver -->
-        <article class="project-card rounded-2xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group" data-category="telecom">
-          <div>
-            <!-- 16:10 Proportional Editorial Photograph -->
-            <div class="editorial-photo-wrap relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#181818] mb-5 cursor-pointer border border-stone-200 dark:border-white/10" onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio: Penerima FM 2-Channel Paralel (DDC & Cosine Oscillator)')">
-              <img 
-                src="assets/gnuradio_fm_2channel.png" 
-                alt="Diagram Alir GNU Radio Companion Penerima FM 2 Channel" 
-                class="w-full h-full object-cover object-center"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-mono text-white uppercase tracking-wider border border-white/15">
-                04 • GNU Radio + RTL-SDR
-              </span>
-              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#e07a38] text-white text-[10px] font-mono font-bold uppercase shadow-md">
-                Perbesar Diagram ↗
-              </span>
-            </div>
-
-            <!-- Title + Badge Row -->
-            <div class="flex items-start justify-between gap-3 mb-2.5">
-              <h3 class="font-grotesk font-bold text-lg sm:text-xl text-stone-900 dark:text-white group-hover:text-[#e07a38] transition-colors leading-snug">
-                Penerima FM 1 & 2 Channel Berbasis RTL-SDR (GNU Radio)
-              </h3>
-              <span class="font-mono text-[10px] px-2.5 py-0.5 rounded bg-stone-100 dark:bg-white/[0.06] text-[#c86428] dark:text-[#e07a38] shrink-0 mt-1">DSP</span>
-            </div>
-
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed mb-4">
-              Membangun diagram alir pemrosesan sinyal digital (<em>Software Defined Radio</em>) untuk menangkap siaran radio FM komersial. Mengimplementasikan <em>Digital Down Conversion (DDC)</em> dengan osilator Cosine untuk mendemodulasi 2 frekuensi radio berbeda secara paralel dari 1 perangkat RTL-SDR.
-            </p>
-
-            <!-- Gallery Mini Previews (2 Flowgraphs) -->
-            <div class="grid grid-cols-2 gap-2.5 mb-5">
-              <button type="button" onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio: Penerima FM 2 Channel Lengkap dengan Osilator Cosine')" class="p-2 rounded-lg bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] border border-stone-200 dark:border-white/10 text-left flex items-center gap-2.5 transition-colors cursor-pointer">
-                <img src="assets/gnuradio_fm_2channel.png" class="w-11 h-9 rounded object-cover shrink-0" alt="2 Channel" />
-                <div class="min-w-0">
-                  <span class="block text-[11px] font-bold text-stone-900 dark:text-white truncate">Flowgraph 2-Ch</span>
-                  <span class="block text-[9px] font-mono text-[#e07a38]">Lihat Diagram ↗</span>
-                </div>
-              </button>
-              <button type="button" onclick="openCertificateModal('assets/gnuradio_fm_1channel.png', 'Flowgraph GNU Radio: Penerima FM 1 Channel Tunggal (Dasar)')" class="p-2 rounded-lg bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] border border-stone-200 dark:border-white/10 text-left flex items-center gap-2.5 transition-colors cursor-pointer">
-                <img src="assets/gnuradio_fm_1channel.png" class="w-11 h-9 rounded object-cover shrink-0" alt="1 Channel" />
-                <div class="min-w-0">
-                  <span class="block text-[11px] font-bold text-stone-900 dark:text-white truncate">Flowgraph 1-Ch</span>
-                  <span class="block text-[9px] font-mono text-[#e07a38]">Lihat Diagram ↗</span>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <!-- Rounded Outline Pill Tags -->
-          <div class="flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-wider pt-3 border-t border-stone-200 dark:border-white/[0.06]">
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">GNU Radio (.grc)</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">RTL-SDR</span>
-            <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">WBFM Demodulator</span>
-          </div>
-        </article>
-
-        <!-- Project 5: Autonomous Robot Line Follower & Gripper (Full 2-Column Featured Card) -->
-        <article class="project-card md:col-span-2 rounded-2xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-5 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center transition-all duration-300 group" data-category="iot">
-          <div class="lg:col-span-6 editorial-photo-wrap relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#181818] cursor-pointer border border-stone-200 dark:border-white/10" onclick="openCertificateModal('assets/line_follower_robot.jpg', 'Purwarupa Robot Line Follower dengan Capit Gripper Servo')">
-            <img 
-              src="assets/line_follower_robot.jpg" 
-              alt="Robot Line Follower dengan Capit Gripper" 
-              class="w-full h-full object-cover object-center"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-mono text-white uppercase tracking-wider border border-white/15">
-              05 • Robotika & Mekatronika
-            </span>
-            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#e07a38] text-white text-[10px] font-mono font-bold uppercase shadow-md">
-              Perbesar Foto ↗
-            </span>
-          </div>
-
-          <div class="lg:col-span-6 space-y-4">
-            <div class="flex items-center justify-between gap-3">
-              <span class="font-mono text-[10px] uppercase tracking-widest text-[#c86428] dark:text-[#e07a38] font-bold">
-                EMBEDDED SYSTEM & MECHATRONICS
-              </span>
-              <span class="font-mono text-[10px] px-2.5 py-0.5 rounded bg-stone-100 dark:bg-white/[0.06] text-stone-600 dark:text-neutral-300">ROBOTIKA</span>
-            </div>
-
-            <h3 class="font-grotesk font-bold text-xl sm:text-2xl text-stone-900 dark:text-white group-hover:text-[#e07a38] transition-colors leading-snug">
-              Pengembangan Robot Line Follower & Lengan Gripper Otonom
-            </h3>
-
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
-              Membangun robot beroda pelacak garis otonom yang dilengkapi dengan lengan mekanik capit (<em>gripper/claw</em>) berbasis servo. Mengintegrasikan modul driver motor L298N, baterai Li-ion UltraFire, motor DC beroda gigi (<em>gearbox</em>), dan sensor array optik inframerah untuk navigasi lintasan serta pemindahan objek secara presisi.
-            </p>
-
-            <div class="flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-wider pt-3 border-t border-stone-200 dark:border-white/[0.06]">
-              <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Mikrokontroler</span>
-              <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Driver L298N</span>
-              <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">Servo Gripper Arm</span>
-              <span class="px-3 py-1 rounded-full border border-stone-300 dark:border-white/15 text-stone-600 dark:text-neutral-300">IR Sensor Array</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         4. PROFIL & TENTANG SAYA (CLEAN MAGAZINE EDITORIAL FEATURE SPREAD)
-         ===================================================================== -->
-    <section id="about" class="space-y-12">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-300 dark:border-white/15 pb-5">
-        <div class="flex flex-wrap items-center gap-3.5">
-          <h2 class="editorial-display text-3xl sm:text-4xl md:text-5xl uppercase text-stone-900 dark:text-white">
-            PROFIL & BIO
-          </h2>
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-stone-400 dark:border-white/20 text-[10px] font-mono uppercase tracking-widest text-stone-700 dark:text-neutral-300">
-            <i data-lucide="user-check" class="w-3 h-3 text-[#e07a38]"></i>
-            <span>STR TEKNIK TELEKOMUNIKASI</span>
-          </span>
-        </div>
-        <p class="text-xs font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-wider">
-          POLITEKNIK ELEKTRONIKA NEGERI SURABAYA (PENS)
-        </p>
-      </div>
-
-      <!-- 12-Column Editorial Magazine Spread (Portrait Card + Bio & Key Credentials) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-start">
-        
-        <!-- Left 4 Cols: High-Contrast Editorial Portrait Frame -->
-        <div class="lg:col-span-4">
-          <div class="rounded-2xl bg-white dark:bg-[#121212] border border-stone-300 dark:border-white/10 p-4 shadow-xl">
-            <div onclick="openCertificateModal('assets/profile.jpg', 'Mochammad Rizky Kurniawan — STr Teknik Telekomunikasi PENS')" class="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-[#1a1a1a] cursor-pointer group">
+          <!-- Outer Dashed Orbital Ring -->
+          <div class="absolute inset-0 rounded-full border border-dashed border-stone-300 dark:border-white/15"></div>
+          
+          <!-- Inner Terracotta Accent Ring + Soft Radial Glow -->
+          <div class="relative w-60 h-60 sm:w-68 sm:h-68 md:w-72 md:h-72 rounded-full p-2 border border-[#e07a38]/55 bg-gradient-to-b from-[#e07a38]/15 via-transparent to-black/40 shadow-2xl flex items-center justify-center group cursor-pointer" onclick="openCertificateModal('assets/profile.jpg', 'Mochammad Rizky Kurniawan — STr Teknik Telekomunikasi PENS')">
+            <div class="w-full h-full rounded-full overflow-hidden bg-[#121215]">
               <img 
                 src="assets/profile.jpg" 
                 alt="Mochammad Rizky Kurniawan" 
-                class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white">
-                <span class="font-mono text-[10px] uppercase tracking-wider text-white/90">SURABAYA, INDONESIA</span>
-                <span class="px-2 py-0.5 rounded bg-[#e07a38] font-mono text-[9px] font-bold uppercase">SEMESTER 5</span>
-              </div>
             </div>
+          </div>
 
-            <div class="pt-4 mt-2 flex items-center justify-between gap-2 border-t border-stone-200 dark:border-white/10">
-              <div>
-                <div class="font-grotesk font-bold text-xs sm:text-sm text-stone-900 dark:text-white">Mochammad Rizky Kurniawan</div>
-                <div class="text-[11px] font-mono text-stone-500 dark:text-neutral-400">STr Teknik Telekomunikasi</div>
+          <!-- Subtle Floating Badge 1: Network & NOC -->
+          <div class="absolute -bottom-2 left-4 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#141418] border border-stone-200 dark:border-white/10 shadow-lg flex items-center gap-2 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-[#e07a38]"></span>
+            <span class="text-stone-800 dark:text-neutral-200 font-semibold">NOC & IT Infra</span>
+          </div>
+
+          <!-- Subtle Floating Badge 2: Komdigi Certified -->
+          <div class="absolute top-4 -right-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#141418] border border-stone-200 dark:border-white/10 shadow-lg flex items-center gap-1.5 text-xs font-mono">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+            <span class="text-stone-800 dark:text-neutral-200 font-semibold">DEX Komdigi</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =====================================================================
+         2. MY EXPERTISE ("WHAT I DO" — 3 CLEAN CARDS FOCUSED ON NOC, SERVER & CLOUD/SECURITY)
+         ===================================================================== -->
+    <section id="expertise" class="space-y-12">
+      
+      <!-- Centered Section Header -->
+      <div class="text-center space-y-2.5">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#c86428] dark:text-[#e07a38] font-semibold block">
+          WHAT I DO
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-stone-900 dark:text-white tracking-tight">
+          Fokus & Keahlian Utama
+        </h2>
+      </div>
+
+      <!-- 3 Clean Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Network Infrastructure & NOC -->
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 p-7 sm:p-8 space-y-4 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#e07a38]/12 border border-[#e07a38]/30 flex items-center justify-center text-[#e07a38]">
+            <i data-lucide="network" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-grotesk font-bold text-xl text-stone-900 dark:text-white">
+            Network Infrastructure & NOC
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+            Merancang, mengonfigurasi, dan memelihara topologi jaringan fisik maupun virtual menggunakan Routing, Switching (Cisco), segmentasi VLAN, Inter-VLAN, serta pemecahan masalah konektivitas LAN/WAN untuk reliabilitas tinggi.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-[11px] font-mono text-stone-500 dark:text-neutral-400">
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">Cisco Routing</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">VLAN</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">TCP/IP & FTTH</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Server Administration & Cloud -->
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 p-7 sm:p-8 space-y-4 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#e07a38]/12 border border-[#e07a38]/30 flex items-center justify-center text-[#e07a38]">
+            <i data-lucide="server" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-grotesk font-bold text-xl text-stone-900 dark:text-white">
+            Server Admin & Cloud System
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+            Mengelola sistem operasi Linux Server, konfigurasi layanan terpusat berbasis <em>Client-Server Architecture</em> (DHCP, DNS, Web & Database SQL), serta fondasi infrastruktur Cloud dan otomasi skrip menggunakan Python.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-[11px] font-mono text-stone-500 dark:text-neutral-400">
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">Linux SysAdmin</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">Client-Server</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">SQL & Python</span>
+          </div>
+        </div>
+
+        <!-- Card 3: System Monitoring & Cyber Security -->
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 p-7 sm:p-8 space-y-4 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#e07a38]/12 border border-[#e07a38]/30 flex items-center justify-center text-[#e07a38]">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-grotesk font-bold text-xl text-stone-900 dark:text-white">
+            Security & Telemetry Monitoring
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+            Menganalisis trafik jaringan dengan Wireshark, melakukan pengujian keamanan aplikasi web (<em>Web Penetration Testing</em>), serta membangun sistem telemetri monitoring perangkat IoT (ESP32) secara <em>real-time</em>.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-[11px] font-mono text-stone-500 dark:text-neutral-400">
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">Wireshark</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">Web Pentest</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/[0.04] border border-stone-200 dark:border-white/[0.06]">IoT Telemetry</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. TRACK RECORD & LAB GALLERY (EXPANDABLE ACCORDIONS + PHOTO CAROUSEL)
+         ===================================================================== -->
+    <section id="experience" class="space-y-10 max-w-4xl mx-auto">
+      
+      <!-- Centered Section Header -->
+      <div class="text-center space-y-2.5">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#c86428] dark:text-[#e07a38] font-semibold block">
+          TRACK RECORD
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-stone-900 dark:text-white tracking-tight">
+          Pendidikan, Lisensi & Praktikum Lab
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500 dark:text-neutral-400">
+          Klik pada kartu di bawah untuk melihat rincian kegiatan dan galeri dokumentasi foto
+        </p>
+      </div>
+
+      <!-- Expandable Accordion Cards -->
+      <div class="space-y-4">
+
+        <!-- Accordion 1: Academic & Lab Track Record (Expanded by Default with Interactive Photo Carousel!) -->
+        <div class="rounded-2xl bg-white dark:bg-[#111114] border border-[#e07a38]/40 dark:border-[#e07a38]/35 overflow-hidden transition-all">
+          <button type="button" onclick="toggleTrackAccordion('accLab', 'accLabIcon')" class="w-full p-6 sm:px-8 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-stone-50/60 dark:hover:bg-white/[0.02] transition-colors">
+            <div>
+              <h3 class="font-grotesk font-bold text-base sm:text-lg text-stone-900 dark:text-white">
+                Politeknik Elektronika Negeri Surabaya (PENS) — STr Teknik Telekomunikasi
+              </h3>
+              <p class="text-xs sm:text-sm font-mono text-[#c86428] dark:text-[#e07a38] mt-1">
+                Network Engineering, Server Lab & IoT Systems | 2024 – Sekarang (Semester 5)
+              </p>
+            </div>
+            <i data-lucide="chevron-down" id="accLabIcon" class="w-5 h-5 text-[#e07a38] transition-transform duration-300 rotate-180 shrink-0"></i>
+          </button>
+
+          <div id="accLab" class="px-6 sm:px-8 pb-7 pt-2 border-t border-stone-200/70 dark:border-white/[0.06] space-y-5">
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+              Menempuh pendidikan Sarjana Terapan (D4) Teknik Telekomunikasi di PENS Surabaya. Aktif merancang <strong>20+ topologi jaringan enterprise (Cisco Packet Tracer & GNS3)</strong>, konfigurasi layanan server, purwarupa monitoring <strong>IoT berbasis ESP32</strong>, serta praktikum perangkat keras telekomunikasi di laboratorium kampus.
+            </p>
+
+            <!-- Interactive 3-Photo Carousel (Exact Match to Friend's Screenshot 5!) -->
+            <div class="relative flex items-center gap-3">
+              <!-- Prev Button -->
+              <button type="button" onclick="scrollLabGallery(-1)" class="w-9 h-9 rounded-full border border-[#e07a38]/50 bg-[#e07a38]/10 hover:bg-[#e07a38] text-[#e07a38] hover:text-white flex items-center justify-center shrink-0 transition-colors cursor-pointer" title="Geser Kiri">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+
+              <!-- Scrollable 3-Photo Strip -->
+              <div id="labGalleryStrip" class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full">
+                <!-- Gallery Item 1 -->
+                <div onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Arsitektur Simulasi Multi-Site Enterprise Network di Cisco Packet Tracer')" class="group relative aspect-[4/3] rounded-xl overflow-hidden bg-[#18181c] border border-stone-200 dark:border-white/10 cursor-pointer">
+                  <img src="assets/cisco_multisite_network.png" alt="Topologi Jaringan Multi-Site" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-x-0 bottom-0 p-2.5 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+                    <span class="text-[11px] font-medium text-white block truncate">Arsitektur WAN Multi-Site</span>
+                  </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div onclick="openCertificateModal('assets/iot_water_level_team.png', 'Tim Riset Purwarupa IoT Water Level Monitoring System PENS')" class="group relative aspect-[4/3] rounded-xl overflow-hidden bg-[#18181c] border border-stone-200 dark:border-white/10 cursor-pointer">
+                  <img src="assets/iot_water_level_team.png" alt="Tim IoT ESP32 PENS" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-x-0 bottom-0 p-2.5 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+                    <span class="text-[11px] font-medium text-white block truncate">Tim Sistem Telemetri IoT</span>
+                  </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Praktikum Laboratorium Gelombang Mikro & Antena PENS')" class="group relative aspect-[4/3] rounded-xl overflow-hidden bg-[#18181c] border border-stone-200 dark:border-white/10 cursor-pointer">
+                  <img id="galleryThirdImg" src="assets/horn_antenna_lab.jpg" alt="Praktikum Lab PENS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-x-0 bottom-0 p-2.5 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+                    <span id="galleryThirdCaption" class="text-[11px] font-medium text-white block truncate">Eksperimen Lab Telekomunikasi</span>
+                  </div>
+                </div>
               </div>
-              <button onclick="openCvModal()" class="shrink-0 px-3 py-1.5 rounded-full bg-[#e07a38] hover:bg-[#c86428] text-white font-grotesk font-bold text-[11px] uppercase tracking-wider transition-colors cursor-pointer">
-                Resume / CV ↗
+
+              <!-- Next Button -->
+              <button type="button" onclick="scrollLabGallery(1)" class="w-9 h-9 rounded-full border border-[#e07a38]/50 bg-[#e07a38]/10 hover:bg-[#e07a38] text-[#e07a38] hover:text-white flex items-center justify-center shrink-0 transition-colors cursor-pointer" title="Geser Kanan">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Right 8 Cols: Editorial Story, Academic Details & 4 Metrics -->
-        <div class="lg:col-span-8 space-y-6">
-          <div class="space-y-4">
-            <span class="font-mono text-xs uppercase tracking-widest text-[#c86428] dark:text-[#e07a38] font-bold block">
-              LATAR BELAKANG AKADEMIK & PRAKTIKUM
-            </span>
-            <h3 class="font-grotesk font-bold text-2xl sm:text-3xl md:text-4xl text-stone-900 dark:text-white leading-tight">
-              Menjembatani Infrastruktur Jaringan, Transmisi Radio RF, dan Sistem Embedded IoT.
-            </h3>
-            <p class="text-sm sm:text-base text-stone-700 dark:text-neutral-300 leading-relaxed">
-              Sebagai mahasiswa aktif program studi <strong class="text-stone-900 dark:text-white font-semibold">STr Teknik Telekomunikasi di Politeknik Elektronika Negeri Surabaya (PENS)</strong>, saya terbiasa bekerja langsung dengan perangkat keras laboratorium maupun simulasi arsitektur jaringan skala enterprise.
+        <!-- Accordion 2: DEX Komdigi Network Administrator & Technician -->
+        <div class="rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/40 overflow-hidden transition-all">
+          <button type="button" onclick="toggleTrackAccordion('accKomdigi', 'accKomdigiIcon')" class="w-full p-6 sm:px-8 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-stone-50/60 dark:hover:bg-white/[0.02] transition-colors">
+            <div>
+              <h3 class="font-grotesk font-bold text-base sm:text-lg text-stone-900 dark:text-white">
+                Associate Network Administrator & Computer Network Technician (Intermediate)
+              </h3>
+              <p class="text-xs sm:text-sm font-mono text-[#c86428] dark:text-[#e07a38] mt-1">
+                Digital Entitlement (DEX) Kementerian Komdigi RI • PENS | 2026
+              </p>
+            </div>
+            <i data-lucide="chevron-down" id="accKomdigiIcon" class="w-5 h-5 text-stone-400 transition-transform duration-300 shrink-0"></i>
+          </button>
+
+          <div id="accKomdigi" class="hidden px-6 sm:px-8 pb-6 pt-2 border-t border-stone-200/70 dark:border-white/[0.06] space-y-3">
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+              Menyelesaikan kualifikasi kompetensi tingkat menengah (<em>Intermediate</em>) di bidang administrasi jaringan komputer dan teknisi infrastruktur jaringan. Mencakup perancangan pengalamatan IP, konfigurasi <em>routing & switching</em>, manajemen perangkat jaringan, serta pemeliharaan konektivitas infrastruktur IT.
             </p>
-            <p class="text-sm sm:text-base text-stone-700 dark:text-neutral-300 leading-relaxed">
-              Eksplorasi teknis saya mencakup perancangan <strong class="text-stone-900 dark:text-white font-medium">20+ topologi jaringan LAN/WAN di Cisco Packet Tracer</strong>, karakterisasi fisik <strong class="text-stone-900 dark:text-white font-medium">Antena Horn gelombang mikro</strong>, demodulasi sinyal radio digital menggunakan <strong class="text-stone-900 dark:text-white font-medium">RTL-SDR & GNU Radio</strong>, hingga pengembangan sistem telemetri <strong class="text-stone-900 dark:text-white font-medium">IoT berbasis ESP32</strong> dan pengujian keamanan aplikasi web (<em>Web Penetration Testing</em>).
+            <div class="flex flex-wrap gap-3 pt-1">
+              <button type="button" onclick="openCertificateModal('assets/certificates/dex_network_admin_intermediate.pdf', 'Associate Network Administrator (Intermediate) — DEX Komdigi')" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#e07a38] hover:underline cursor-pointer">
+                <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+                <span>Lihat Sertifikat Network Admin (PDF) →</span>
+              </button>
+              <button type="button" onclick="openCertificateModal('assets/certificates/dex_network_tech_intermediate.pdf', 'Associate Computer Network Technician (Intermediate) — DEX Komdigi')" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#e07a38] hover:underline cursor-pointer">
+                <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+                <span>Lihat Sertifikat Network Technician (PDF) →</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: ID-Networkers Bootcamp (Linux Server, Networking & Web Pentest) -->
+        <div class="rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/40 overflow-hidden transition-all">
+          <button type="button" onclick="toggleTrackAccordion('accIdn', 'accIdnIcon')" class="w-full p-6 sm:px-8 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-stone-50/60 dark:hover:bg-white/[0.02] transition-colors">
+            <div>
+              <h3 class="font-grotesk font-bold text-base sm:text-lg text-stone-900 dark:text-white">
+                Linux Server Administration, Networking & Web Pentest Bootcamp
+              </h3>
+              <p class="text-xs sm:text-sm font-mono text-[#c86428] dark:text-[#e07a38] mt-1">
+                ID-Networkers (IDN.ID) & Cyber Academy Indonesia | 2024
+              </p>
+            </div>
+            <i data-lucide="chevron-down" id="accIdnIcon" class="w-5 h-5 text-stone-400 transition-transform duration-300 shrink-0"></i>
+          </button>
+
+          <div id="accIdn" class="hidden px-6 sm:px-8 pb-6 pt-2 border-t border-stone-200/70 dark:border-white/[0.06] space-y-3">
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+              Mengikuti pelatihan intensif administrasi sistem operasi <strong>Linux Server</strong> dari nol, fondasi <strong>Jaringan Komputer Dasar</strong>, serta penerima <strong>Beasiswa Bootcamp 1 Bulan Web Penetration Testing</strong> bersama instruktur praktisi di ID-Networkers (IDN.ID).
             </p>
-          </div>
-
-          <!-- 4 Highlight Metrics Grid -->
-          <div id="statsSection" class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
-            <div class="p-4 rounded-xl border border-stone-300 dark:border-white/10 bg-white/80 dark:bg-[#121212]">
-              <div class="font-display text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-white">20+</div>
-              <div class="text-[10px] font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-wider mt-1">Topologi Cisco</div>
-            </div>
-            <div class="p-4 rounded-xl border border-stone-300 dark:border-white/10 bg-white/80 dark:bg-[#121212]">
-              <div class="font-display text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-white">05</div>
-              <div class="text-[10px] font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-wider mt-1">Proyek Lab Nyata</div>
-            </div>
-            <div class="p-4 rounded-xl border border-stone-300 dark:border-white/10 bg-white/80 dark:bg-[#121212]">
-              <div class="font-display text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-white">36</div>
-              <div class="text-[10px] font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-wider mt-1">Sertifikat Resmi</div>
-            </div>
-            <div class="p-4 rounded-xl border border-stone-300 dark:border-white/10 bg-white/80 dark:bg-[#121212]">
-              <div class="font-display text-2xl sm:text-3xl font-extrabold text-[#e07a38]">PENS</div>
-              <div class="text-[10px] font-mono text-stone-500 dark:text-neutral-400 uppercase tracking-wider mt-1">STr Telkom Sem 5</div>
+            <div class="flex flex-wrap gap-3 pt-1">
+              <button type="button" onclick="openCertificateModal('assets/certificates/idn_linux_dari_nol.pdf', 'Sertifikat Belajar Linux Dari Nol — ID-Networkers')" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#e07a38] hover:underline cursor-pointer">
+                <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+                <span>Sertifikat Linux Server →</span>
+              </button>
+              <button type="button" onclick="openCertificateModal('assets/certificates/idn_jaringan_dasar.pdf', 'Sertifikat Jaringan Komputer Dasar — ID-Networkers')" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#e07a38] hover:underline cursor-pointer">
+                <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+                <span>Sertifikat Jaringan Dasar →</span>
+              </button>
+              <button type="button" onclick="openCertificateModal('assets/certificates/idn_web_pentest_bootcamp.pdf', 'Beasiswa Bootcamp Web Pentest — ID-Networkers')" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#e07a38] hover:underline cursor-pointer">
+                <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+                <span>Sertifikat Bootcamp Pentest →</span>
+              </button>
             </div>
           </div>
-
-          <!-- Key Info Table Strip -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-            <div class="p-3.5 rounded-xl bg-stone-200/60 dark:bg-white/[0.03] border border-stone-300 dark:border-white/[0.07] flex items-center gap-3">
-              <i data-lucide="graduation-cap" class="w-5 h-5 text-[#e07a38] shrink-0"></i>
-              <div>
-                <div class="text-[10px] font-mono uppercase text-stone-500 dark:text-neutral-400">INSTITUSI PENDIDIKAN</div>
-                <div class="text-xs font-bold text-stone-900 dark:text-white">Politeknik Elektronika Negeri Surabaya</div>
-              </div>
-            </div>
-            <div class="p-3.5 rounded-xl bg-stone-200/60 dark:bg-white/[0.03] border border-stone-300 dark:border-white/[0.07] flex items-center gap-3">
-              <i data-lucide="briefcase" class="w-5 h-5 text-[#e07a38] shrink-0"></i>
-              <div>
-                <div class="text-[10px] font-mono uppercase text-stone-500 dark:text-neutral-400">FOKUS BIDANG & INTERNSIP</div>
-                <div class="text-xs font-bold text-stone-900 dark:text-white">Network, IT Infra, RF & Cyber Security</div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      <!-- Monochrome Partner / Certification Issuers Strip -->
-      <div class="pt-4">
-        <p class="text-center font-mono text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-neutral-500 mb-4">
-          INSTITUSI AKADEMIK & LEMBAGA SERTIFIKASI PELATIHAN
-        </p>
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 py-5 px-4 rounded-2xl bg-white/50 dark:bg-[#121212]/60 border border-stone-300/80 dark:border-white/[0.07] text-center items-center font-grotesk font-bold text-xs uppercase tracking-widest text-stone-500 dark:text-neutral-400">
-          <div class="hover:text-[#e07a38] transition-colors py-1">✦ PENS SURABAYA</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">KOMDIGI RI</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">CISCO NETACAD</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">ID-NETWORKERS</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">CYBER ACADEMY</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">DICODING ID</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">DQLAB DATA</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">BINAR ACADEMY</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">HIMA TELKOM</div>
-          <div class="hover:text-[#e07a38] transition-colors py-1">GNU RADIO SDR</div>
-        </div>
       </div>
     </section>
 
     <!-- =====================================================================
-         5. SERTIFIKASI TERVERIFIKASI (10 FEATURED + 36 SEARCHABLE ARCHIVE)
+         4. FEATURED PROJECTS ("SHOWCASE" — CLEAN 3-COLUMN CARDS LIKE FRIEND'S SITE)
          ===================================================================== -->
-    <section id="certificates" class="space-y-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-stone-300 dark:border-white/15 pb-5">
-        <div class="flex flex-wrap items-center gap-3.5">
-          <h2 class="editorial-display text-3xl sm:text-4xl md:text-5xl uppercase text-stone-900 dark:text-white">
-            SERTIFIKASI
-          </h2>
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-stone-400 dark:border-white/20 text-[10px] font-mono uppercase tracking-widest text-stone-700 dark:text-neutral-300">
-            <i data-lucide="award" class="w-3 h-3 text-[#e07a38]"></i>
-            <span>36 DOKUMEN TERVERIFIKASI</span>
-          </span>
-        </div>
-
-        <!-- Filter Tabs for Certificates -->
-        <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono uppercase">
-          <button class="cert-filter-btn active px-4 py-1.5 rounded-full bg-stone-900 text-white dark:bg-white dark:text-black font-bold transition-all cursor-pointer" data-cert-filter="all">Unggulan (10)</button>
-          <button class="cert-filter-btn px-4 py-1.5 rounded-full border border-stone-400 dark:border-white/20 text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] transition-all cursor-pointer" data-cert-filter="network">Jaringan Komputer</button>
-          <button class="cert-filter-btn px-4 py-1.5 rounded-full border border-stone-400 dark:border-white/20 text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] transition-all cursor-pointer" data-cert-filter="security">Keamanan Siber</button>
-          <button class="cert-filter-btn px-4 py-1.5 rounded-full border border-stone-400 dark:border-white/20 text-stone-700 dark:text-neutral-300 hover:border-[#e07a38] transition-all cursor-pointer" data-cert-filter="system">Sistem & Programming</button>
-        </div>
+    <section id="projects" class="space-y-12">
+      
+      <!-- Centered Section Header -->
+      <div class="text-center space-y-2.5">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#c86428] dark:text-[#e07a38] font-semibold block">
+          SHOWCASE
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-stone-900 dark:text-white tracking-tight">
+          Proyek & Implementasi Teknis
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500 dark:text-neutral-400 max-w-xl mx-auto">
+          Berfokus pada arsitektur jaringan enterprise, segmentasi VLAN & server, serta sistem telemetri perangkat terhubung.
+        </p>
       </div>
 
-      <!-- 10 Featured Certificates Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Primary 3-Column Project Grid (Prioritizing Network, Server & IoT Telemetry) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: Enterprise Multi-Site WAN Architecture -->
+        <article class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 overflow-hidden flex flex-col justify-between">
+          <div>
+            <!-- Visual Header Banner with Preview Image & Watermark Title -->
+            <div onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Arsitektur Simulasi Multi-Site Enterprise Network (HQ, Branch, ISP Carrier & Data Center)')" class="relative h-48 w-full bg-[#151519] overflow-hidden cursor-pointer group border-b border-stone-200/70 dark:border-white/[0.06]">
+              <img src="assets/cisco_multisite_network.png" alt="Multi-Site Network Architecture" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#111114] via-black/30 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-grotesk font-bold text-xs uppercase tracking-wider text-white/90 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded border border-white/10">
+                WAN & Routing Arch
+              </span>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-3.5">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">Cisco</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">WAN Routing</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">Enterprise</span>
+              </div>
+
+              <h3 class="font-grotesk font-bold text-lg text-stone-900 dark:text-white">
+                Multi-Site Enterprise Network
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+                Merancang dan menguji arsitektur jaringan skala enterprise yang menghubungkan Head Office (HQ), kantor cabang (Branch 1 & 2), jaringan ISP Carrier, dan Data Center terpusat.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <button type="button" onclick="openCertificateModal('assets/cisco_multisite_network.png', 'Arsitektur Simulasi Multi-Site Enterprise Network (HQ, Branch, ISP Carrier & Data Center)')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline cursor-pointer">
+              <span>Lihat Topologi</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2: VLAN Segmentation & Client-Server Infrastructure -->
+        <article class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 overflow-hidden flex flex-col justify-between">
+          <div>
+            <!-- Visual Header Banner -->
+            <div onclick="openCertificateModal('assets/cisco_vlan_clientserver.png', 'Implementasi Segmentasi VLAN & Client-Server Architecture (20+ Topologi Lab)')" class="relative h-48 w-full bg-[#151519] overflow-hidden cursor-pointer group border-b border-stone-200/70 dark:border-white/[0.06]">
+              <img src="assets/cisco_vlan_clientserver.png" alt="VLAN & Client-Server Topology" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#111114] via-black/30 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-grotesk font-bold text-xs uppercase tracking-wider text-white/90 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded border border-white/10">
+                Server & VLAN Lab
+              </span>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-3.5">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">VLAN</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">Client-Server</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">20+ Topologi</span>
+              </div>
+
+              <h3 class="font-grotesk font-bold text-lg text-stone-900 dark:text-white">
+                VLAN & Server Infrastructure
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+                Implementasi 20+ skenario laboratorium mencakup segmentasi jaringan VLAN, <em>Inter-VLAN Routing</em> pada sub-interface router, manajemen layanan server, serta pengujian konektivitas ICMP.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <button type="button" onclick="openCertificateModal('assets/cisco_vlan_clientserver.png', 'Implementasi Segmentasi VLAN & Client-Server Architecture (20+ Topologi Lab)')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline cursor-pointer">
+              <span>Lihat Topologi</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3: Real-Time IoT Water Level Telemetry -->
+        <article class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 overflow-hidden flex flex-col justify-between">
+          <div>
+            <!-- Visual Header Banner -->
+            <div onclick="openCertificateModal('assets/iot_water_level_team.png', 'Sistem Telemetri IoT Pemantau Ketinggian Air Tambak Berbasis ESP32 & Wi-Fi')" class="relative h-48 w-full bg-[#151519] overflow-hidden cursor-pointer group border-b border-stone-200/70 dark:border-white/[0.06]">
+              <img src="assets/iot_water_level_team.png" alt="IoT Water Level Telemetry" class="w-full h-full object-cover object-top opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#111114] via-black/30 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-grotesk font-bold text-xs uppercase tracking-wider text-white/90 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded border border-white/10">
+                IoT Network Telemetry
+              </span>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-3.5">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">ESP32</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">Wi-Fi Telemetry</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 border border-[#e07a38]/30 text-[#c86428] dark:text-[#f39c5a]">Web Monitor</span>
+              </div>
+
+              <h3 class="font-grotesk font-bold text-lg text-stone-900 dark:text-white">
+                IoT Water Level Monitoring
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-600 dark:text-neutral-400 leading-relaxed">
+                Membangun sistem monitoring ketinggian air otomatis berbasis ESP32 dan sensor ultrasonik yang mentransmisikan data sensor melalui jaringan Wi-Fi ke antarmuka pemantauan web secara <em>real-time</em>.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <button type="button" onclick="openCertificateModal('assets/iot_water_level_team.png', 'Sistem Telemetri IoT Pemantau Ketinggian Air Tambak Berbasis ESP32 & Wi-Fi')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline cursor-pointer">
+              <span>Lihat Dokumentasi</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Optional Toggle for Additional Hardware / Telecom Lab Projects (Keeps Page Clean & Uncluttered!) -->
+      <div class="text-center pt-2">
+        <button type="button" id="toggleMoreProjectsBtn" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-stone-300 dark:border-white/15 bg-white/50 dark:bg-white/[0.02] hover:border-[#e07a38] text-xs font-mono text-stone-700 dark:text-neutral-300 transition-all cursor-pointer">
+          <span id="toggleMoreProjectsText">Tampilkan Eksperimen Lab Lainnya (SDR, Robotika & Antena)</span>
+          <i data-lucide="chevron-down" id="moreProjectsIcon" class="w-4 h-4 text-[#e07a38] transition-transform duration-300"></i>
+        </button>
+      </div>
+
+      <!-- Secondary Lab Projects (Hidden by Default so Main Page Stays Concise & Focused on IT Infra/NOC) -->
+      <div id="moreProjectsGrid" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        
+        <!-- Card 4: Software Defined Radio (GNU Radio) -->
+        <article class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 overflow-hidden flex flex-col justify-between">
+          <div>
+            <div onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio: Penerima FM 2-Channel Paralel Berbasis RTL-SDR')" class="relative h-44 w-full bg-[#151519] overflow-hidden cursor-pointer group border-b border-stone-200/70 dark:border-white/[0.06]">
+              <img src="assets/gnuradio_fm_2channel.png" alt="GNU Radio SDR" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" />
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <span class="px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-white/[0.05] text-stone-600 dark:text-neutral-300">GNU Radio</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-white/[0.05] text-stone-600 dark:text-neutral-300">RTL-SDR</span>
+              </div>
+              <h3 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Dual-Channel SDR Receiver</h3>
+              <p class="text-xs text-stone-600 dark:text-neutral-400 leading-relaxed">
+                Pemrosesan sinyal digital (DDC) menggunakan GNU Radio & dongle RTL-SDR untuk mendemodulasi 2 kanal frekuensi FM secara paralel.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-5">
+            <button type="button" onclick="openCertificateModal('assets/gnuradio_fm_2channel.png', 'Flowgraph GNU Radio: Penerima FM 2-Channel Paralel Berbasis RTL-SDR')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#e07a38] hover:underline cursor-pointer">
+              <span>Lihat Diagram →</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 5: Autonomous Line Follower & Gripper Robot -->
+        <article class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 overflow-hidden flex flex-col justify-between">
+          <div>
+            <div onclick="openCertificateModal('assets/line_follower_robot.jpg', 'Purwarupa Robot Line Follower & Lengan Gripper Servo')" class="relative h-44 w-full bg-[#151519] overflow-hidden cursor-pointer group border-b border-stone-200/70 dark:border-white/[0.06]">
+              <img src="assets/line_follower_robot.jpg" alt="Robot Line Follower" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" />
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <span class="px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-white/[0.05] text-stone-600 dark:text-neutral-300">C++ Embedded</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-white/[0.05] text-stone-600 dark:text-neutral-300">L298N & Servo</span>
+              </div>
+              <h3 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Autonomous Robot & Gripper</h3>
+              <p class="text-xs text-stone-600 dark:text-neutral-400 leading-relaxed">
+                Purwarupa robot pelacak garis otonom dengan lengan mekanik capit berbasis servo, sensor inframerah, dan driver motor L298N.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-5">
+            <button type="button" onclick="openCertificateModal('assets/line_follower_robot.jpg', 'Purwarupa Robot Line Follower & Lengan Gripper Servo')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#e07a38] hover:underline cursor-pointer">
+              <span>Lihat Foto →</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 6: Horn Antenna Lab Practice -->
+        <article class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/50 overflow-hidden flex flex-col justify-between">
+          <div>
+            <div onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Praktikum Fabrikasi & Pengujian Antena Horn di Lab PENS')" class="relative h-44 w-full bg-[#151519] overflow-hidden cursor-pointer group border-b border-stone-200/70 dark:border-white/[0.06]">
+              <img src="assets/horn_antenna_lab.jpg" alt="Horn Antenna Lab" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" />
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <span class="px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-white/[0.05] text-stone-600 dark:text-neutral-300">Lab PENS</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-white/[0.05] text-stone-600 dark:text-neutral-300">Gelombang Mikro</span>
+              </div>
+              <h3 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Praktikum Antena Gelombang Mikro</h3>
+              <p class="text-xs text-stone-600 dark:text-neutral-400 leading-relaxed">
+                Praktikum akademik fabrikasi fisik dan pengujian pola radiasi antena Horn piramidal di laboratorium gelombang mikro PENS.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-5">
+            <button type="button" onclick="openCertificateModal('assets/horn_antenna_lab.jpg', 'Praktikum Fabrikasi & Pengujian Antena Horn di Lab PENS')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#e07a38] hover:underline cursor-pointer">
+              <span>Lihat Foto →</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. CERTIFICATES & CREDENTIALS (CONCISE 6 TOP CERTS + 36 ARCHIVE DRAWER)
+         ===================================================================== -->
+    <section id="certificates" class="space-y-10">
+      
+      <!-- Centered Section Header -->
+      <div class="text-center space-y-2.5">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#c86428] dark:text-[#e07a38] font-semibold block">
+          CREDENTIALS
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-stone-900 dark:text-white tracking-tight">
+          Sertifikasi & Lisensi Terverifikasi
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500 dark:text-neutral-400">
+          6 sertifikasi utama bidang Jaringan, Server & Keamanan Siber (klik untuk pratinjau dokumen PDF)
+        </p>
+      </div>
+
+      <!-- Concise 6 Featured Certificates Grid (3 Columns x 2 Rows) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         
         <!-- Cert 1 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="network">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>01 / Administrasi Jaringan</span>
-              <span>2026</span>
-            </div>
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-6 flex flex-col justify-between">
+          <div class="space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 text-[#c86428] dark:text-[#f39c5a] text-[10px] font-mono uppercase">Network Admin • 2026</span>
             <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Associate Network Administrator (Intermediate)</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">DEX Komdigi • Politeknik Elektronika Negeri Surabaya</p>
+            <p class="text-xs text-stone-500 dark:text-neutral-400">DEX Komdigi RI • PENS Surabaya</p>
           </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/dex_network_admin_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-white/[0.05]">
+            <a href="assets/certificates/dex_network_admin_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline">
+              <span>Lihat Sertifikat</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 2 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="network">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>02 / Teknisi Jaringan</span>
-              <span>2026</span>
-            </div>
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-6 flex flex-col justify-between">
+          <div class="space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 text-[#c86428] dark:text-[#f39c5a] text-[10px] font-mono uppercase">Network Tech • 2026</span>
             <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Associate Computer Network Technician (Intermediate)</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">DEX Komdigi • Politeknik Elektronika Negeri Surabaya</p>
+            <p class="text-xs text-stone-500 dark:text-neutral-400">DEX Komdigi RI • PENS Surabaya</p>
           </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/dex_network_tech_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-white/[0.05]">
+            <a href="assets/certificates/dex_network_tech_intermediate.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline">
+              <span>Lihat Sertifikat</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 3 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="network">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>03 / Fundamental Networking</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Sertifikat Jaringan Komputer Dasar</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">ID-Networkers (IDN.ID) • Dedi Gunawan, M.T., CCIE</p>
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-6 flex flex-col justify-between">
+          <div class="space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 text-[#c86428] dark:text-[#f39c5a] text-[10px] font-mono uppercase">Linux Server • 2024</span>
+            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Sertifikat Administrasi Linux Server Dari Nol</h4>
+            <p class="text-xs text-stone-500 dark:text-neutral-400">ID-Networkers (IDN.ID)</p>
           </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/idn_jaringan_dasar.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-white/[0.05]">
+            <a href="assets/certificates/idn_linux_dari_nol.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline">
+              <span>Lihat Sertifikat</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 4 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="security">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>04 / Web Penetration Testing</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Beasiswa Bootcamp Online "Web Pentest" (1 Bulan)</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">ID-Networkers (IDN.ID) • Instruktur: Fattyr | CCIE: Dedi Gunawan, M.T.</p>
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-6 flex flex-col justify-between">
+          <div class="space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 text-[#c86428] dark:text-[#f39c5a] text-[10px] font-mono uppercase">Networking • 2024</span>
+            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Sertifikat Jaringan Komputer Dasar</h4>
+            <p class="text-xs text-stone-500 dark:text-neutral-400">ID-Networkers (IDN.ID)</p>
           </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/idn_web_pentest_bootcamp.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-white/[0.05]">
+            <a href="assets/certificates/idn_jaringan_dasar.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline">
+              <span>Lihat Sertifikat</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 5 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="security">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>05 / Information Security</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Introduction to Information Security Course</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">Cyber Academy (Cyber Army Indonesia) • ID: PKMI01107241944</p>
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-6 flex flex-col justify-between">
+          <div class="space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 text-[#c86428] dark:text-[#f39c5a] text-[10px] font-mono uppercase">Cyber Security • 2024</span>
+            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Beasiswa Bootcamp Online "Web Pentest"</h4>
+            <p class="text-xs text-stone-500 dark:text-neutral-400">ID-Networkers (IDN.ID)</p>
           </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/cyber_academy_infosec.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-white/[0.05]">
+            <a href="assets/certificates/idn_web_pentest_bootcamp.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline">
+              <span>Lihat Sertifikat</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
 
         <!-- Cert 6 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="security">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>06 / Cryptography Security</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Classical Cryptography for Beginner Course</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">Cyber Academy Indonesia • ID: PKMC02506240343</p>
+        <div class="clean-card rounded-2xl bg-white dark:bg-[#111114] border border-stone-200/90 dark:border-white/[0.08] hover:border-[#e07a38]/60 p-6 flex flex-col justify-between">
+          <div class="space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#e07a38]/12 text-[#c86428] dark:text-[#f39c5a] text-[10px] font-mono uppercase">InfoSec • 2024</span>
+            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Introduction to Information Security</h4>
+            <p class="text-xs text-stone-500 dark:text-neutral-400">Cyber Academy Indonesia</p>
           </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/cyber_academy_cryptography.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Cert 7 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="system">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>07 / Linux Server & SysAdmin</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Sertifikat Belajar Linux Dari Nol</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">ID-Networkers (IDN.ID) • Dedi Gunawan, M.T., CCIE</p>
-          </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/idn_linux_dari_nol.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Cert 8 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="system">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>08 / Sistem Tertanam & Hardware</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Workshop Basic Intelligent Systems (Hardware)</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">Politeknik Elektronika Negeri Surabaya (PENS)</p>
-          </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/pens_hardware_intelligent_sys.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Cert 9 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="system">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>09 / Data Analysis & Scripting</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Python Fundamental for Data Science</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">DQLab Indonesia</p>
-          </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/dqlab_python.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Cert 10 -->
-        <div class="cert-card rounded-xl bg-white dark:bg-[#121212] border border-stone-300/90 dark:border-white/[0.08] p-5 flex flex-col justify-between hover:border-[#e07a38] dark:hover:border-[#e07a38]/70 transition-all" data-cert-category="system">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#c86428] dark:text-[#e07a38]">
-              <span>10 / Database Querying</span>
-              <span>2024</span>
-            </div>
-            <h4 class="font-grotesk font-bold text-base text-stone-900 dark:text-white">Fundamental SQL Using SELECT Statement</h4>
-            <p class="text-xs text-stone-600 dark:text-neutral-400">DQLab Indonesia</p>
-          </div>
-          <div class="pt-4 mt-4 border-t border-stone-200 dark:border-white/[0.06] flex items-center justify-end">
-            <a href="assets/certificates/dqlab_sql.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-stone-900 dark:text-white hover:text-[#e07a38] dark:hover:text-[#e07a38] font-bold">
-              <span>Pratinjau Sertifikat (PDF)</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-[#e07a38]"></i>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-white/[0.05]">
+            <a href="assets/certificates/cyber_academy_infosec.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c86428] dark:text-[#e07a38] hover:underline">
+              <span>Lihat Sertifikat</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
@@ -1177,18 +827,18 @@
       </div>
 
       <!-- Expandable Archive of All 36 Certificates -->
-      <div class="mt-8 pt-6 border-t border-stone-300 dark:border-white/10 text-center">
-        <button id="toggleArchiveBtn" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white dark:bg-[#141414] border border-stone-400 dark:border-white/20 hover:border-[#e07a38] text-stone-900 dark:text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-sm">
+      <div class="text-center pt-2">
+        <button id="toggleArchiveBtn" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white dark:bg-[#141418] border border-stone-300 dark:border-white/15 hover:border-[#e07a38] text-stone-900 dark:text-white font-semibold text-xs transition-all cursor-pointer shadow-sm">
           <i data-lucide="folder-archive" class="w-4 h-4 text-[#e07a38]"></i>
-          <span id="toggleArchiveText">Buka Seluruh Arsip Dokumen Sertifikat (36 File)</span>
+          <span id="toggleArchiveText">Buka Seluruh Arsip Sertifikat (36 Dokumen PDF)</span>
           <i data-lucide="chevron-down" id="archiveChevron" class="w-4 h-4 transition-transform duration-300"></i>
         </button>
       </div>
 
-      <div id="archiveSection" class="hidden space-y-4 pt-4">
+      <div id="archiveSection" class="hidden space-y-5 pt-4">
         <!-- Live Search Box -->
         <div class="relative max-w-md mx-auto">
-          <input type="text" id="archiveSearchInput" placeholder="Cari sertifikat (misal: DEX, Web, Cyber, AI, SQL)..." class="w-full px-4 py-2.5 pl-10 rounded-full bg-white dark:bg-[#121212] border border-stone-400 dark:border-white/20 text-xs text-stone-900 dark:text-white placeholder:text-stone-400 focus:outline-none focus:border-[#e07a38] font-mono">
+          <input type="text" id="archiveSearchInput" placeholder="Cari sertifikat (misal: DEX, Linux, Cyber, Cloud, SQL)..." class="w-full px-4 py-2.5 pl-10 rounded-full bg-white dark:bg-[#121215] border border-stone-300 dark:border-white/15 text-xs text-stone-900 dark:text-white placeholder:text-stone-400 focus:outline-none focus:border-[#e07a38] font-mono">
           <i data-lucide="search" class="w-4 h-4 text-[#e07a38] absolute left-3.5 top-3"></i>
         </div>
 
@@ -1635,97 +1285,61 @@
     
     
     
+    
     </section>
 
   </main>
 
   <!-- =====================================================================
-       6. WARM TERRACOTTA EDITORIAL FOOTER (CLEAN, UNOBSTRUCTED TYPOGRAPHY)
+       6. CLEAN COLLABORATION FOOTER (CONCISE & ELEGANT)
        ===================================================================== -->
-  <footer id="contact" class="bg-[#a86234] text-white relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-8 pt-16 sm:pt-24 pb-12">
+  <footer id="contact" class="border-t border-stone-200 dark:border-white/[0.07] bg-white/60 dark:bg-[#0c0c0f]">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-20 text-center space-y-6">
       
-      <!-- Centered Stamp Badge ABOVE Headline (Never Covers or Blocks Text!) -->
-      <div class="text-center flex flex-col items-center justify-center">
-        
-        <a href="mailto:mocha.rizkykurniawan@gmail.com" title="Kirim Email Langsung" class="mb-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#e07a38] border-2 border-white/40 flex items-center justify-center shadow-2xl hover:scale-105 transition-transform">
-          <svg class="w-full h-full p-1.5 spin-badge" viewBox="0 0 100 100">
-            <text class="text-[8.5px] font-mono uppercase tracking-[2.4px] fill-white font-bold">
-              <textPath href="#circlePath">• KIRIM EMAIL • DISKUSI & KOLABORASI </textPath>
-            </text>
-          </svg>
-          <div class="absolute flex items-center justify-center w-10 h-10 rounded-full border border-white/40">
-            <i data-lucide="mail" class="w-5 h-5 text-white"></i>
-          </div>
+      <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#c86428] dark:text-[#e07a38] font-semibold block">
+        GET IN TOUCH
+      </span>
+
+      <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-stone-900 dark:text-white tracking-tight">
+        Mari Berdiskusi & Berkolaborasi
+      </h2>
+
+      <p class="text-sm sm:text-base text-stone-600 dark:text-neutral-400 max-w-lg mx-auto leading-relaxed">
+        Terbuka untuk kesempatan Kerja Praktik (KP) / Magang serta diskusi seputar <strong>Network Infrastructure (NOC), Server Administration, dan Cloud</strong>.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="mailto:mocha.rizkykurniawan@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#c86428] to-[#e07a38] hover:from-[#e07a38] hover:to-[#f39c5a] text-white font-semibold text-xs sm:text-sm shadow-lg shadow-[#e07a38]/20 transition-all">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Kirim Email</span>
         </a>
 
-        <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-white/85 mb-3">
-          TERBUKA UNTUK KOMUNIKASI, MAGANG / KP & KOLABORASI TEKNIS
-        </p>
+        <button id="copyEmailBtn" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.03] hover:border-[#e07a38] text-stone-800 dark:text-white font-semibold text-xs sm:text-sm transition-all cursor-pointer">
+          <i data-lucide="copy" class="w-4 h-4 text-[#e07a38]"></i>
+          <span id="copyEmailText">Salin Email</span>
+        </button>
 
-        <h2 class="editorial-display text-4xl sm:text-6xl md:text-7xl uppercase text-white tracking-tight max-w-4xl mx-auto">
-          MARI BERDISKUSI & BERKOLABORASI!
-        </h2>
+        <button onclick="openCvModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.03] hover:border-[#e07a38] text-stone-800 dark:text-white font-semibold text-xs sm:text-sm transition-all cursor-pointer">
+          <i data-lucide="file-text" class="w-4 h-4 text-[#e07a38]"></i>
+          <span>Resume / CV</span>
+        </button>
 
-        <!-- Direct Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-3 mt-8 sm:mt-10">
-          <a href="mailto:mocha.rizkykurniawan@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#111111] hover:bg-[#111111] hover:text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all shadow-lg">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-            <span>Kirim Email Langsung</span>
-          </a>
-
-          <button id="copyEmailBtn" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/50 bg-black/15 hover:bg-black/30 text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all cursor-pointer">
-            <i data-lucide="copy" class="w-4 h-4"></i>
-            <span id="copyEmailText">Salin Email</span>
-          </button>
-
-          <button onclick="openCvModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/50 bg-black/15 hover:bg-black/30 text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all cursor-pointer">
-            <i data-lucide="file-text" class="w-4 h-4"></i>
-            <span>Buka Resume / CV</span>
-          </button>
-
-          <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/50 bg-black/15 hover:bg-black/30 text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-all">
-            <i data-lucide="linkedin" class="w-4 h-4"></i>
-            <span>LinkedIn Resmi</span>
-          </a>
-        </div>
+        <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.03] hover:border-[#e07a38] text-stone-800 dark:text-white font-semibold text-xs sm:text-sm transition-all">
+          <i data-lucide="linkedin" class="w-4 h-4 text-[#e07a38]"></i>
+          <span>LinkedIn</span>
+        </a>
       </div>
 
-      <!-- Bottom 3-Column Editorial Metadata Bar -->
-      <div class="mt-16 pt-8 border-t border-white/25 grid grid-cols-1 sm:grid-cols-3 gap-6 items-start text-xs font-mono">
-        <!-- Col 1: Brand Mark -->
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#111111] border-2 border-white/80 flex items-center justify-center shrink-0 shadow-md">
-            <span class="font-grotesk font-extrabold text-xs tracking-tighter text-white leading-none">
-              MR<span class="text-[#e07a38]">K</span>
-            </span>
+      <!-- Bottom Copyright Bar -->
+      <div class="pt-12 mt-12 border-t border-stone-200/80 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-neutral-500">
+        <div class="flex items-center gap-2.5">
+          <div class="w-6 h-6 rounded-md bg-stone-900 dark:bg-[#16161a] border border-[#e07a38] flex items-center justify-center">
+            <span class="font-grotesk font-extrabold text-[9px] text-white">MR<span class="text-[#e07a38]">K</span></span>
           </div>
-          <div>
-            <span class="font-bold block text-white">MOCHAMMAD RIZKY KURNIAWAN</span>
-            <span class="text-[10px] text-white/75">PORTFOLIO RESMI • SURABAYA</span>
-          </div>
+          <span>© 2026 Mochammad Rizky Kurniawan • STr Teknik Telekomunikasi PENS</span>
         </div>
-
-        <!-- Col 2: Direct Contact -->
-        <div class="sm:text-center space-y-1">
-          <a href="mailto:mocha.rizkykurniawan@gmail.com" class="block font-bold text-white hover:underline uppercase">
-            MOCHA.RIZKYKURNIAWAN@GMAIL.COM
-          </a>
-          <a href="https://www.linkedin.com/in/mochammad-rizky-kurniawan" target="_blank" class="block text-[11px] text-white/80 hover:text-white hover:underline">
-            linkedin.com/in/mochammad-rizky-kurniawan
-          </a>
-        </div>
-
-        <!-- Col 3: Academic Institution -->
-        <div class="sm:text-right space-y-1">
-          <span class="block font-bold text-white uppercase">STR TEKNIK TELEKOMUNIKASI</span>
-          <span class="block text-[11px] text-white/80">POLITEKNIK ELEKTRONIKA NEGERI SURABAYA (PENS)</span>
-        </div>
-      </div>
-
-      <div class="mt-8 pt-4 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] font-mono text-white/75 uppercase tracking-widest">
-        <span>© 2026 MOCHAMMAD RIZKY KURNIAWAN — ALL RIGHTS RESERVED</span>
-        <a href="#hero" class="hover:text-white transition-colors">KEMBALI KE ATAS ↑</a>
+        <a href="#about" class="hover:text-[#e07a38] transition-colors font-mono text-[11px]">Kembali ke atas ↑</a>
       </div>
 
     </div>
@@ -1733,23 +1347,20 @@
 
   <!-- RESUME / CV SELECTOR MODAL -->
   <div id="cvModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-200">
-    <div id="cvModalBox" class="bg-white dark:bg-[#121212] rounded-2xl border border-stone-300 dark:border-white/15 max-w-sm w-full overflow-hidden transform scale-95 transition-transform duration-200 shadow-2xl">
-      <!-- Modal Header -->
+    <div id="cvModalBox" class="bg-white dark:bg-[#121215] rounded-2xl border border-stone-300 dark:border-white/15 max-w-sm w-full overflow-hidden transform scale-95 transition-transform duration-200 shadow-2xl">
       <div class="px-5 py-4 border-b border-stone-200 dark:border-white/10 flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-full bg-[#e07a38]/15 border border-[#e07a38]/40 text-[#e07a38] flex items-center justify-center">
             <i data-lucide="file-text" class="w-4 h-4"></i>
           </div>
-          <h3 class="font-grotesk font-bold text-sm sm:text-base uppercase text-stone-900 dark:text-white">Curriculum Vitae</h3>
+          <h3 class="font-grotesk font-bold text-sm sm:text-base text-stone-900 dark:text-white">Curriculum Vitae</h3>
         </div>
         <button onclick="closeCvModal()" class="p-1.5 text-stone-400 hover:text-stone-900 dark:hover:text-white transition-colors cursor-pointer" title="Tutup">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
 
-      <!-- Modal Options -->
       <div class="p-4 space-y-2.5">
-        <!-- Option 1: English Version -->
         <a href="https://flowcv.com/resume/sn5w3sufm60h" target="_blank" onclick="closeCvModal()" class="group flex items-center justify-between p-3.5 rounded-xl border border-stone-200 dark:border-white/10 bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] transition-all">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full bg-[#e07a38] text-white font-mono font-bold text-xs flex items-center justify-center shrink-0">
@@ -1767,7 +1378,6 @@
           <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-400 group-hover:text-[#e07a38] transition-all"></i>
         </a>
 
-        <!-- Option 2: Indonesian Version -->
         <a href="https://flowcv.com/resume/lqejif1s5q28" target="_blank" onclick="closeCvModal()" class="group flex items-center justify-between p-3.5 rounded-xl border border-stone-200 dark:border-white/10 bg-stone-50 dark:bg-white/[0.03] hover:border-[#e07a38] transition-all">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full bg-stone-900 dark:bg-white text-white dark:text-black font-mono font-bold text-xs flex items-center justify-center shrink-0">
@@ -1790,9 +1400,8 @@
 
   <!-- In-App View-Only Certificate Lightbox Modal -->
   <div id="certModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 opacity-0 transition-opacity duration-300">
-    <div class="bg-[#121212] rounded-2xl border border-white/15 w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
-      <!-- Modal Header -->
-      <div class="px-4 py-3 bg-[#090909] border-b border-white/10 flex items-center justify-between gap-3 shrink-0">
+    <div class="bg-[#121215] rounded-2xl border border-white/15 w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="px-4 py-3 bg-[#09090b] border-b border-white/10 flex items-center justify-between gap-3 shrink-0">
         <div class="flex items-center gap-2.5 min-w-0">
           <div class="p-1.5 rounded-lg bg-[#e07a38]/15 border border-[#e07a38]/40 text-[#e07a38] shrink-0">
             <i data-lucide="file-check" class="w-4 h-4"></i>
@@ -1813,8 +1422,7 @@
         </div>
       </div>
       
-      <!-- Modal Body (Canvas Container) -->
-      <div id="modalBody" class="flex-1 overflow-y-auto p-3 sm:p-6 bg-[#090909]/80 flex flex-col items-center min-h-[350px] relative">
+      <div id="modalBody" class="flex-1 overflow-y-auto p-3 sm:p-6 bg-[#09090b]/80 flex flex-col items-center min-h-[350px] relative">
         <div id="modalLoading" class="flex flex-col items-center justify-center gap-3 text-neutral-400 py-20 my-auto">
           <div class="w-8 h-8 border-2 border-[#e07a38] border-t-transparent rounded-full animate-spin"></div>
           <span class="text-xs font-mono">Memuat dokumen tanpa unduhan...</span>
@@ -1822,42 +1430,69 @@
         <div id="modalCanvasContainer" class="flex flex-col items-center gap-3 w-full"></div>
       </div>
 
-      <!-- Modal Footer -->
-      <div class="px-4 py-2.5 bg-[#090909] border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-400 shrink-0">
+      <div class="px-4 py-2.5 bg-[#09090b] border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-400 shrink-0">
         <span id="modalPageInfo">Pratinjau Siap</span>
         <button id="closeCertModalBtn" class="px-4 py-1 rounded-lg bg-white/10 hover:bg-[#e07a38] text-white text-xs font-semibold transition-colors cursor-pointer">Tutup</button>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPT UNTUK INTERAKTIVITAS & FILTER -->
+  <!-- SCRIPT UNTUK INTERAKTIVITAS -->
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Hero Showcase Interactive Photo Switcher with Smooth Fade
-    function switchHeroPhoto(src, caption, tagText, btnEl) {
-      const img = document.getElementById('heroShowcaseImg');
-      const cap = document.getElementById('heroShowcaseCaption');
-      const tag = document.getElementById('heroShowcaseTag');
-      if (img) {
-        img.style.opacity = '0.35';
-        setTimeout(() => {
-          img.src = src;
-          img.style.opacity = '1';
-        }, 120);
+    // Track Record Accordion Toggle
+    function toggleTrackAccordion(contentId, iconId) {
+      const el = document.getElementById(contentId);
+      const icon = document.getElementById(iconId);
+      if (!el) return;
+      const isHidden = el.classList.contains('hidden');
+      if (isHidden) {
+        el.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+      } else {
+        el.classList.add('hidden');
+        if (icon) icon.classList.remove('rotate-180');
       }
-      if (cap) cap.textContent = caption;
-      if (tag && tagText) tag.textContent = tagText;
+    }
 
-      document.querySelectorAll('.hero-photo-btn').forEach(b => {
-        b.classList.remove('active', 'border-2', 'border-[#e07a38]', 'bg-white', 'dark:bg-[#121212]');
-        b.classList.add('border', 'border-stone-300', 'dark:border-white/10', 'bg-white/70', 'dark:bg-[#121212]/80');
-      });
-      if (btnEl) {
-        btnEl.classList.add('active', 'border-2', 'border-[#e07a38]', 'bg-white', 'dark:bg-[#121212]');
-        btnEl.classList.remove('border', 'border-stone-300', 'dark:border-white/10', 'bg-white/70', 'dark:bg-[#121212]/80');
+    // Interactive Photo Switcher inside Track Record Gallery
+    const extraLabPhotos = [
+      { src: 'assets/horn_antenna_lab.jpg', caption: 'Eksperimen Lab Telekomunikasi' },
+      { src: 'assets/horn_antenna_team.png', caption: 'Kolaborasi Tim Praktikum PENS' },
+      { src: 'assets/line_follower_robot.jpg', caption: 'Purwarupa Embedded & Robotika' },
+      { src: 'assets/cisco_vlan_clientserver.png', caption: 'Segmentasi VLAN & Server Lab' }
+    ];
+    let labPhotoIdx = 0;
+    function scrollLabGallery(dir) {
+      labPhotoIdx = (labPhotoIdx + dir + extraLabPhotos.length) % extraLabPhotos.length;
+      const img = document.getElementById('galleryThirdImg');
+      const cap = document.getElementById('galleryThirdCaption');
+      if (img && cap) {
+        img.src = extraLabPhotos[labPhotoIdx].src;
+        cap.textContent = extraLabPhotos[labPhotoIdx].caption;
+        img.parentElement.setAttribute('onclick', `openCertificateModal('${extraLabPhotos[labPhotoIdx].src}', '${extraLabPhotos[labPhotoIdx].caption}')`);
       }
+    }
+
+    // Secondary Lab Projects Toggle
+    const toggleMoreProjectsBtn = document.getElementById('toggleMoreProjectsBtn');
+    const toggleMoreProjectsText = document.getElementById('toggleMoreProjectsText');
+    const moreProjectsIcon = document.getElementById('moreProjectsIcon');
+    const moreProjectsGrid = document.getElementById('moreProjectsGrid');
+    if (toggleMoreProjectsBtn && moreProjectsGrid) {
+      toggleMoreProjectsBtn.addEventListener('click', () => {
+        const isHidden = moreProjectsGrid.classList.contains('hidden');
+        if (isHidden) {
+          moreProjectsGrid.classList.remove('hidden');
+          toggleMoreProjectsText.textContent = 'Sembunyikan Eksperimen Lab Tambahan';
+          if (moreProjectsIcon) moreProjectsIcon.classList.add('rotate-180');
+        } else {
+          moreProjectsGrid.classList.add('hidden');
+          toggleMoreProjectsText.textContent = 'Tampilkan Eksperimen Lab Lainnya (SDR, Robotika & Antena)';
+          if (moreProjectsIcon) moreProjectsIcon.classList.remove('rotate-180');
+        }
+      });
     }
 
     // Dark/Light Theme Toggle
@@ -1879,12 +1514,8 @@
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-
-    // Close mobile menu on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
 
     // Copy Email to Clipboard
@@ -1893,59 +1524,7 @@
     copyEmailBtn.addEventListener('click', () => {
       navigator.clipboard.writeText('mocha.rizkykurniawan@gmail.com').then(() => {
         copyEmailText.textContent = 'Tersalin!';
-        setTimeout(() => {
-          copyEmailText.textContent = 'Salin Email';
-        }, 2000);
-      });
-    });
-
-    // Projects Filtering Logic
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => {
-          b.classList.remove('active', 'bg-stone-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-bold');
-          b.classList.add('border', 'border-stone-400', 'dark:border-white/20', 'text-stone-700', 'dark:text-neutral-300');
-        });
-        btn.classList.add('active', 'bg-stone-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-bold');
-        btn.classList.remove('border', 'border-stone-400', 'dark:border-white/20', 'text-stone-700', 'dark:text-neutral-300');
-
-        const filter = btn.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Certificates Filtering Logic
-    const certFilterButtons = document.querySelectorAll('.cert-filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
-
-    certFilterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        certFilterButtons.forEach(b => {
-          b.classList.remove('active', 'bg-stone-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-bold');
-          b.classList.add('border', 'border-stone-400', 'dark:border-white/20', 'text-stone-700', 'dark:text-neutral-300');
-        });
-        btn.classList.add('active', 'bg-stone-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-bold');
-        btn.classList.remove('border', 'border-stone-400', 'dark:border-white/20', 'text-stone-700', 'dark:text-neutral-300');
-
-        const filter = btn.getAttribute('data-cert-filter');
-
-        certCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-cert-category') === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        setTimeout(() => { copyEmailText.textContent = 'Salin Email'; }, 2000);
       });
     });
 
@@ -1963,11 +1542,11 @@
         const isHidden = archiveSection.classList.contains('hidden');
         if (isHidden) {
           archiveSection.classList.remove('hidden');
-          toggleArchiveText.textContent = 'Tutup Arsip Dokumen Sertifikat (36 File)';
+          toggleArchiveText.textContent = 'Tutup Arsip Sertifikat (36 Dokumen PDF)';
           archiveChevron.style.transform = 'rotate(180deg)';
         } else {
           archiveSection.classList.add('hidden');
-          toggleArchiveText.textContent = 'Buka Seluruh Arsip Dokumen Sertifikat (36 File)';
+          toggleArchiveText.textContent = 'Buka Seluruh Arsip Sertifikat (36 Dokumen PDF)';
           archiveChevron.style.transform = 'rotate(0deg)';
         }
       });
@@ -2044,7 +1623,7 @@
       modalLoading.classList.remove('hidden');
       
       const isImage = /\.(jpg|jpeg|png|webp|gif)$/i.test(url);
-      modalCertSub.textContent = isImage ? 'Dokumentasi Foto Asli' : 'Mode Lihat Saja (View Only)';
+      modalCertSub.textContent = isImage ? 'Dokumentasi Proyek & Lab' : 'Mode Lihat Saja (View Only)';
       modalPageInfo.textContent = 'Memuat pratinjau...';
 
       certModal.classList.remove('hidden');
@@ -2131,24 +1710,14 @@
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const url = link.getAttribute('href');
-        const card = link.closest('.cert-card, .archive-item');
+        const card = link.closest('.clean-card, .archive-item');
         const titleEl = card ? card.querySelector('h4') : null;
         const titleText = titleEl ? titleEl.textContent.trim() : 'Sertifikat Terverifikasi';
         openCertificateModal(url, titleText);
       });
     });
 
-    // Live Surabaya Clock & Lightweight Scroll Progress Bar
-    const clockEl = document.getElementById('liveClock');
-    function updateClock() {
-      if (!clockEl) return;
-      const now = new Date();
-      const opts = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-      clockEl.textContent = 'SUB: ' + new Intl.DateTimeFormat('en-GB', opts).format(now) + ' WIB';
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-
+    // Lightweight Scroll Progress Bar
     const scrollProgressBar = document.getElementById('scrollProgressBar');
     window.addEventListener('scroll', () => {
       if (!scrollProgressBar) return;
