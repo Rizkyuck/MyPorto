@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1721"/>
+      <stop offset="55%" stop-color="#2c2436"/>
+      <stop offset="100%" stop-color="#3c2d40"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97254"/>
+      <stop offset="100%" stop-color="#e88d67"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Subtle Grid Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="160" y1="0" x2="160" y2="600"/>
+    <line x1="320" y1="0" x2="320" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+    <line x1="640" y1="0" x2="640" y2="600"/>
+  </g>
+
+  <!-- Dashboard Window Frame -->
+  <rect x="40" y="36" width="720" height="528" rx="16" fill="#16131c" stroke="#e88d67" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- Top Header Bar -->
+  <rect x="40" y="36" width="720" height="54" rx="16" fill="#231d2b"/>
+  <circle cx="70" cy="63" r="6" fill="#d97254"/>
+  <circle cx="90" cy="63" r="6" fill="#e88d67"/>
+  <circle cx="110" cy="63" r="6" fill="#4ade80"/>
+  <text x="135" y="68" fill="#ffffff" font-family="monospace" font-weight="bold" font-size="14" letter-spacing="1.5">CLOUD NOC • DNS-OVER-HTTPS &amp; SATELLITE LINK</text>
+  <rect x="635" y="50" width="102" height="26" rx="13" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="1.2"/>
+  <circle cx="651" cy="63" r="4" fill="#4ade80"/>
+  <text x="663" y="67" fill="#4ade80" font-family="monospace" font-weight="bold" font-size="11">EDGE LIVE</text>
+
+  <!-- Left Panel: Cloud Edge Latency Nodes -->
+  <rect x="64" y="112" width="330" height="220" rx="12" fill="#211b29" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="84" y="140" fill="#e88d67" font-family="monospace" font-weight="bold" font-size="12" letter-spacing="1">01 / CLOUD EDGE LATENCY MONITOR</text>
+
+  <!-- Node 1 -->
+  <rect x="84" y="156" width="290" height="42" rx="8" fill="#18141f"/>
+  <circle cx="102" cy="177" r="4.5" fill="#4ade80"/>
+  <text x="116" y="174" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="12">Cloudflare DoH Edge (1.1.1.1)</text>
+  <text x="116" y="189" fill="#9ca3af" font-family="monospace" font-size="10">HTTPS 200 OK • SIN/CGK</text>
+  <text x="322" y="181" fill="#4ade80" font-family="monospace" font-weight="bold" font-size="13">18 ms</text>
+
+  <!-- Node 2 -->
+  <rect x="84" y="208" width="290" height="42" rx="8" fill="#18141f"/>
+  <circle cx="102" cy="229" r="4.5" fill="#4ade80"/>
+  <text x="116" y="226" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="12">Vercel Edge CDN (Portfolio)</text>
+  <text x="116" y="241" fill="#9ca3af" font-family="monospace" font-size="10">216.198.79.1 • SSL/TLS</text>
+  <text x="322" y="233" fill="#4ade80" font-family="monospace" font-weight="bold" font-size="13">24 ms</text>
+
+  <!-- Node 3 -->
+  <rect x="84" y="260" width="290" height="42" rx="8" fill="#18141f"/>
+  <circle cx="102" cy="281" r="4.5" fill="#e88d67"/>
+  <text x="116" y="278" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="12">Google Cloud DNS (8.8.8.8)</text>
+  <text x="116" y="293" fill="#9ca3af" font-family="monospace" font-size="10">Anycast Global Gateway</text>
+  <text x="322" y="285" fill="#e88d67" font-family="monospace" font-weight="bold" font-size="13">31 ms</text>
+
+  <!-- Right Panel: Cloud DNS Resolver -->
+  <rect x="412" y="112" width="324" height="220" rx="12" fill="#211b29" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="432" y="140" fill="#e88d67" font-family="monospace" font-weight="bold" font-size="12" letter-spacing="1">02 / CLOUD DNS RECORD INSPECTOR</text>
+  <rect x="432" y="154" width="284" height="32" rx="6" fill="#14111a" stroke="#d97254" stroke-width="1.2"/>
+  <text x="446" y="174" fill="#ffffff" font-family="monospace" font-size="11">rizky-kurniawan.my.id</text>
+  <rect x="652" y="160" width="56" height="20" rx="4" fill="#d97254"/>
+  <text x="664" y="174" fill="#ffffff" font-family="monospace" font-weight="bold" font-size="10">QUERY</text>
+
+  <!-- DNS Table -->
+  <rect x="432" y="198" width="284" height="114" rx="8" fill="#18141f"/>
+  <text x="446" y="220" fill="#e88d67" font-family="monospace" font-weight="bold" font-size="11">TYPE   TTL     DATA / TARGET</text>
+  <line x1="444" y1="228" x2="704" y2="228" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="446" y="248" fill="#ffffff" font-family="monospace" font-size="11">A      300s    216.198.79.1</text>
+  <text x="446" y="272" fill="#ffffff" font-family="monospace" font-size="11">NS     3600s   ns1.vercel-dns.com</text>
+  <text x="446" y="296" fill="#4ade80" font-family="monospace" font-size="11">HTTPS  ACTIVE  TLS 1.3 Edge CDN</text>
+
+  <!-- Bottom Wide Panel: Satellite & RF Link Budget Telemetry -->
+  <rect x="64" y="350" width="672" height="190" rx="12" fill="#211b29" stroke="#e88d67" stroke-opacity="0.25"/>
+  <text x="84" y="378" fill="#e88d67" font-family="monospace" font-weight="bold" font-size="12" letter-spacing="1">03 / SATELLITE &amp; TERRESTRIAL RF LINK BUDGET TELEMETRY</text>
+
+  <!-- Satellite Graphic & Wave -->
+  <path d="M 90 480 Q 190 410 290 475 T 490 460" fill="none" stroke="url(#accent)" stroke-width="3"/>
+  <path d="M 90 495 Q 190 435 290 490 T 490 478" fill="none" stroke="#e88d67" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.5"/>
+
+  <!-- Metric Boxes inside Bottom Panel -->
+  <rect x="84" y="396" width="145" height="58" rx="8" fill="#18141f"/>
+  <text x="98" y="416" fill="#9ca3af" font-family="monospace" font-size="10">ORBIT PROFILE</text>
+  <text x="98" y="440" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="15">LEO 550 km</text>
+
+  <rect x="244" y="396" width="145" height="58" rx="8" fill="#18141f"/>
+  <text x="258" y="416" fill="#9ca3af" font-family="monospace" font-size="10">PATH LOSS (FSPL)</text>
+  <text x="258" y="440" fill="#e88d67" font-family="monospace" font-weight="bold" font-size="15">165.2 dB</text>
+
+  <rect x="404" y="396" width="145" height="58" rx="8" fill="#18141f"/>
+  <text x="418" y="416" fill="#9ca3af" font-family="monospace" font-size="10">RX SIGNAL POWER</text>
+  <text x="418" y="440" fill="#ffffff" font-family="monospace" font-weight="bold" font-size="15">-78.2 dBm</text>
+
+  <rect x="564" y="396" width="152" height="122" rx="8" fill="#18141f" stroke="#4ade80" stroke-opacity="0.35"/>
+  <text x="580" y="420" fill="#9ca3af" font-family="monospace" font-size="10">LINK MARGIN</text>
+  <text x="580" y="454" fill="#4ade80" font-family="monospace" font-weight="bold" font-size="24">+16.8 dB</text>
+  <text x="580" y="482" fill="#4ade80" font-family="monospace" font-size="11">● LINK LOCKED</text>
+  <text x="580" y="502" fill="#9ca3af" font-family="monospace" font-size="10">C/N0: 84.5 dB-Hz</text>
+
+  <text x="84" y="518" fill="#d1d5db" font-family="monospace" font-size="11">Cloudflare DoH API • Multi-Region Edge Ping • Satellite Downlink FSPL Calculator</text>
+</svg>
