@@ -1,18 +1,12 @@
 /**
- * ============================================================================
- * KONFIGURASI STATUS PELUANG KERJA & KARIER — MOCHAMMAD RIZKY KURNIAWAN
- * ============================================================================
- * File ini mengontrol seluruh badge ketersediaan kerja di website (Hero, About,
- * Services, Contact) sekaligus menjadi sumber data dinamis untuk MRK AI Assistant.
+ * KONFIGURASI STATUS PELUANG KERJA - MOCHAMMAD RIZKY KURNIAWAN
  *
- * CARA MENGGANTI STATUS DI TAHUN SELANJUTNYA (CUKUP UBAH 1 BARIS DI BAWAH INI):
- * Pilihan nilai ACTIVE_STATUS_KEY yang tersedia:
- *   1. "internship_sidejob" -> (AKTIF SAAT INI) Siap Magang / KP & Job Sampingan
- *   2. "fulltime_ready"     -> Siap Kerja Full-Time / Fresh Graduate / Kontrak
- *   3. "open_all"           -> Terbuka untuk Full-Time, Magang, & Freelance
- *   4. "freelance_only"     -> Fokus Proyek Sampingan / Part-Time / Freelance
- *   5. "employed_closed"    -> Sedang Bekerja Aktif (Terbuka Kolaborasi/Jejaring)
- * ============================================================================
+ * Cara mengganti status di tahun berikutnya, cukup ubah nilai ACTIVE_STATUS_KEY:
+ *   1. "internship_sidejob" -> Siap Magang, KP, dan Pekerjaan Sampingan
+ *   2. "fulltime_ready"     -> Siap Kerja Full-Time dan Kontrak Profesional
+ *   3. "open_all"           -> Terbuka untuk Kerja Full-Time, Magang, dan Proyek
+ *   4. "freelance_only"     -> Fokus Proyek Sampingan dan Freelance
+ *   5. "employed_closed"    -> Sedang Bekerja Aktif, Terbuka Jejaring Profesional
  */
 
 window.MRK_CAREER_CONFIG = {
@@ -24,124 +18,124 @@ window.MRK_CAREER_CONFIG = {
     internship_sidejob: {
       key: "internship_sidejob",
       isOpen: true,
-      dotColor: "#10b981", // Emerald green
-      badgeShort: "Open: Magang / KP & Job Sampingan",
-      badgeHero: "TERBUKA UNTUK MAGANG / KP & JOB SAMPINGAN",
+      dotColor: "#10b981",
+      badgeShort: "Terbuka untuk Magang & Kerja Sampingan",
+      badgeHero: "TERBUKA UNTUK MAGANG, KP & KERJA SAMPINGAN",
       statusTitle: "Siap Menerima Tawaran Magang & Pekerjaan Sampingan",
-      statusSubtitle: "Internship / Kerja Praktik (KP) • Part-Time • Project-Based / Freelance",
+      statusSubtitle: "Magang Industri, Kerja Praktik, Part-Time & Freelance",
       summaryText:
-        "Saat ini saya merupakan mahasiswa aktif Semester 5 STr Teknik Telekomunikasi PENS (IPK 3.43/4.00) dan siap menerima tawaran Magang / Kerja Praktik (KP) maupun pekerjaan sampingan (Part-Time / Freelance / Project-Based) yang fleksibel dengan jadwal perkuliahan.",
-      workModes: ["On-site (Surabaya)", "Hybrid", "Remote", "Penempatan Luar Kota (Program Magang/KP)"],
+        "Saat ini saya aktif menempuh semester 5 STr Teknik Telekomunikasi di PENS Surabaya dengan IPK 3.43 dari 4.00. Saya terbuka untuk program Magang atau Kerja Praktik serta pekerjaan sampingan paruh waktu dan proyek lepas yang dapat menyesuaikan jadwal kuliah.",
+      workModes: ["On-site Surabaya", "Hybrid", "Remote", "Siap Luar Kota untuk Magang"],
       targetRoles: [
         "NOC & Network Infrastructure Intern",
-        "IT Support / Linux Server Administration",
-        "Cloud & Web Utility / Dashboard Sampingan",
-        "IoT & Embedded Prototyping Project"
+        "IT Support & Linux Server Administration",
+        "Web Teknis & Cloud Support Sampingan",
+        "Proyek Purwarupa IoT & Embedded"
       ],
-      contactSubjectPlaceholder: "Subjek (misal: Tawaran Magang NOC / Job Sampingan IT)...",
+      contactSubjectPlaceholder: "Subjek pesan, misal Tawaran Magang NOC...",
       servicesFooterNote:
-        "Saat ini terbuka untuk program Kerja Praktik / Magang Industri serta pekerjaan sampingan (Part-Time / Project-Based) di bidang NOC, infrastruktur IT, pengelolaan server, maupun pengembangan sistem IoT & web teknis.",
+        "Terbuka untuk program Kerja Praktik, magang industri, serta pekerjaan sampingan paruh waktu di bidang NOC, infrastruktur jaringan, administrasi server, dan sistem IoT.",
       aiResponseLead:
-        "**Ya, saat ini Mochammad Rizky Kurniawan terbuka untuk tawaran Magang (Internship / Kerja Praktik) maupun Pekerjaan Sampingan (Part-Time / Freelance / Project-Based)!**",
+        "**Ya, saat ini Rizky terbuka menerima tawaran Magang atau Kerja Praktik maupun pekerjaan sampingan berbasis paruh waktu dan proyek lepas.**",
       aiFullTimeClarification:
-        "Karena saat ini Rizky masih berstatus **mahasiswa aktif Semester 5 di PENS Surabaya**, fokus utamanya tahun ini adalah **Magang / Kerja Praktik (KP)** serta **Job Sampingan (Part-Time / Freelance)** yang jadwalnya dapat disesuaikan. Untuk posisi *Full-Time* penuh akan dibuka setelah menyelesaikan masa studi."
+        "Karena Rizky masih menempuh semester 5 di PENS Surabaya, fokus utamanya saat ini adalah program magang industri serta pekerjaan sampingan yang fleksibel dengan jadwal perkuliahan. Untuk posisi kerja penuh waktu akan dibuka setelah masa studi selesai."
     },
 
     fulltime_ready: {
       key: "fulltime_ready",
       isOpen: true,
       dotColor: "#10b981",
-      badgeShort: "Open to Work: Siap Kerja Full-Time",
-      badgeHero: "OPEN TO WORK • SIAP KERJA FULL-TIME & PROFESIONAL",
-      statusTitle: "Siap Bekerja Penuh Waktu (Full-Time) & Peluang Profesional",
-      statusSubtitle: "Full-Time • Contract • On-Site / Hybrid / Remote",
+      badgeShort: "Siap Kerja Full-Time",
+      badgeHero: "SIAP KERJA FULL-TIME & PELUANG PROFESIONAL",
+      statusTitle: "Siap Bekerja Penuh Waktu & Kontrak Profesional",
+      statusSubtitle: "Full-Time, Kontrak, On-Site, Hybrid & Remote",
       summaryText:
-        "Siap berkontribusi secara profesional dan penuh waktu (Full-Time) di bidang Network Operations Center (NOC), Network Infrastructure Engineer, Linux Server & Cloud Administration, serta Sistem Telekomunikasi.",
-      workModes: ["Full-Time On-site", "Hybrid", "Remote", "Bersedia Relokasi"],
+        "Siap berkontribusi secara penuh waktu di bidang Network Operations Center, Network Infrastructure Engineer, administrasi server Linux dan Cloud, serta sistem telekomunikasi.",
+      workModes: ["Full-Time On-site", "Hybrid", "Remote", "Siap Relokasi"],
       targetRoles: [
-        "Junior NOC / Network Engineer",
+        "Junior NOC & Network Engineer",
         "System & Linux Server Administrator",
         "Cloud & IT Infrastructure Engineer",
-        "Telecommunications / IoT Engineer"
+        "Telecommunications & IoT Engineer"
       ],
-      contactSubjectPlaceholder: "Subjek (misal: Rekrutmen Full-Time NOC / Network Engineer)...",
+      contactSubjectPlaceholder: "Subjek pesan, misal Rekrutmen NOC Engineer...",
       servicesFooterNote:
-        "Siap berkontribusi secara penuh waktu (Full-Time) dalam tim operasional jaringan (NOC), infrastruktur IT, pengelolaan sistem server, dan telekomunikasi.",
+        "Siap berkontribusi penuh waktu dalam tim operasional jaringan NOC, infrastruktur IT, administrasi sistem server, dan telekomunikasi.",
       aiResponseLead:
-        "**Ya! Saat ini Mochammad Rizky Kurniawan dalam status SIAP KERJA (Open to Work) untuk posisi Full-Time, Kontrak, maupun proyek profesional.**",
+        "**Ya, saat ini Rizky dalam status siap kerja penuh waktu untuk posisi Full-Time, kontrak, maupun proyek profesional.**",
       aiFullTimeClarification:
-        "Rizky siap mengikuti proses rekrutmen untuk posisi **Full-Time** (On-site, Hybrid, maupun Remote) serta bersedia ditempatkan sesuai kebutuhan perusahaan."
+        "Rizky siap mengikuti proses rekrutmen untuk skema kerja On-site, Hybrid, maupun Remote dan bersedia ditempatkan sesuai kebutuhan perusahaan."
     },
 
     open_all: {
       key: "open_all",
       isOpen: true,
       dotColor: "#10b981",
-      badgeShort: "Open: Full-Time, Magang & Proyek",
-      badgeHero: "TERBUKA UNTUK PELUANG KERJA, MAGANG & KOLABORasi",
+      badgeShort: "Terbuka untuk Kerja, Magang & Proyek",
+      badgeHero: "TERBUKA UNTUK PELUANG KERJA, MAGANG & KOLABORASI",
       statusTitle: "Terbuka untuk Tawaran Kerja, Magang & Proyek Teknis",
-      statusSubtitle: "Full-Time • Internship • Freelance / Project-Based",
+      statusSubtitle: "Full-Time, Magang Industri & Proyek Freelance",
       summaryText:
-        "Terbuka untuk berbagai skema kolaborasi profesional mulai dari rekrutmen kerja, program magang industri, hingga pengerjaan proyek jaringan, server, dan IoT.",
+        "Terbuka untuk berbagai skema kerja sama mulai dari rekrutmen staf teknis, program magang industri, hingga pengerjaan proyek jaringan, server, dan IoT.",
       workModes: ["On-site", "Hybrid", "Remote"],
       targetRoles: [
         "NOC & Network Engineer",
         "Linux Server & Cloud Support",
         "Technical Web & IoT Developer"
       ],
-      contactSubjectPlaceholder: "Subjek (misal: Tawaran Kerja / Proyek Kolaborasi)...",
+      contactSubjectPlaceholder: "Subjek pesan, misal Tawaran Kerja atau Kolaborasi...",
       servicesFooterNote:
-        "Terbuka untuk kolaborasi kerja, magang, maupun proyek teknis di bidang jaringan (NOC), administrasi server, dan sistem telekomunikasi.",
+        "Terbuka untuk kerja sama profesional, magang, maupun proyek teknis di bidang jaringan NOC, administrasi server, dan sistem telekomunikasi.",
       aiResponseLead:
-        "**Ya, Mochammad Rizky Kurniawan saat ini terbuka untuk tawaran kerja, program magang, maupun proyek sampingan/kolaborasi teknis.**",
+        "**Ya, saat ini Rizky terbuka untuk tawaran kerja, program magang, maupun proyek kolaborasi teknis.**",
       aiFullTimeClarification:
-        "Silakan hubungi langsung melalui email atau LinkedIn untuk mendiskusikan skema kerja dan ketersediaan waktu."
+        "Silakan hubungi langsung melalui email atau WhatsApp untuk membicarakan skema kerja dan ketersediaan waktu."
     },
 
     freelance_only: {
       key: "freelance_only",
       isOpen: true,
       dotColor: "#f59e0b",
-      badgeShort: "Open: Proyek Sampingan / Freelance",
+      badgeShort: "Terbuka untuk Proyek Freelance",
       badgeHero: "TERBUKA UNTUK PROYEK SAMPINGAN & FREELANCE",
-      statusTitle: "Menerima Pekerjaan Sampingan & Proyek Teknis Terbatas",
-      statusSubtitle: "Part-Time • Project-Based • Remote Freelance",
+      statusTitle: "Menerima Pekerjaan Sampingan & Proyek Teknis",
+      statusSubtitle: "Part-Time, Berbasis Proyek & Remote Freelance",
       summaryText:
-        "Saat ini fokus menerima pekerjaan sampingan berbasis proyek (Freelance / Part-Time) untuk konfigurasi jaringan, simulasi topologi, setup Linux server, dan dashboard web teknis.",
-      workModes: ["Remote", "Flexible Part-Time"],
+        "Saat ini fokus menerima pekerjaan sampingan berbasis proyek untuk perancangan topologi jaringan, konfigurasi dasar server Linux, serta pembuatan antarmuka web teknis.",
+      workModes: ["Remote", "Part-Time Fleksibel"],
       targetRoles: [
-        "Freelance Network & Topology Consultant",
-        "Server Setup & Web Utility Developer",
-        "IoT Prototype Contributor"
+        "Konsultan Topologi & Simulasi Jaringan",
+        "Pengembang Web Utilitas & Setup Server",
+        "Kontributor Purwarupa IoT"
       ],
-      contactSubjectPlaceholder: "Subjek (misal: Diskusi Proyek Freelance / Sampingan)...",
+      contactSubjectPlaceholder: "Subjek pesan, misal Diskusi Proyek Sampingan...",
       servicesFooterNote:
-        "Saat ini menerima kolaborasi berbasis proyek sampingan (Freelance / Part-Time) yang fleksibel.",
+        "Saat ini menerima kolaborasi berbasis proyek lepas dan paruh waktu yang fleksibel.",
       aiResponseLead:
-        "**Saat ini Mochammad Rizky Kurniawan fokus menerima tawaran Proyek Sampingan (Freelance / Part-Time) secara fleksibel.**",
+        "**Saat ini Rizky fokus menerima tawaran pekerjaan sampingan dan proyek lepas secara fleksibel.**",
       aiFullTimeClarification:
-        "Untuk komitmen penuh waktu saat ini sedang dibatasi, namun sangat terbuka untuk diskusi proyek lepas atau kerja paruh waktu."
+        "Untuk posisi penuh waktu sedang dibatasi sementara, namun tetap terbuka untuk diskusi proyek lepas atau paruh waktu."
     },
 
     employed_closed: {
       key: "employed_closed",
       isOpen: false,
       dotColor: "#94a3b8",
-      badgeShort: "Aktif Berkarier • Open Networking",
-      badgeHero: "AKTIF BERKARIER • TERBUKA UNTUK JEJARING PROFESIONAL",
-      statusTitle: "Sedang Menjalani Peran Aktif • Terbuka untuk Diskusi & Jejaring",
-      statusSubtitle: "Professional Networking • Knowledge Sharing",
+      badgeShort: "Aktif Berkarier, Terbuka Jejaring",
+      badgeHero: "AKTIF BERKARIER & TERBUKA JEJARING PROFESIONAL",
+      statusTitle: "Sedang Menjalani Peran Utama & Terbuka Berjejaring",
+      statusSubtitle: "Jejaring Profesional & Diskusi Teknis",
       summaryText:
-        "Saat ini sedang fokus pada tanggung jawab utama, namun tetap senang terhubung dengan rekan industri untuk diskusi seputar NOC, infrastruktur jaringan, dan teknologi telekomunikasi.",
-      workModes: ["Networking & Diskusi"],
-      targetRoles: ["Kolaborasi Komunitas & Diskusi Teknis"],
-      contactSubjectPlaceholder: "Subjek (misal: Salam Kenal / Diskusi Teknis)...",
+        "Saat ini sedang fokus pada peran kerja utama, namun tetap senang terhubung dengan rekan industri untuk berdiskusi seputar NOC, jaringan komputer, dan teknologi telekomunikasi.",
+      workModes: ["Diskusi & Jejaring"],
+      targetRoles: ["Kolaborasi Komunitas & Pertukaran Wawasan"],
+      contactSubjectPlaceholder: "Subjek pesan, misal Salam Kenal atau Diskusi...",
       servicesFooterNote:
-        "Terbuka untuk jejaring profesional dan pertukaran wawasan di bidang jaringan komputer, server, dan telekomunikasi.",
+        "Terbuka untuk jejaring profesional dan diskusi seputar jaringan komputer, server, serta telekomunikasi.",
       aiResponseLead:
-        "**Saat ini Mochammad Rizky Kurniawan sedang menjalani komitmen utama sehingga belum aktif mencari lowongan baru, namun tetap terbuka untuk jejaring profesional.**",
+        "**Saat ini Rizky sedang fokus menjalani peran utamanya sehingga belum mencari lowongan baru, tetapi tetap terbuka untuk jejaring profesional.**",
       aiFullTimeClarification:
-        "Anda tetap dapat mengirimkan pesan melalui formulir kontak atau LinkedIn untuk silaturahmi profesional maupun diskusi peluang masa depan."
+        "Anda tetap dapat mengirim pesan lewat formulir kontak atau LinkedIn untuk silaturahmi maupun komunikasi peluang ke depan."
     }
   }
 };

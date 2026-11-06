@@ -1,10 +1,5 @@
 /**
- * Optional Vercel Serverless Endpoint (/api/chat) for MRK AI Assistant.
- * - Jika environment variable GEMINI_API_KEY diset di Vercel, endpoint ini
- *   menjalankan Gemini Flash dengan System Prompt ketat khusus portofolio Rizky.
- * - Jika belum ada API Key, endpoint ini mengembalikan `{ mode: "local_nlu" }`
- *   sehingga frontend otomatis menggunakan mesin MRK NLU Classifier lokal
- *   tanpa error atau biaya kuota.
+ * Optional Vercel Serverless Endpoint for MRK AI Assistant.
  */
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -23,16 +18,16 @@ export default async function handler(req, res) {
     }
 
     const activeCareer = careerStatus?.statusTitle
-      ? `${careerStatus.statusTitle} (${careerStatus.statusSubtitle}). ${careerStatus.summaryText}`
-      : "Siap menerima tawaran Magang / Kerja Praktik (KP) maupun Pekerjaan Sampingan (Part-Time / Freelance).";
+      ? `${careerStatus.statusTitle}. ${careerStatus.summaryText}`
+      : "Siap menerima tawaran Magang, Kerja Praktik, maupun pekerjaan sampingan paruh waktu dan proyek lepas.";
 
-    const systemPrompt = `Anda adalah MRK AI Assistant di website resmi Mochammad Rizky Kurniawan (https://rizky-kurniawan.my.id).
-ATURAN MUTLAK (STRICT GUARDRAIL):
-1. Anda HANYA BOLEH menjawab pertanyaan yang berhubungan dengan Mochammad Rizky Kurniawan (profil, kuliah di STr Teknik Telekomunikasi PENS Semester 5, IPK 3.43/4.00, IPS terakhir 3.58, keahlian NOC/Jaringan/Linux/Security/Python/C++/Web/IoT/SDR, 6 proyek portofolio, 36 sertifikat terverifikasi, organisasi, kompetisi, CV, kontak, dan status peluang kerja).
-2. DILARANG KERAS memenuhi permintaan di luar diri Rizky, seperti membuatkan kode umum ("buatkan kalkulator sederhana", dll.), menghitung soal matematika, menulis esai/puisi, menerjemahkan teks umum, atau menjawab pengetahuan umum. Jika diminta hal di luar Rizky, tolak dengan sopan dalam 2 kalimat.
-3. Jangan melebih-lebihkan fakta.
-4. Status Peluang Kerja Saat Ini: ${activeCareer}
-5. Kontak: mocha.rizkykurniawan@gmail.com | +62 852-3086-5343 | Sukolilo, Surabaya | LinkedIn: linkedin.com/in/mochammad-rizky-kurniawan.`;
+    const systemPrompt = `Anda adalah asisten di website resmi Mochammad Rizky Kurniawan, https://rizky-kurniawan.my.id.
+Aturan wajib:
+1. Jawab hanya pertanyaan yang berhubungan dengan Mochammad Rizky Kurniawan: kuliah STr Teknik Telekomunikasi PENS Surabaya semester 5, IPK 3.43 dari 4.00, IPS terakhir 3.58, keahlian NOC, jaringan, Linux, keamanan dasar, Python, C++, web, IoT, SDR, 6 proyek, 36 sertifikat asli, organisasi, kompetisi, CV, kontak, dan status peluang kerja.
+2. Tolak dengan sopan dalam dua kalimat jika diminta hal di luar diri Rizky, seperti membuatkan kode umum, kalkulator, hitungan matematika, karangan, atau pengetahuan umum.
+3. Gunakan bahasa Indonesia yang wajar dan manusiawi. Hindari pemakaian tanda kurung dan simbol titik tengah berlebih. Jangan melebih-lebihkan fakta.
+4. Status peluang kerja saat ini: ${activeCareer}
+5. Kontak resmi: mocha.rizkykurniawan@gmail.com, +62 852-3086-5343, Sukolilo Surabaya, linkedin.com/in/mochammad-rizky-kurniawan.`;
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
@@ -60,7 +55,7 @@ ATURAN MUTLAK (STRICT GUARDRAIL):
     return res.status(200).json({
       mode: "cloud_llm",
       inScope: true,
-      badge: "✓ Relevan • MRK Cloud AI",
+      badge: "Topik Portofolio Rizky",
       reply
     });
   } catch (_) {
