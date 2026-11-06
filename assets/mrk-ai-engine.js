@@ -130,11 +130,28 @@
           "Koordinasi gerak motor servo pada mekanisme lengan capit untuk mengangkat dan meletakkan benda."
         ],
         stack: ["Arduino & C++", "Driver Motor L298N", "IR Sensor Array", "Servo Gripper", "PWM Control"]
+      },
+      {
+        id: "horn-antenna",
+        title: "Pyramidal Horn Antenna Fabrication & Microwave Testing",
+        badge: "Lab Telekomunikasi PENS",
+        category: "Telekomunikasi & RF",
+        year: "2025",
+        image: "assets/horn_antenna_lab.jpg",
+        liveUrl: null,
+        summary:
+          "Praktikum fabrikasi dan pengujian antena Pyramidal Horn pada frekuensi gelombang mikro di laboratorium telekomunikasi PENS, dikerjakan secara berkelompok.",
+        highlights: [
+          "Pembuatan badan antena horn piramida sesuai dimensi hasil perhitungan.",
+          "Pengujian karakteristik radiasi antena pada frekuensi gelombang mikro di laboratorium.",
+          "Kerja tim dalam perakitan, pengukuran, dan penyusunan laporan praktikum."
+        ],
+        stack: ["Pyramidal Horn Antenna", "Gelombang Mikro", "Pengukuran RF", "Link Budget Satelit"]
       }
     ],
 
     extraLabNote:
-      "Di luar enam proyek tersebut, Rizky juga memiliki pengalaman praktikum fabrikasi dan pengujian antena Pyramidal Horn pada frekuensi gelombang mikro di laboratorium telekomunikasi PENS.",
+      "Selain tujuh proyek di atas, Rizky juga mengikuti praktikum perhitungan Link Budget transmisi satelit di laboratorium telekomunikasi PENS.",
 
     skills: {
       nocNetwork: [
