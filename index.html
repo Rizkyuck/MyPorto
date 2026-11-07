@@ -214,7 +214,7 @@
     .reveal-fast {
       opacity: 0;
       transform: translate3d(0, 18px, 0);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: opacity, transform;
     }
     .reveal-fast.is-visible {
@@ -346,6 +346,17 @@
     }
     html.dark .archive-item:hover {
       border-color: rgba(232, 141, 103, 0.55) !important;
+    }
+
+    /* Mobile touch feedback */
+    @media (hover: none) {
+      .btn-tactile:active, .work-card:active { opacity: 0.82; transform: scale(0.97); }
+      .senja-card:active { border-color: rgba(232,141,103,0.5); }
+    }
+
+    @media (max-width: 640px) {
+      .backdrop-blur-md { backdrop-filter: blur(6px) !important; }
+      .backdrop-blur-sm { backdrop-filter: blur(3px) !important; }
     }
   </style>
 </head>
@@ -2122,7 +2133,8 @@
           // Kartu dalam satu baris muncul bergantian kiri ke kanan
           const sibs = el.parentElement ? Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal-fast')) : [];
           const pos = sibs.indexOf(el);
-          if (sibs.length > 1 && pos >= 0) el.style.transitionDelay = ((pos % 3) * 110) + 'ms';
+          const isMobile = window.innerWidth < 768;
+          if (sibs.length > 1 && pos >= 0) el.style.transitionDelay = ((pos % 3) * (isMobile ? 60 : 110)) + 'ms';
           observer.observe(el);
         }
       });
@@ -2138,7 +2150,12 @@
       const labelEl = document.getElementById('mrkCursorLabel');
       const parallaxLayers = document.querySelectorAll('.hero-parallax-layer');
 
-      if (!finePointer) return;
+      const isTouchDevice = window.matchMedia && window.matchMedia('(hover: none)').matches;
+      if (!finePointer) {
+        // On touch: disable parallax layers completely
+        parallaxLayers.forEach(layer => { layer.style.transform = ''; });
+        return;
+      }
 
       let mouseX = -100;
       let mouseY = -100;
@@ -2197,7 +2214,7 @@
           ring.style.transform = `translate3d(${ringX.toFixed(1)}px, ${ringY.toFixed(1)}px, 0)`;
         }
 
-        if (window.scrollY < 750 && parallaxLayers.length) {
+        if (!isTouchDevice && window.scrollY < 750 && parallaxLayers.length) {
           curHeroX += (heroNormX - curHeroX) * 0.08;
           curHeroY += (heroNormY - curHeroY) * 0.08;
           parallaxLayers.forEach(layer => {

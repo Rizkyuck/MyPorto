@@ -400,6 +400,14 @@
       ]
     },
     {
+      id: "PROJECT_HORN_ANTENNA",
+      label: "Proyek Antena Horn",
+      weight: 1.3,
+      patterns: [
+        /\b(horn|antena horn|pyramidal|gelombang mikro|microwave antenna|fabrikasi antena)\b/i
+      ]
+    },
+    {
       id: "PROJECT_ENTERPRISE_WAN",
       label: "Proyek Enterprise WAN",
       weight: 1.25,
@@ -514,10 +522,25 @@
     turnCount: 0
   };
 
-  function buildIntentBlock(intentId, parsed) {
+  // -------------------------------------------------------------------------
+  // MICRO QUESTION CLASSIFIER — membaca *tipe* pertanyaan bukan hanya topiknya
+  // -------------------------------------------------------------------------
+  function classifyQuestionType(norm) {
+    if (/\b(kapan|sejak kapan|mulai kapan|dari kapan|tanggal berapa|bulan berapa|tahun berapa|since when|when)\b/i.test(norm)) return "WHEN";
+    if (/\b(dimana|di mana|lokasi|kota|daerah|domisili|remote|onsite|on[- ]?site|wfo|wfh|hybrid|tempatnya|wilayah)\b/i.test(norm)) return "WHERE";
+    if (/\b(sudah|belum|apakah|apa masih|masih|apakah masih|available|tersedia|apakah bisa|bisa ga|bisa gak|dapat magang|dapet)\b/i.test(norm)) return "STATUS_CHECK";
+    if (/\b(hubungi|kontak|nomor|email|wa|whatsapp|dm|dm ke|reach|contact|info kontak|cara menghubungi)\b/i.test(norm)) return "HOW_CONTACT";
+    if (/\b(gaji|salary|bayaran|rate|fee|harga|tarif|berapa bayar|bayarnya)\b/i.test(norm)) return "SALARY";
+    if (/\b(kenapa|mengapa|alasan|motivasi|keunggulan|kelebihan|nilai tambah|cocok|worth|layak)\b/i.test(norm)) return "WHY";
+    if (/\b(detail|rincian|lebih lanjut|ceritakan|jelaskan|lengkapnya|lengkap|gimana ceritanya|bagaimana cara)\b/i.test(norm)) return "DETAIL";
+    return "DEFAULT";
+  }
+
+  function buildIntentBlock(intentId, parsed, questionType) {
     const career = window.getActiveCareerStatus ? window.getActiveCareerStatus() : null;
     const p = MRK_KNOWLEDGE.profile;
     const norm = parsed.normalized;
+    const qType = questionType || classifyQuestionType(norm);
 
     switch (intentId) {
       case "GREETING": {
@@ -525,7 +548,7 @@
         return {
           text:
             `Halo, selamat datang di portofolio **${p.fullName}**.\n\n` +
-            `Anda bisa menanyakan riwayat studi di PENS Surabaya, keahlian jaringan dan server, enam proyek praktikum, 36 sertifikat kompetensi, atau status ketersediaan kerja saat ini yaitu **${statusBadge}**.`,
+            `Anda bisa menanyakan riwayat studi di PENS Surabaya, keahlian jaringan dan server, tujuh proyek praktikum, 36 sertifikat kompetensi, atau status ketersediaan kerja saat ini yaitu **${statusBadge}**.`,
           actions: [
             { label: "Status Magang & Kerja", type: "prompt", value: "Bagaimana status ketersediaan Rizky untuk magang atau kerja sampingan saat ini?" },
             { label: "Buka CV ATS", type: "cv", value: "open" }
@@ -540,13 +563,83 @@
             actions: [{ label: "Kirim Tawaran Kontak", type: "scroll", value: "#contact" }]
           };
         }
+
+        // --- WHEN: kapan bisa mulai ---
+        if (qType === "WHEN") {
+          return {
+            text:
+              `Rizky bisa mulai kapan saja sesuai kesepakatan, karena saat ini status perkuliahan masih aktif ${p.semester}.\n\n` +
+              `Untuk magang atau Kerja Praktik industri, biasanya dimulai saat ada jeda semester atau paralel dengan kuliah. Untuk pekerjaan sampingan dan freelance, bisa langsung dimulai.\n\n` +
+              `Hubungi Rizky untuk menyesuaikan jadwal.`,
+            actions: [
+              { label: "Hubungi via WhatsApp", type: "external", value: p.whatsappUrl },
+              { label: "Kirim Pesan Kontak", type: "scroll", value: "#contact" }
+            ]
+          };
+        }
+
+        // --- WHERE: lokasi kerja ---
+        if (qType === "WHERE") {
+          return {
+            text:
+              `Rizky berdomisili di **Sukolilo, Surabaya**, sehingga paling ideal untuk posisi on-site di wilayah Surabaya dan sekitarnya.\n\n` +
+              `Untuk posisi lain, Rizky **terbuka untuk remote, hybrid, maupun siap luar kota** khusus untuk program magang industri.`,
+            actions: [
+              { label: "Lihat CV ATS", type: "cv", value: "open" },
+              { label: "Hubungi via WhatsApp", type: "external", value: p.whatsappUrl }
+            ]
+          };
+        }
+
+        // --- STATUS CHECK: sudah/belum/masih tersedia ---
+        if (qType === "STATUS_CHECK") {
+          const statusLine = career.aiResponseLead.split('.')[0];
+          return {
+            text:
+              `${statusLine}.\n\n` +
+              `Skema yang terbuka saat ini: **${career.statusSubtitle}**.\n\n` +
+              `Jika ada tawaran konkret, silakan hubungi langsung untuk membahas lebih lanjut.`,
+            actions: [
+              { label: "Hubungi via WhatsApp", type: "external", value: p.whatsappUrl },
+              { label: "Kirim Pesan Kontak", type: "scroll", value: "#contact" }
+            ]
+          };
+        }
+
+        // --- SALARY: gaji/rate ---
+        if (qType === "SALARY") {
+          return {
+            text:
+              `Untuk besaran gaji magang, rate freelance, atau fee proyek sampingan, Rizky terbuka mendiskusikannya langsung sesuai jenis pekerjaan dan durasi kerjasama.\n\n` +
+              `Silakan hubungi melalui kontak di bawah untuk membahas lebih detail.`,
+            actions: [
+              { label: "Hubungi via WhatsApp", type: "external", value: p.whatsappUrl },
+              { label: "Kirim Pesan Kontak", type: "scroll", value: "#contact" }
+            ]
+          };
+        }
+
+        // --- WHY: kenapa harus Rizky ---
+        if (qType === "WHY") {
+          return {
+            text:
+              `Rizky membawa kombinasi yang jarang ditemukan: **latar telekomunikasi** yang menjembatani perangkat keras RF dan sinyal dengan sistem jaringan dan cloud.\n\n` +
+              `Sudah terbiasa di lab mulai dari konfigurasi topologi WAN, administrasi server Linux, hingga merakit perangkat IoT. Ditambah sertifikasi resmi dari DEX Komdigi sebagai Associate Network Administrator Intermediate.`,
+            actions: [
+              { label: "Lihat Keahlian Lengkap", type: "scroll", value: "#skills-telemetry" },
+              { label: "Buka CV ATS", type: "cv", value: "open" }
+            ]
+          };
+        }
+
+        // --- DEFAULT / DETAIL: tampilkan info lengkap ---
         const asksFullTime = /\b(full[- ]?time|tetap|penuh waktu)\b/i.test(norm);
         let body = `${career.aiResponseLead}\n\n`;
-        body += `- **Skema kerja:** ${career.statusSubtitle}\n`;
-        body += `- **Mode kerja:** ${career.workModes.join(", ")}\n`;
-        body += `- **Bidang fokus:** ${career.targetRoles.join(", ")}\n`;
+        body += `Skema kerja: **${career.statusSubtitle}**\n`;
+        body += `Mode kerja: ${career.workModes.join(", ")}\n`;
+        body += `Bidang fokus: ${career.targetRoles.join(", ")}`;
         if (asksFullTime || career.key === "internship_sidejob") {
-          body += `\n${career.aiFullTimeClarification}`;
+          body += `\n\n${career.aiFullTimeClarification}`;
         }
         return {
           text: body,
@@ -560,10 +653,27 @@
 
       case "PROFILE_SUMMARY": {
         const statusShort = career ? career.statusTitle : "Siap Menerima Tawaran Magang & Pekerjaan Sampingan";
+
+        // Jika tanya lokasi/domisili
+        if (qType === "WHERE") {
+          return {
+            text: `Rizky berdomisili di **${p.location}**. Ia kuliah di ${p.campus}.`,
+            actions: [{ label: "Lihat Kontak Lengkap", type: "scroll", value: "#contact" }]
+          };
+        }
+
+        // Jika tanya IPK/nilai saja
+        if (/\b(ipk|ips|nilai|gpa|akademik|prestasi akademik)\b/i.test(norm)) {
+          return {
+            text: `IPK Rizky saat ini **${p.gpa}** dengan IPS semester terakhir **${p.latestIps}**. Ia sedang menempuh ${p.semester} di ${p.campus}.`,
+            actions: [{ label: "Lihat Sertifikat", type: "scroll", value: "#credentials" }]
+          };
+        }
+
         return {
           text:
-            `**${p.fullName}** merupakan mahasiswa ${p.semester} program studi ${p.degree} di ${p.campus} dengan capaian IPK **${p.gpa}** dan IPS terakhir **${p.latestIps}**. Ia berdomisili di ${p.location}.\n\n` +
-            `Minat utamanya mencakup ${p.focusSummary} Status ketersediaannya saat ini: **${statusShort}**.`,
+            `**${p.fullName}** adalah mahasiswa ${p.semester} program studi ${p.degree} di ${p.campus}. IPK saat ini **${p.gpa}**, IPS terakhir **${p.latestIps}**, domisili di ${p.location}.\n\n` +
+            `Fokus studi dan keahliannya mencakup ${p.focusSummary} Status ketersediaan kerja: **${statusShort}**.`,
           actions: [
             { label: "Lihat Peta Keahlian", type: "scroll", value: "#skills-telemetry" },
             { label: "Buka CV", type: "cv", value: "open" }
@@ -572,14 +682,30 @@
       }
 
       case "EDUCATION_GPA": {
+        // Jika hanya tanya IPK
+        if (/\b(ipk|gpa)\b/i.test(norm) && !/\b(kampus|jurusan|prodi|kuliah di|semester|lulus)\b/i.test(norm)) {
+          return {
+            text: `IPK Rizky **${p.gpa}** dari 4.00. IPS semester terakhir **${p.latestIps}**.`,
+            actions: [{ label: "Lihat Profil Lengkap", type: "prompt", value: "Ceritakan profil lengkap Rizky." }]
+          };
+        }
+
+        // Jika tanya semester saja
+        if (/\b(semester|angkatan|tahun berapa|tingkat)\b/i.test(norm)) {
+          return {
+            text: `Rizky sekarang sedang menempuh **${p.semester}** di ${p.campus}, program studi ${p.degree}.`,
+            actions: [{ label: "Lihat Proyek Lab", type: "scroll", value: "#work" }]
+          };
+        }
+
         return {
           text:
-            `Berikut latar belakang akademik **${p.fullName}**:\n\n` +
-            `- **Kampus:** ${p.campus}\n` +
-            `- **Program Studi:** ${p.degree}\n` +
-            `- **Status:** Mahasiswa ${p.semester}, NRP \`${p.nrp}\`\n` +
-            `- **Capaian Nilai:** IPK **${p.gpa}** dengan IPS semester terakhir **${p.latestIps}**\n\n` +
-            `Selama kuliah, porsi praktikum berfokus pada jaringan komputer, transmisi satelit dan gelombang mikro, pengolahan sinyal radio digital, serta sistem tertanam berbasis IoT.`,
+            `Latar belakang akademik **${p.fullName}**:\n\n` +
+            `Kampus: ${p.campus}\n` +
+            `Program Studi: ${p.degree}\n` +
+            `Status: ${p.semester}, NRP \`${p.nrp}\`\n` +
+            `Capaian Nilai: IPK **${p.gpa}**, IPS terakhir **${p.latestIps}**\n\n` +
+            `Porsi praktikum mencakup jaringan komputer, transmisi satelit, pengolahan sinyal radio digital, dan sistem tertanam IoT.`,
           actions: [
             { label: "Lihat 36 Sertifikat", type: "scroll", value: "#credentials" },
             { label: "Lihat Proyek Lab", type: "scroll", value: "#work" }
@@ -589,13 +715,34 @@
 
       case "SKILLS_OVERVIEW": {
         const s = MRK_KNOWLEDGE.skills;
+
+        // Jika tanya keahlian spesifik
+        if (/\b(python|coding|pemrograman|koding|bahasa program)\b/i.test(norm)) {
+          return {
+            text: `Di bidang pemrograman, Rizky menguasai ${s.codeWebData[0]}, serta ${s.codeWebData[2].toLowerCase()}.`,
+            actions: [{ label: "Lihat Semua Keahlian", type: "scroll", value: "#skills-telemetry" }]
+          };
+        }
+        if (/\b(jaringan|network|noc|routing|cisco|vlan)\b/i.test(norm)) {
+          return {
+            text: `Di bidang jaringan, Rizky menguasai ${s.nocNetwork[0]}, serta ${s.nocNetwork[1].toLowerCase()}.`,
+            actions: [{ label: "Lihat Peta Keahlian", type: "scroll", value: "#skills-telemetry" }]
+          };
+        }
+        if (/\b(iot|esp32|embedded|robot|sensor)\b/i.test(norm)) {
+          return {
+            text: `Di bidang IoT dan sistem tertanam, Rizky berpengalaman dengan ${s.iotTelecom[0]}, serta ${s.iotTelecom[1].toLowerCase()}.`,
+            actions: [{ label: "Lihat Proyek IoT", type: "scroll", value: "#work" }]
+          };
+        }
+
         return {
           text:
-            `Keahlian teknis **${p.fullName}** terbagi ke dalam empat bidang utama:\n\n` +
-            `1. **NOC & Jaringan:** ${s.nocNetwork[0]}, serta ${s.nocNetwork[1].toLowerCase()}.\n` +
+            `Keahlian teknis Rizky mencakup empat bidang utama:\n\n` +
+            `1. **NOC & Jaringan:** ${s.nocNetwork[0]}.\n` +
             `2. **Server & Keamanan:** ${s.nocNetwork[3]}, ditambah ${s.security[1].toLowerCase()}.\n` +
-            `3. **Pemrograman & Data:** ${s.codeWebData[0]}, serta ${s.codeWebData[1].toLowerCase()}.\n` +
-            `4. **IoT & Telekomunikasi:** ${s.iotTelecom[0]}, serta ${s.iotTelecom[1].toLowerCase()}.`,
+            `3. **Pemrograman & Data:** ${s.codeWebData[0]}.\n` +
+            `4. **IoT & Telekomunikasi:** ${s.iotTelecom[0]}.`,
           actions: [
             { label: "Grafik Kompetensi", type: "scroll", value: "#skills-telemetry" },
             { label: "Coba Cloud NOC", type: "link", value: "noc.html" }
@@ -605,12 +752,12 @@
 
       case "PROJECTS_ALL": {
         const list = MRK_KNOWLEDGE.projects
-          .map((pr, idx) => `${idx + 1}. **${pr.title}** di bidang ${pr.category}`)
+          .map((pr, idx) => `${idx + 1}. **${pr.title}** — ${pr.category}`)
           .join("\n");
         return {
           text:
-            `Terdapat **6 proyek utama** yang telah dikerjakan dan didokumentasikan oleh Rizky:\n\n${list}\n\n` +
-            `${MRK_KNOWLEDGE.extraLabNote}\n\nKlik kartu proyek di halaman utama untuk melihat rincian teknisnya, atau sebutkan nama proyek yang ingin Anda tanyakan.`,
+            `Rizky memiliki **${MRK_KNOWLEDGE.projects.length} proyek** yang sudah didokumentasikan:\n\n${list}\n\n` +
+            `Sebutkan nama proyek yang ingin Anda tanyakan lebih lanjut, atau klik kartu proyek di halaman utama.`,
           actions: [
             { label: "Ke Bagian Proyek", type: "scroll", value: "#work" },
             { label: "Buka Cloud NOC", type: "link", value: "noc.html" }
@@ -623,16 +770,19 @@
       case "PROJECT_VLAN_SERVER":
       case "PROJECT_IOT_WATER":
       case "PROJECT_SDR_RADIO":
-      case "PROJECT_ROBOT_GRIPPER": {
+      case "PROJECT_ROBOT_GRIPPER":
+      case "PROJECT_HORN_ANTENNA": {
         const mapIdx = {
           PROJECT_CLOUD_NOC: "cloud-noc",
           PROJECT_ENTERPRISE_WAN: "enterprise-wan",
           PROJECT_VLAN_SERVER: "vlan-server",
           PROJECT_IOT_WATER: "iot-water",
           PROJECT_SDR_RADIO: "sdr-radio",
-          PROJECT_ROBOT_GRIPPER: "robot-gripper"
+          PROJECT_ROBOT_GRIPPER: "robot-gripper",
+          PROJECT_HORN_ANTENNA: "horn-antenna"
         };
         const proj = MRK_KNOWLEDGE.projects.find((item) => item.id === mapIdx[intentId]);
+        if (!proj) return null;
         const bullets = proj.highlights.map((h) => `- ${h}`).join("\n");
         const acts = [
           { label: "Detail Proyek", type: "project_modal", value: proj.id }
@@ -642,10 +792,10 @@
         }
         return {
           text:
-            `**${proj.title}**\nKategori ${proj.category}, tahun ${proj.year}\n\n` +
+            `**${proj.title}**\nKategori: ${proj.category}, tahun ${proj.year}\n\n` +
             `${proj.summary}\n\n` +
-            `**Poin pengerjaan:**\n${bullets}\n\n` +
-            `**Teknologi:** \`${proj.stack.join("`, `")}\``,
+            `Poin pengerjaan:\n${bullets}\n\n` +
+            `Teknologi: \`${proj.stack.join("`, `")}\``,
           actions: acts
         };
       }
@@ -694,13 +844,38 @@
       }
 
       case "CONTACT_SOCIAL": {
+        // Jika tanya email saja
+        if (/\b(email|surel|mail)\b/i.test(norm) && !/\b(wa|whatsapp|telepon|nomor|kontak lengkap)\b/i.test(norm)) {
+          return {
+            text: `Email Rizky: \`${p.email}\``,
+            actions: [
+              { label: "Salin Alamat Email", type: "scroll", value: "#contact" },
+              { label: "Chat WhatsApp", type: "external", value: p.whatsappUrl }
+            ]
+          };
+        }
+        // Jika tanya WA/telepon saja
+        if (/\b(wa|whatsapp|telepon|nomor|hp|nomer)\b/i.test(norm) && !/\b(email|linkedin|kontak lengkap)\b/i.test(norm)) {
+          return {
+            text: `WhatsApp / Telepon Rizky: \`${p.phone}\``,
+            actions: [{ label: "Chat WhatsApp", type: "external", value: p.whatsappUrl }]
+          };
+        }
+        // Jika tanya LinkedIn
+        if (/\b(linkedin|li)\b/i.test(norm)) {
+          return {
+            text: `Profil LinkedIn Rizky: linkedin.com/in/mochammad-rizky-kurniawan`,
+            actions: [{ label: "Buka LinkedIn", type: "external", value: p.linkedin }]
+          };
+        }
+
         return {
           text:
-            `Anda dapat menghubungi **${p.fullName}** melalui kontak resmi berikut:\n\n` +
-            `- **Email:** \`${p.email}\`\n` +
-            `- **Telepon & WhatsApp:** \`${p.phone}\`\n` +
-            `- **Domisili:** ${p.location}\n` +
-            `- **LinkedIn:** linkedin.com/in/mochammad-rizky-kurniawan`,
+            `Kontak resmi **${p.fullName}**:\n\n` +
+            `Email: \`${p.email}\`\n` +
+            `WhatsApp: \`${p.phone}\`\n` +
+            `Domisili: ${p.location}\n` +
+            `LinkedIn: linkedin.com/in/mochammad-rizky-kurniawan`,
           actions: [
             { label: "Form Kontak", type: "scroll", value: "#contact" },
             { label: "Chat WhatsApp", type: "external", value: p.whatsappUrl },
@@ -712,10 +887,10 @@
       case "WHY_HIRE_HRD": {
         return {
           text:
-            `Tiga bekal utama yang ditawarkan **${p.fullName}** untuk mendukung tim teknis Anda:\n\n` +
-            `1. **Terbiasa Praktik Langsung:** Sudah mengerjakan lebih dari 20 topologi VLAN dan WAN, analisis paket Wireshark, pengelolaan layanan dasar server Linux, hingga membangun aplikasi web Cloud NOC.\n` +
-            `2. **Sertifikasi Teruji:** Mengantongi sertifikat tingkat Intermediate sebagai Associate Network Administrator dan Network Technician dari DEX Kementerian Komdigi RI serta lulus pelatihan Web Pentest ID-Networkers.\n` +
-            `3. **Memahami Perangkat Keras hingga Jaringan:** Latar belakang STr Teknik Telekomunikasi PENS dengan IPK **${p.gpa}** membantunya menghubungkan perangkat fisik seperti ESP32 dan sinyal RF ke sistem jaringan dan antarmuka web.`,
+            `Tiga hal yang membuat Rizky cocok untuk posisi teknis:\n\n` +
+            `1. **Praktik langsung:** Sudah mengerjakan lebih dari 20 topologi VLAN dan WAN, analisis paket Wireshark, pengelolaan layanan server Linux, hingga membangun aplikasi web Cloud NOC sendiri.\n` +
+            `2. **Sertifikasi resmi:** Memegang sertifikat DEX Komdigi RI sebagai Associate Network Administrator dan Network Technician Intermediate, serta lulus bootcamp Web Pentest ID-Networkers.\n` +
+            `3. **Latar telekomunikasi:** STr Teknik Telekomunikasi PENS dengan IPK **${p.gpa}** memberi Rizky pemahaman menyeluruh dari perangkat keras RF hingga sistem jaringan dan cloud.`,
           actions: [
             { label: "Buka CV ATS", type: "cv", value: "open" },
             { label: "Hubungi Rizky", type: "scroll", value: "#contact" }
@@ -726,7 +901,7 @@
       case "WEBSITE_TECH": {
         return {
           text:
-            `Website **${p.website}** ini dibuat sebagai portofolio interaktif **${p.fullName}**. Halaman utamanya mendukung mode gelap dan terang, grafik peta kompetensi, pratinjau dokumen langsung, serta asisten tanya jawab khusus yang dibatasi hanya untuk topik seputar profil dan karya Rizky.`,
+            `Portofolio **${p.website}** ini dibuat sendiri oleh Rizky sebagai showcase interaktif. Fiturnya meliputi mode gelap/terang, grafik kompetensi radar, pratinjau dokumen langsung di browser, dan asisten tanya jawab yang dibatasi hanya untuk topik seputar profil dan karyanya.`,
           actions: [
             { label: "Coba Aplikasi Cloud NOC", type: "link", value: "noc.html" }
           ]
@@ -824,7 +999,8 @@
           if (data && data.mode === "cloud_llm" && data.reply) {
             conversationContext.lastIntentIds = [scored[0].id];
             conversationContext.turnCount += 1;
-            const localBlock = buildIntentBlock(scored[0].id, parsed);
+            const qType = classifyQuestionType(parsed.normalized);
+            const localBlock = buildIntentBlock(scored[0].id, parsed, qType);
             return {
               inScope: data.inScope !== false,
               classificationBadge: data.badge || `Topik: ${scored[0].label}`,
@@ -850,8 +1026,11 @@
       }
     }
 
+    // Classify pertanyaan sekali untuk diteruskan ke semua block
+    const questionType = classifyQuestionType(parsed.normalized);
+
     const blocks = selectedIntents
-      .map((it) => buildIntentBlock(it.id, parsed))
+      .map((it) => buildIntentBlock(it.id, parsed, questionType))
       .filter(Boolean);
 
     const combinedMarkdown = blocks.map((b) => b.text).join("\n\n---\n\n");
